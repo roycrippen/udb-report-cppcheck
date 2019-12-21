@@ -1,0 +1,2677 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Roy Crippen">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <title>Red Metrics &mdash; UDB Metrics Reporting for cpp_check</title>
+<!--    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">-->
+<!--    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">-->
+<!--    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">-->
+<!--    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">-->
+
+    <link rel="stylesheet" href="../css/googleapis_lato_400_700.css">
+    <link rel="stylesheet" href="../css/fira_code.css">
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/v4-shims.css">
+
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/github.min.css">
+<!--    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>-->
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../search/lunr.js"></script>
+    <script src="../search/worker.js"></script>
+    <script src="../js/highlight.min.js"></script>
+<!---->
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script> 
+</head>
+
+<body ontouchstart="">
+    <div id="container">
+        <aside>
+            <div class="home">
+                <div class="title">
+                    <button class="hamburger"></button>
+                    <a href="../index.html" class="site-name"> UDB Metrics Reporting for cpp_check</a>
+                </div>
+                <div class="search">
+                    <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+        <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    </form>
+</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="root">
+                    <li class="toctree-l1"><a class="nav-item" href="../index.html">Usage</a></li>
+                    <li class="toctree-l1"><button class="section nav-item">Metrics</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../Metrics/application-metrics.html">Application Metrics</a></li>
+    <li class="toctree-l2"><button class="section nav-item hide">cppcheck</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../Metrics/cppcheck/cppcheck-metrics.html">cppcheck Metrics</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../Metrics/cppcheck/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l3"><button class="section nav-item hide">addons</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/addons/addons-metrics.html">addons Metrics</a></li>
+    <li class="toctree-l4"><button class="section nav-item hide">doc</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/addons/doc/doc-metrics.html">doc Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/addons/doc/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">test</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/addons/test/test-metrics.html">test Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/addons/test/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><button class="section nav-item hide">misra</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/addons/test/misra/misra-metrics.html">misra Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/addons/test/misra/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">path1</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/addons/test/path1/path1-metrics.html">path1 Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/addons/test/path1/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">y2038</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/addons/test/y2038/y2038-metrics.html">y2038 Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/addons/test/y2038/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">cli</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/cli/cli-metrics.html">cli Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/cli/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">cve-test-suite</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/cve-test-suite/cve-test-suite-metrics.html">cve-test-suite Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/cve-test-suite/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">democlient</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/democlient/democlient-metrics.html">democlient Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/democlient/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">externals</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/externals/externals-metrics.html">externals Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/externals/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><button class="section nav-item hide">simplecpp</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/externals/simplecpp/simplecpp-metrics.html">simplecpp Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/externals/simplecpp/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">tinyxml</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/externals/tinyxml/tinyxml-metrics.html">tinyxml Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/externals/tinyxml/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">gui</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/gui/gui-metrics.html">gui Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/gui/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><button class="section nav-item hide">help</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/gui/help/help-metrics.html">help Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/gui/help/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">test</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/gui/test/test-metrics.html">test Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/gui/test/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><button class="section nav-item hide">benchmark</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/gui/test/benchmark/benchmark-metrics.html">benchmark Metrics</a></li>
+    <li class="toctree-l6"><button class="section nav-item hide">simple</button>
+<ul class="subnav hide">
+    <li class="toctree-l7"><a class="nav-item" href="../Metrics/cppcheck/gui/test/benchmark/simple/simple-metrics.html">simple Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../Metrics/cppcheck/gui/test/benchmark/simple/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">data</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/data-metrics.html">data Metrics</a></li>
+    <li class="toctree-l6"><button class="section nav-item hide">benchmark</button>
+<ul class="subnav hide">
+    <li class="toctree-l7"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/benchmark/benchmark-metrics.html">benchmark Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/benchmark/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l6"><button class="section nav-item hide">files</button>
+<ul class="subnav hide">
+    <li class="toctree-l7"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/files/files-metrics.html">files Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/files/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l7"><button class="section nav-item hide">dir1</button>
+<ul class="subnav hide">
+    <li class="toctree-l8"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/files/dir1/dir1-metrics.html">dir1 Metrics</a></li>
+    <li class="toctree-l8"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/files/dir1/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l8"><button class="section nav-item hide">dir11</button>
+<ul class="subnav hide">
+    <li class="toctree-l9"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/files/dir1/dir11/dir11-metrics.html">dir11 Metrics</a></li>
+    <li class="toctree-l9"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/files/dir1/dir11/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l7"><button class="section nav-item hide">dir2</button>
+<ul class="subnav hide">
+    <li class="toctree-l8"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/files/dir2/dir2-metrics.html">dir2 Metrics</a></li>
+    <li class="toctree-l8"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/files/dir2/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">filelist</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/gui/test/filelist/filelist-metrics.html">filelist Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/gui/test/filelist/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">projectfile</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/gui/test/projectfile/projectfile-metrics.html">projectfile Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/gui/test/projectfile/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">translationhandler</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/gui/test/translationhandler/translationhandler-metrics.html">translationhandler Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/gui/test/translationhandler/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">xmlreportv2</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/gui/test/xmlreportv2/xmlreportv2-metrics.html">xmlreportv2 Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/gui/test/xmlreportv2/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">htmlreport</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/htmlreport/htmlreport-metrics.html">htmlreport Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/htmlreport/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">lib</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/lib/lib-metrics.html">lib Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/lib/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">oss-fuzz</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/oss-fuzz/oss-fuzz-metrics.html">oss-fuzz Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/oss-fuzz/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">samples</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/samples/samples-metrics.html">samples Metrics</a></li>
+    <li class="toctree-l4"><button class="section nav-item hide">AssignmentAddressToInteger</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/AssignmentAddressToInteger/AssignmentAddressToInteger-metrics.html">AssignmentAddressToInteger Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/AssignmentAddressToInteger/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">arrayIndexOutOfBounds</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/arrayIndexOutOfBounds/arrayIndexOutOfBounds-metrics.html">arrayIndexOutOfBounds Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/arrayIndexOutOfBounds/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">autoVariables</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/autoVariables/autoVariables-metrics.html">autoVariables Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/autoVariables/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">bufferAccessOutOfBounds</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/bufferAccessOutOfBounds/bufferAccessOutOfBounds-metrics.html">bufferAccessOutOfBounds Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/bufferAccessOutOfBounds/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">erase</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/erase/erase-metrics.html">erase Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/erase/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">memleak</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/memleak/memleak-metrics.html">memleak Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/memleak/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">outOfBounds</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/outOfBounds/outOfBounds-metrics.html">outOfBounds Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/outOfBounds/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">resourceLeak</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/resourceLeak/resourceLeak-metrics.html">resourceLeak Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/resourceLeak/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">syntaxError</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/syntaxError/syntaxError-metrics.html">syntaxError Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/syntaxError/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">test</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/test/test-metrics.html">test Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/test/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><button class="section nav-item hide">cfg</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/test/cfg/cfg-metrics.html">cfg Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/test/cfg/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">cli</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/test/cli/cli-metrics.html">cli Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/test/cli/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><button class="section nav-item hide">helloworld</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/cli/helloworld/helloworld-metrics.html">helloworld Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/cli/helloworld/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">proj-inline-suppress</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/cli/proj-inline-suppress/proj-inline-suppress-metrics.html">proj-inline-suppress Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/cli/proj-inline-suppress/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">proj-suppress-syntaxError</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/cli/proj-suppress-syntaxError/proj-suppress-syntaxError-metrics.html">proj-suppress-syntaxError Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/cli/proj-suppress-syntaxError/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">proj2</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/cli/proj2/proj2-metrics.html">proj2 Metrics</a></li>
+    <li class="toctree-l6"><button class="section nav-item hide">a</button>
+<ul class="subnav hide">
+    <li class="toctree-l7"><a class="nav-item" href="../Metrics/cppcheck/test/cli/proj2/a/a-metrics.html">a Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../Metrics/cppcheck/test/cli/proj2/a/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l6"><button class="section nav-item hide">b</button>
+<ul class="subnav hide">
+    <li class="toctree-l7"><a class="nav-item" href="../Metrics/cppcheck/test/cli/proj2/b/b-metrics.html">b Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../Metrics/cppcheck/test/cli/proj2/b/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">synthetic</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/test/synthetic/synthetic-metrics.html">synthetic Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/test/synthetic/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">testsuites</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/test/testsuites/testsuites-metrics.html">testsuites Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/test/testsuites/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><button class="section nav-item hide">clang</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/testsuites/clang/clang-metrics.html">clang Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/testsuites/clang/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">duma</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/testsuites/duma/duma-metrics.html">duma Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/testsuites/duma/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">tools</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/tools/tools-metrics.html">tools Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/tools/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><button class="section nav-item hide">triage</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/tools/triage/triage-metrics.html">triage Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/tools/triage/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">win_installer</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/win_installer/win_installer-metrics.html">win_installer Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/win_installer/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Reports</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="circular_file_refs.html">Direct Circular File References</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="file_dependencies.html">File Dependencies</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="file_list_indented_sloc.html">File List Indented</a></li>
+    <li class="toctree-l2 current"><a class="nav-item current" href="red_metrics.html">Red Metrics</a>
+<ul class="subnav">
+<li class="toctree-l3"><a class="nav-item toc" href="#maxcyclomaticstrict">MaxCyclomaticStrict</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#maxessential">MaxEssential</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#maxnesting">MaxNesting</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#ratiocommenttocode">RatioCommentToCode</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#badfix">badFix</a></li>
+</ul></li>
+</ul></li>
+                </ul>
+            </nav>
+            <div class="repo">
+    <div class="previous"><a href="file_list_indented_sloc.html">&laquo; Previous</a></div>
+</div>
+        </aside>
+        <div id="spacer"><button class="arrow"></button></div>
+        <main>
+            <div class="home-top">
+                <button class="hamburger"></button>
+                <a href="../index.html" class="site-name"> UDB Metrics Reporting for cpp_check</a>
+            </div>
+            <div id="main">
+                <nav class="breadcrumbs">
+<ul>
+    <li>Reports</li>
+</ul>
+</nav>
+                <div id="content"><h1 id="red-metrics">Red Metrics<a class="headerlink" href="#red-metrics" title="Permanent link">#</a></h1>
+<h2 id="maxcyclomaticstrict">MaxCyclomaticStrict<a class="headerlink" href="#maxcyclomaticstrict" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Path</th>
+<th align="right">Value</th>
+<th align="right">SLOC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsymboldatabasecpp-metrics">cppcheck/test/testsymboldatabase.cpp</a></td>
+<td align="right">613</td>
+<td align="right">7,770</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkiocpp-metrics">cppcheck/lib/checkio.cpp</a></td>
+<td align="right">413</td>
+<td align="right">1,479</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testtokenizecpp-metrics">cppcheck/test/testtokenize.cpp</a></td>
+<td align="right">358</td>
+<td align="right">5,905</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#tokenizecpp-metrics">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">333</td>
+<td align="right">7,484</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#valueflowcpp-metrics">cppcheck/lib/valueflow.cpp</a></td>
+<td align="right">272</td>
+<td align="right">4,750</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#templatesimplifiercpp-metrics">cppcheck/lib/templatesimplifier.cpp</a></td>
+<td align="right">271</td>
+<td align="right">2,557</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkunusedvarcpp-metrics">cppcheck/lib/checkunusedvar.cpp</a></td>
+<td align="right">213</td>
+<td align="right">890</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testgarbagecpp-metrics">cppcheck/test/testgarbage.cpp</a></td>
+<td align="right">205</td>
+<td align="right">3,083</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/cli/zzz-file-metrics.html#cmdlineparsercpp-metrics">cppcheck/cli/cmdlineparser.cpp</a></td>
+<td align="right">200</td>
+<td align="right">512</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testvalueflowcpp-metrics">cppcheck/test/testvalueflow.cpp</a></td>
+<td align="right">197</td>
+<td align="right">2,935</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsimplifytemplatecpp-metrics">cppcheck/test/testsimplifytemplate.cpp</a></td>
+<td align="right">195</td>
+<td align="right">2,234</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkuninitvarcpp-metrics">cppcheck/lib/checkuninitvar.cpp</a></td>
+<td align="right">178</td>
+<td align="right">965</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#symboldatabasecpp-metrics">cppcheck/lib/symboldatabase.cpp</a></td>
+<td align="right">170</td>
+<td align="right">3,992</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testothercpp-metrics">cppcheck/test/testother.cpp</a></td>
+<td align="right">161</td>
+<td align="right">3,781</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testunusedvarcpp-metrics">cppcheck/test/testunusedvar.cpp</a></td>
+<td align="right">158</td>
+<td align="right">2,113</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testclasscpp-metrics">cppcheck/test/testclass.cpp</a></td>
+<td align="right">156</td>
+<td align="right">2,807</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testvaridcpp-metrics">cppcheck/test/testvarid.cpp</a></td>
+<td align="right">156</td>
+<td align="right">1,570</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkleakautovarcpp-metrics">cppcheck/lib/checkleakautovar.cpp</a></td>
+<td align="right">155</td>
+<td align="right">597</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#librarycpp-metrics">cppcheck/lib/library.cpp</a></td>
+<td align="right">153</td>
+<td align="right">1,053</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsimplifytokenscpp-metrics">cppcheck/test/testsimplifytokens.cpp</a></td>
+<td align="right">143</td>
+<td align="right">2,820</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testpreprocessorcpp-metrics">cppcheck/test/testpreprocessor.cpp</a></td>
+<td align="right">142</td>
+<td align="right">1,648</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsimplifytypedefcpp-metrics">cppcheck/test/testsimplifytypedef.cpp</a></td>
+<td align="right">134</td>
+<td align="right">1,760</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testconstructorscpp-metrics">cppcheck/test/testconstructors.cpp</a></td>
+<td align="right">133</td>
+<td align="right">1,521</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testbufferoverruncpp-metrics">cppcheck/test/testbufferoverrun.cpp</a></td>
+<td align="right">130</td>
+<td align="right">1,915</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testmathlibcpp-metrics">cppcheck/test/testmathlib.cpp</a></td>
+<td align="right">126</td>
+<td align="right">1,900</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/externals/simplecpp/zzz-file-metrics.html#simplecppcpp-metrics">cppcheck/externals/simplecpp/simplecpp.cpp</a></td>
+<td align="right">125</td>
+<td align="right">1,887</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#astutilscpp-metrics">cppcheck/lib/astutils.cpp</a></td>
+<td align="right">115</td>
+<td align="right">1,437</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testiocpp-metrics">cppcheck/test/testio.cpp</a></td>
+<td align="right">115</td>
+<td align="right">2,749</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#cppcheckcpp-metrics">cppcheck/lib/cppcheck.cpp</a></td>
+<td align="right">112</td>
+<td align="right">638</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#teststlcpp-metrics">cppcheck/test/teststl.cpp</a></td>
+<td align="right">103</td>
+<td align="right">1,830</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testlibrarycpp-metrics">cppcheck/test/testlibrary.cpp</a></td>
+<td align="right">98</td>
+<td align="right">809</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testleakautovarcpp-metrics">cppcheck/test/testleakautovar.cpp</a></td>
+<td align="right">95</td>
+<td align="right">1,177</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkclasscpp-metrics">cppcheck/lib/checkclass.cpp</a></td>
+<td align="right">92</td>
+<td align="right">1,701</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkstlcpp-metrics">cppcheck/lib/checkstl.cpp</a></td>
+<td align="right">92</td>
+<td align="right">1,575</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testcmdlineparsercpp-metrics">cppcheck/test/testcmdlineparser.cpp</a></td>
+<td align="right">90</td>
+<td align="right">1,274</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkconditioncpp-metrics">cppcheck/lib/checkcondition.cpp</a></td>
+<td align="right">89</td>
+<td align="right">1,102</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkothercpp-metrics">cppcheck/lib/checkother.cpp</a></td>
+<td align="right">86</td>
+<td align="right">1,961</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkunusedfunctionscpp-metrics">cppcheck/lib/checkunusedfunctions.cpp</a></td>
+<td align="right">79</td>
+<td align="right">271</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testuninitvarcpp-metrics">cppcheck/test/testuninitvar.cpp</a></td>
+<td align="right">72</td>
+<td align="right">1,818</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testnullpointercpp-metrics">cppcheck/test/testnullpointer.cpp</a></td>
+<td align="right">71</td>
+<td align="right">1,395</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testautovariablescpp-metrics">cppcheck/test/testautovariables.cpp</a></td>
+<td align="right">69</td>
+<td align="right">1,109</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testconditioncpp-metrics">cppcheck/test/testcondition.cpp</a></td>
+<td align="right">69</td>
+<td align="right">1,745</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checknullpointercpp-metrics">cppcheck/lib/checknullpointer.cpp</a></td>
+<td align="right">67</td>
+<td align="right">432</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checksizeofcpp-metrics">cppcheck/lib/checksizeof.cpp</a></td>
+<td align="right">62</td>
+<td align="right">258</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#importprojectcpp-metrics">cppcheck/lib/importproject.cpp</a></td>
+<td align="right">61</td>
+<td align="right">826</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#tokenlistcpp-metrics">cppcheck/lib/tokenlist.cpp</a></td>
+<td align="right">57</td>
+<td align="right">1,098</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkmemoryleakcpp-metrics">cppcheck/lib/checkmemoryleak.cpp</a></td>
+<td align="right">53</td>
+<td align="right">670</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#preprocessorcpp-metrics">cppcheck/lib/preprocessor.cpp</a></td>
+<td align="right">53</td>
+<td align="right">687</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#tokencpp-metrics">cppcheck/lib/token.cpp</a></td>
+<td align="right">52</td>
+<td align="right">1,520</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testtokencpp-metrics">cppcheck/test/testtoken.cpp</a></td>
+<td align="right">52</td>
+<td align="right">1,110</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkautovariablescpp-metrics">cppcheck/lib/checkautovariables.cpp</a></td>
+<td align="right">50</td>
+<td align="right">438</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#mathlibcpp-metrics">cppcheck/lib/mathlib.cpp</a></td>
+<td align="right">49</td>
+<td align="right">1,031</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#exprenginecpp-metrics">cppcheck/lib/exprengine.cpp</a></td>
+<td align="right">47</td>
+<td align="right">1,032</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/cli/zzz-file-metrics.html#cppcheckexecutorcpp-metrics">cppcheck/cli/cppcheckexecutor.cpp</a></td>
+<td align="right">45</td>
+<td align="right">496</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkfunctionscpp-metrics">cppcheck/lib/checkfunctions.cpp</a></td>
+<td align="right">44</td>
+<td align="right">257</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/test/data/benchmark/zzz-file-metrics.html#simplecpp-metrics">cppcheck/gui/test/data/benchmark/simple.cpp</a></td>
+<td align="right">42</td>
+<td align="right">233</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsizeofcpp-metrics">cppcheck/test/testsizeof.cpp</a></td>
+<td align="right">42</td>
+<td align="right">458</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#check64bitcpp-metrics">cppcheck/lib/check64bit.cpp</a></td>
+<td align="right">39</td>
+<td align="right">64</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkvaargcpp-metrics">cppcheck/lib/checkvaarg.cpp</a></td>
+<td align="right">39</td>
+<td align="right">103</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkbufferoverruncpp-metrics">cppcheck/lib/checkbufferoverrun.cpp</a></td>
+<td align="right">37</td>
+<td align="right">646</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#ctucpp-metrics">cppcheck/lib/ctu.cpp</a></td>
+<td align="right">36</td>
+<td align="right">406</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testexprenginecpp-metrics">cppcheck/test/testexprengine.cpp</a></td>
+<td align="right">36</td>
+<td align="right">290</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkstringcpp-metrics">cppcheck/lib/checkstring.cpp</a></td>
+<td align="right">35</td>
+<td align="right">311</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testtypecpp-metrics">cppcheck/test/testtype.cpp</a></td>
+<td align="right">35</td>
+<td align="right">261</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testboolcpp-metrics">cppcheck/test/testbool.cpp</a></td>
+<td align="right">33</td>
+<td align="right">652</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testmemleakcpp-metrics">cppcheck/test/testmemleak.cpp</a></td>
+<td align="right">33</td>
+<td align="right">1,069</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checktypecpp-metrics">cppcheck/lib/checktype.cpp</a></td>
+<td align="right">32</td>
+<td align="right">259</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testunusedprivfunccpp-metrics">cppcheck/test/testunusedprivfunc.cpp</a></td>
+<td align="right">32</td>
+<td align="right">323</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testfunctionscpp-metrics">cppcheck/test/testfunctions.cpp</a></td>
+<td align="right">31</td>
+<td align="right">569</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/tools/zzz-file-metrics.html#generate_cfg_testscpp-metrics">cppcheck/tools/generate_cfg_tests.cpp</a></td>
+<td align="right">31</td>
+<td align="right">166</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/cli/zzz-file-metrics.html#threadexecutorcpp-metrics">cppcheck/cli/threadexecutor.cpp</a></td>
+<td align="right">30</td>
+<td align="right">188</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testpathmatchcpp-metrics">cppcheck/test/testpathmatch.cpp</a></td>
+<td align="right">28</td>
+<td align="right">217</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testincompletestatementcpp-metrics">cppcheck/test/testincompletestatement.cpp</a></td>
+<td align="right">27</td>
+<td align="right">294</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkassertcpp-metrics">cppcheck/lib/checkassert.cpp</a></td>
+<td align="right">25</td>
+<td align="right">73</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsuppressionscpp-metrics">cppcheck/test/testsuppressions.cpp</a></td>
+<td align="right">25</td>
+<td align="right">512</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testunusedfunctionscpp-metrics">cppcheck/test/testunusedfunctions.cpp</a></td>
+<td align="right">25</td>
+<td align="right">315</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#errorloggercpp-metrics">cppcheck/lib/errorlogger.cpp</a></td>
+<td align="right">23</td>
+<td align="right">482</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsimplifyusingcpp-metrics">cppcheck/test/testsimplifyusing.cpp</a></td>
+<td align="right">23</td>
+<td align="right">243</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/externals/zzz-file-metrics.html#picojsonh-metrics">cppcheck/externals/picojson.h</a></td>
+<td align="right">22</td>
+<td align="right">827</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkboolcpp-metrics">cppcheck/lib/checkbool.cpp</a></td>
+<td align="right">22</td>
+<td align="right">279</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testastutilscpp-metrics">cppcheck/test/testastutils.cpp</a></td>
+<td align="right">21</td>
+<td align="right">220</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testplatformcpp-metrics">cppcheck/test/testplatform.cpp</a></td>
+<td align="right">21</td>
+<td align="right">282</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#teststringcpp-metrics">cppcheck/test/teststring.cpp</a></td>
+<td align="right">21</td>
+<td align="right">391</td>
+</tr>
+</tbody>
+</table>
+<h2 id="maxessential">MaxEssential<a class="headerlink" href="#maxessential" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Path</th>
+<th align="right">Value</th>
+<th align="right">SLOC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testvalueflowcpp-metrics">cppcheck/test/testvalueflow.cpp</a></td>
+<td align="right">197</td>
+<td align="right">2,935</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsymboldatabasecpp-metrics">cppcheck/test/testsymboldatabase.cpp</a></td>
+<td align="right">181</td>
+<td align="right">7,770</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/cli/zzz-file-metrics.html#cmdlineparsercpp-metrics">cppcheck/cli/cmdlineparser.cpp</a></td>
+<td align="right">138</td>
+<td align="right">512</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testmathlibcpp-metrics">cppcheck/test/testmathlib.cpp</a></td>
+<td align="right">126</td>
+<td align="right">1,900</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testiocpp-metrics">cppcheck/test/testio.cpp</a></td>
+<td align="right">115</td>
+<td align="right">2,749</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testlibrarycpp-metrics">cppcheck/test/testlibrary.cpp</a></td>
+<td align="right">98</td>
+<td align="right">809</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#valueflowcpp-metrics">cppcheck/lib/valueflow.cpp</a></td>
+<td align="right">94</td>
+<td align="right">4,750</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#librarycpp-metrics">cppcheck/lib/library.cpp</a></td>
+<td align="right">83</td>
+<td align="right">1,053</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testtokenizecpp-metrics">cppcheck/test/testtokenize.cpp</a></td>
+<td align="right">72</td>
+<td align="right">5,905</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testuninitvarcpp-metrics">cppcheck/test/testuninitvar.cpp</a></td>
+<td align="right">72</td>
+<td align="right">1,818</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#tokenizecpp-metrics">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">69</td>
+<td align="right">7,484</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testconditioncpp-metrics">cppcheck/test/testcondition.cpp</a></td>
+<td align="right">69</td>
+<td align="right">1,745</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkuninitvarcpp-metrics">cppcheck/lib/checkuninitvar.cpp</a></td>
+<td align="right">68</td>
+<td align="right">965</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testunusedvarcpp-metrics">cppcheck/test/testunusedvar.cpp</a></td>
+<td align="right">50</td>
+<td align="right">2,113</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#astutilscpp-metrics">cppcheck/lib/astutils.cpp</a></td>
+<td align="right">47</td>
+<td align="right">1,437</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#templatesimplifiercpp-metrics">cppcheck/lib/templatesimplifier.cpp</a></td>
+<td align="right">47</td>
+<td align="right">2,557</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsimplifytokenscpp-metrics">cppcheck/test/testsimplifytokens.cpp</a></td>
+<td align="right">47</td>
+<td align="right">2,820</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testnullpointercpp-metrics">cppcheck/test/testnullpointer.cpp</a></td>
+<td align="right">46</td>
+<td align="right">1,395</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testothercpp-metrics">cppcheck/test/testother.cpp</a></td>
+<td align="right">45</td>
+<td align="right">3,781</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkconditioncpp-metrics">cppcheck/lib/checkcondition.cpp</a></td>
+<td align="right">43</td>
+<td align="right">1,102</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#symboldatabasecpp-metrics">cppcheck/lib/symboldatabase.cpp</a></td>
+<td align="right">43</td>
+<td align="right">3,992</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsizeofcpp-metrics">cppcheck/test/testsizeof.cpp</a></td>
+<td align="right">42</td>
+<td align="right">458</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkleakautovarcpp-metrics">cppcheck/lib/checkleakautovar.cpp</a></td>
+<td align="right">41</td>
+<td align="right">597</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkmemoryleakcpp-metrics">cppcheck/lib/checkmemoryleak.cpp</a></td>
+<td align="right">41</td>
+<td align="right">670</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsimplifytypedefcpp-metrics">cppcheck/test/testsimplifytypedef.cpp</a></td>
+<td align="right">41</td>
+<td align="right">1,760</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkclasscpp-metrics">cppcheck/lib/checkclass.cpp</a></td>
+<td align="right">38</td>
+<td align="right">1,701</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testleakautovarcpp-metrics">cppcheck/test/testleakautovar.cpp</a></td>
+<td align="right">38</td>
+<td align="right">1,177</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkiocpp-metrics">cppcheck/lib/checkio.cpp</a></td>
+<td align="right">37</td>
+<td align="right">1,479</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsimplifytemplatecpp-metrics">cppcheck/test/testsimplifytemplate.cpp</a></td>
+<td align="right">37</td>
+<td align="right">2,234</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#teststlcpp-metrics">cppcheck/test/teststl.cpp</a></td>
+<td align="right">37</td>
+<td align="right">1,830</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/externals/simplecpp/zzz-file-metrics.html#simplecppcpp-metrics">cppcheck/externals/simplecpp/simplecpp.cpp</a></td>
+<td align="right">35</td>
+<td align="right">1,887</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testautovariablescpp-metrics">cppcheck/test/testautovariables.cpp</a></td>
+<td align="right">34</td>
+<td align="right">1,109</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#mathlibcpp-metrics">cppcheck/lib/mathlib.cpp</a></td>
+<td align="right">33</td>
+<td align="right">1,031</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#tokencpp-metrics">cppcheck/lib/token.cpp</a></td>
+<td align="right">33</td>
+<td align="right">1,520</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testboolcpp-metrics">cppcheck/test/testbool.cpp</a></td>
+<td align="right">33</td>
+<td align="right">652</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testtypecpp-metrics">cppcheck/test/testtype.cpp</a></td>
+<td align="right">33</td>
+<td align="right">261</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testtokencpp-metrics">cppcheck/test/testtoken.cpp</a></td>
+<td align="right">32</td>
+<td align="right">1,110</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#importprojectcpp-metrics">cppcheck/lib/importproject.cpp</a></td>
+<td align="right">30</td>
+<td align="right">826</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkunusedvarcpp-metrics">cppcheck/lib/checkunusedvar.cpp</a></td>
+<td align="right">28</td>
+<td align="right">890</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkothercpp-metrics">cppcheck/lib/checkother.cpp</a></td>
+<td align="right">27</td>
+<td align="right">1,961</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testclasscpp-metrics">cppcheck/test/testclass.cpp</a></td>
+<td align="right">27</td>
+<td align="right">2,807</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checknullpointercpp-metrics">cppcheck/lib/checknullpointer.cpp</a></td>
+<td align="right">26</td>
+<td align="right">432</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testbufferoverruncpp-metrics">cppcheck/test/testbufferoverrun.cpp</a></td>
+<td align="right">24</td>
+<td align="right">1,915</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkstlcpp-metrics">cppcheck/lib/checkstl.cpp</a></td>
+<td align="right">23</td>
+<td align="right">1,575</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testfunctionscpp-metrics">cppcheck/test/testfunctions.cpp</a></td>
+<td align="right">23</td>
+<td align="right">569</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkunusedfunctionscpp-metrics">cppcheck/lib/checkunusedfunctions.cpp</a></td>
+<td align="right">22</td>
+<td align="right">271</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testastutilscpp-metrics">cppcheck/test/testastutils.cpp</a></td>
+<td align="right">21</td>
+<td align="right">220</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testplatformcpp-metrics">cppcheck/test/testplatform.cpp</a></td>
+<td align="right">21</td>
+<td align="right">282</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#teststringcpp-metrics">cppcheck/test/teststring.cpp</a></td>
+<td align="right">21</td>
+<td align="right">391</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkautovariablescpp-metrics">cppcheck/lib/checkautovariables.cpp</a></td>
+<td align="right">20</td>
+<td align="right">438</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#tokenlistcpp-metrics">cppcheck/lib/tokenlist.cpp</a></td>
+<td align="right">19</td>
+<td align="right">1,098</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/zzz-file-metrics.html#codeeditorstylecpp-metrics">cppcheck/gui/codeeditorstyle.cpp</a></td>
+<td align="right">18</td>
+<td align="right">72</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testmemleakcpp-metrics">cppcheck/test/testmemleak.cpp</a></td>
+<td align="right">18</td>
+<td align="right">1,069</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsuppressionscpp-metrics">cppcheck/test/testsuppressions.cpp</a></td>
+<td align="right">18</td>
+<td align="right">512</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#exprenginecpp-metrics">cppcheck/lib/exprengine.cpp</a></td>
+<td align="right">17</td>
+<td align="right">1,032</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#preprocessorcpp-metrics">cppcheck/lib/preprocessor.cpp</a></td>
+<td align="right">17</td>
+<td align="right">687</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#valueflowh-metrics">cppcheck/lib/valueflow.h</a></td>
+<td align="right">17</td>
+<td align="right">234</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/externals/zzz-file-metrics.html#picojsonh-metrics">cppcheck/externals/picojson.h</a></td>
+<td align="right">16</td>
+<td align="right">827</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkassertcpp-metrics">cppcheck/lib/checkassert.cpp</a></td>
+<td align="right">16</td>
+<td align="right">73</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checksizeofcpp-metrics">cppcheck/lib/checksizeof.cpp</a></td>
+<td align="right">16</td>
+<td align="right">258</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#ctucpp-metrics">cppcheck/lib/ctu.cpp</a></td>
+<td align="right">15</td>
+<td align="right">406</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#settingscpp-metrics">cppcheck/lib/settings.cpp</a></td>
+<td align="right">15</td>
+<td align="right">68</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testcharvarcpp-metrics">cppcheck/test/testcharvar.cpp</a></td>
+<td align="right">15</td>
+<td align="right">98</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testcmdlineparsercpp-metrics">cppcheck/test/testcmdlineparser.cpp</a></td>
+<td align="right">15</td>
+<td align="right">1,274</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#test64bitcpp-metrics">cppcheck/test/test64bit.cpp</a></td>
+<td align="right">14</td>
+<td align="right">129</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testunusedfunctionscpp-metrics">cppcheck/test/testunusedfunctions.cpp</a></td>
+<td align="right">14</td>
+<td align="right">315</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/externals/tinyxml/zzz-file-metrics.html#tinyxml2cpp-metrics">cppcheck/externals/tinyxml/tinyxml2.cpp</a></td>
+<td align="right">13</td>
+<td align="right">1,462</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checktypecpp-metrics">cppcheck/lib/checktype.cpp</a></td>
+<td align="right">13</td>
+<td align="right">259</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkvaargcpp-metrics">cppcheck/lib/checkvaarg.cpp</a></td>
+<td align="right">13</td>
+<td align="right">103</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testconstructorscpp-metrics">cppcheck/test/testconstructors.cpp</a></td>
+<td align="right">13</td>
+<td align="right">1,521</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testvaargcpp-metrics">cppcheck/test/testvaarg.cpp</a></td>
+<td align="right">13</td>
+<td align="right">142</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#check64bitcpp-metrics">cppcheck/lib/check64bit.cpp</a></td>
+<td align="right">12</td>
+<td align="right">64</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkboolcpp-metrics">cppcheck/lib/checkbool.cpp</a></td>
+<td align="right">12</td>
+<td align="right">279</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkbufferoverruncpp-metrics">cppcheck/lib/checkbufferoverrun.cpp</a></td>
+<td align="right">12</td>
+<td align="right">646</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkexceptionsafetycpp-metrics">cppcheck/lib/checkexceptionsafety.cpp</a></td>
+<td align="right">12</td>
+<td align="right">170</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkfunctionscpp-metrics">cppcheck/lib/checkfunctions.cpp</a></td>
+<td align="right">12</td>
+<td align="right">257</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkstringcpp-metrics">cppcheck/lib/checkstring.cpp</a></td>
+<td align="right">12</td>
+<td align="right">311</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#errorloggercpp-metrics">cppcheck/lib/errorlogger.cpp</a></td>
+<td align="right">12</td>
+<td align="right">482</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testpathcpp-metrics">cppcheck/test/testpath.cpp</a></td>
+<td align="right">12</td>
+<td align="right">141</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testpostfixoperatorcpp-metrics">cppcheck/test/testpostfixoperator.cpp</a></td>
+<td align="right">12</td>
+<td align="right">158</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#cppcheckcpp-metrics">cppcheck/lib/cppcheck.cpp</a></td>
+<td align="right">11</td>
+<td align="right">638</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#suppressionscpp-metrics">cppcheck/lib/suppressions.cpp</a></td>
+<td align="right">11</td>
+<td align="right">282</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testpreprocessorcpp-metrics">cppcheck/test/testpreprocessor.cpp</a></td>
+<td align="right">11</td>
+<td align="right">1,648</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testvaridcpp-metrics">cppcheck/test/testvarid.cpp</a></td>
+<td align="right">11</td>
+<td align="right">1,570</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#errorloggerh-metrics">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">10</td>
+<td align="right">173</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testincompletestatementcpp-metrics">cppcheck/test/testincompletestatement.cpp</a></td>
+<td align="right">10</td>
+<td align="right">294</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/cli/zzz-file-metrics.html#threadexecutorcpp-metrics">cppcheck/cli/threadexecutor.cpp</a></td>
+<td align="right">9</td>
+<td align="right">188</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/test/data/benchmark/zzz-file-metrics.html#simplecpp-metrics">cppcheck/gui/test/data/benchmark/simple.cpp</a></td>
+<td align="right">9</td>
+<td align="right">233</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#pathmatchcpp-metrics">cppcheck/lib/pathmatch.cpp</a></td>
+<td align="right">9</td>
+<td align="right">36</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/oss-fuzz/zzz-file-metrics.html#type2cpp-metrics">cppcheck/oss-fuzz/type2.cpp</a></td>
+<td align="right">9</td>
+<td align="right">108</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testassertcpp-metrics">cppcheck/test/testassert.cpp</a></td>
+<td align="right">9</td>
+<td align="right">98</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/tools/triage/zzz-file-metrics.html#mainwindowcpp-metrics">cppcheck/tools/triage/mainwindow.cpp</a></td>
+<td align="right">9</td>
+<td align="right">86</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testexceptionsafetycpp-metrics">cppcheck/test/testexceptionsafety.cpp</a></td>
+<td align="right">8</td>
+<td align="right">209</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testboostcpp-metrics">cppcheck/test/testboost.cpp</a></td>
+<td align="right">7</td>
+<td align="right">44</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testcppcheckcpp-metrics">cppcheck/test/testcppcheck.cpp</a></td>
+<td align="right">7</td>
+<td align="right">90</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testerrorloggercpp-metrics">cppcheck/test/testerrorlogger.cpp</a></td>
+<td align="right">7</td>
+<td align="right">379</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/cli/zzz-file-metrics.html#filelistercpp-metrics">cppcheck/cli/filelister.cpp</a></td>
+<td align="right">6</td>
+<td align="right">38</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkboostcpp-metrics">cppcheck/lib/checkboost.cpp</a></td>
+<td align="right">6</td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkpostfixoperatorcpp-metrics">cppcheck/lib/checkpostfixoperator.cpp</a></td>
+<td align="right">6</td>
+<td align="right">28</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#standardsh-metrics">cppcheck/lib/standards.h</a></td>
+<td align="right">6</td>
+<td align="right">71</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testfilelistercpp-metrics">cppcheck/test/testfilelister.cpp</a></td>
+<td align="right">6</td>
+<td align="right">51</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testimportprojectcpp-metrics">cppcheck/test/testimportproject.cpp</a></td>
+<td align="right">6</td>
+<td align="right">176</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsimplifyusingcpp-metrics">cppcheck/test/testsimplifyusing.cpp</a></td>
+<td align="right">6</td>
+<td align="right">243</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/tools/zzz-file-metrics.html#dmakecpp-metrics">cppcheck/tools/dmake.cpp</a></td>
+<td align="right">6</td>
+<td align="right">263</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/cli/zzz-file-metrics.html#cppcheckexecutorcpp-metrics">cppcheck/cli/cppcheckexecutor.cpp</a></td>
+<td align="right">5</td>
+<td align="right">496</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#analyzerinfocpp-metrics">cppcheck/lib/analyzerinfo.cpp</a></td>
+<td align="right">5</td>
+<td align="right">92</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#pathcpp-metrics">cppcheck/lib/path.cpp</a></td>
+<td align="right">5</td>
+<td align="right">89</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#suppressionsh-metrics">cppcheck/lib/suppressions.h</a></td>
+<td align="right">5</td>
+<td align="right">69</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testgarbagecpp-metrics">cppcheck/test/testgarbage.cpp</a></td>
+<td align="right">5</td>
+<td align="right">3,083</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsamplescpp-metrics">cppcheck/test/testsamples.cpp</a></td>
+<td align="right">5</td>
+<td align="right">108</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testunusedprivfunccpp-metrics">cppcheck/test/testunusedprivfunc.cpp</a></td>
+<td align="right">5</td>
+<td align="right">323</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/tools/zzz-file-metrics.html#generate_cfg_testscpp-metrics">cppcheck/tools/generate_cfg_tests.cpp</a></td>
+<td align="right">5</td>
+<td align="right">166</td>
+</tr>
+</tbody>
+</table>
+<h2 id="maxnesting">MaxNesting<a class="headerlink" href="#maxnesting" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Path</th>
+<th align="right">Value</th>
+<th align="right">SLOC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkiocpp-metrics">cppcheck/lib/checkio.cpp</a></td>
+<td align="right">12</td>
+<td align="right">1,479</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#symboldatabasecpp-metrics">cppcheck/lib/symboldatabase.cpp</a></td>
+<td align="right">10</td>
+<td align="right">3,992</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/test/data/benchmark/zzz-file-metrics.html#simplecpp-metrics">cppcheck/gui/test/data/benchmark/simple.cpp</a></td>
+<td align="right">9</td>
+<td align="right">233</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkunusedvarcpp-metrics">cppcheck/lib/checkunusedvar.cpp</a></td>
+<td align="right">9</td>
+<td align="right">890</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#templatesimplifiercpp-metrics">cppcheck/lib/templatesimplifier.cpp</a></td>
+<td align="right">9</td>
+<td align="right">2,557</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#tokenizecpp-metrics">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">9</td>
+<td align="right">7,484</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/cli/zzz-file-metrics.html#threadexecutorcpp-metrics">cppcheck/cli/threadexecutor.cpp</a></td>
+<td align="right">8</td>
+<td align="right">188</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/externals/simplecpp/zzz-file-metrics.html#simplecppcpp-metrics">cppcheck/externals/simplecpp/simplecpp.cpp</a></td>
+<td align="right">8</td>
+<td align="right">1,887</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/externals/tinyxml/zzz-file-metrics.html#tinyxml2cpp-metrics">cppcheck/externals/tinyxml/tinyxml2.cpp</a></td>
+<td align="right">7</td>
+<td align="right">1,462</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkclasscpp-metrics">cppcheck/lib/checkclass.cpp</a></td>
+<td align="right">7</td>
+<td align="right">1,701</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkconditioncpp-metrics">cppcheck/lib/checkcondition.cpp</a></td>
+<td align="right">7</td>
+<td align="right">1,102</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkleakautovarcpp-metrics">cppcheck/lib/checkleakautovar.cpp</a></td>
+<td align="right">7</td>
+<td align="right">597</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkmemoryleakcpp-metrics">cppcheck/lib/checkmemoryleak.cpp</a></td>
+<td align="right">7</td>
+<td align="right">670</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkothercpp-metrics">cppcheck/lib/checkother.cpp</a></td>
+<td align="right">7</td>
+<td align="right">1,961</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkuninitvarcpp-metrics">cppcheck/lib/checkuninitvar.cpp</a></td>
+<td align="right">7</td>
+<td align="right">965</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#librarycpp-metrics">cppcheck/lib/library.cpp</a></td>
+<td align="right">7</td>
+<td align="right">1,053</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#tokencpp-metrics">cppcheck/lib/token.cpp</a></td>
+<td align="right">7</td>
+<td align="right">1,520</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/cli/zzz-file-metrics.html#cmdlineparsercpp-metrics">cppcheck/cli/cmdlineparser.cpp</a></td>
+<td align="right">6</td>
+<td align="right">512</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#astutilscpp-metrics">cppcheck/lib/astutils.cpp</a></td>
+<td align="right">6</td>
+<td align="right">1,437</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checknullpointercpp-metrics">cppcheck/lib/checknullpointer.cpp</a></td>
+<td align="right">6</td>
+<td align="right">432</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checksizeofcpp-metrics">cppcheck/lib/checksizeof.cpp</a></td>
+<td align="right">6</td>
+<td align="right">258</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkstlcpp-metrics">cppcheck/lib/checkstl.cpp</a></td>
+<td align="right">6</td>
+<td align="right">1,575</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkunusedfunctionscpp-metrics">cppcheck/lib/checkunusedfunctions.cpp</a></td>
+<td align="right">6</td>
+<td align="right">271</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#exprenginecpp-metrics">cppcheck/lib/exprengine.cpp</a></td>
+<td align="right">6</td>
+<td align="right">1,032</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#importprojectcpp-metrics">cppcheck/lib/importproject.cpp</a></td>
+<td align="right">6</td>
+<td align="right">826</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#tokenlistcpp-metrics">cppcheck/lib/tokenlist.cpp</a></td>
+<td align="right">6</td>
+<td align="right">1,098</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#valueflowcpp-metrics">cppcheck/lib/valueflow.cpp</a></td>
+<td align="right">6</td>
+<td align="right">4,750</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsymboldatabasecpp-metrics">cppcheck/test/testsymboldatabase.cpp</a></td>
+<td align="right">6</td>
+<td align="right">7,770</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ratiocommenttocode">RatioCommentToCode<a class="headerlink" href="#ratiocommenttocode" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Path</th>
+<th align="right">Value</th>
+<th align="right">SLOC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/zzz-file-metrics.html#codeeditorcpp-metrics">cppcheck/gui/codeeditor.cpp</a></td>
+<td align="right">0.01</td>
+<td align="right">80</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/addons/test/zzz-file-metrics.html#namingng_testc-metrics">cppcheck/addons/test/namingng_test.c</a></td>
+<td align="right">0.03</td>
+<td align="right">26</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testiocpp-metrics">cppcheck/test/testio.cpp</a></td>
+<td align="right">0.03</td>
+<td align="right">2,749</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/tools/triage/zzz-file-metrics.html#mainwindowcpp-metrics">cppcheck/tools/triage/mainwindow.cpp</a></td>
+<td align="right">0.03</td>
+<td align="right">86</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/externals/zzz-file-metrics.html#picojsonh-metrics">cppcheck/externals/picojson.h</a></td>
+<td align="right">0.04</td>
+<td align="right">827</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/zzz-file-metrics.html#cppchecklibrarydatacpp-metrics">cppcheck/gui/cppchecklibrarydata.cpp</a></td>
+<td align="right">0.04</td>
+<td align="right">63</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#exprenginecpp-metrics">cppcheck/lib/exprengine.cpp</a></td>
+<td align="right">0.04</td>
+<td align="right">1,032</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#librarycpp-metrics">cppcheck/lib/library.cpp</a></td>
+<td align="right">0.04</td>
+<td align="right">1,053</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testothercpp-metrics">cppcheck/test/testother.cpp</a></td>
+<td align="right">0.04</td>
+<td align="right">3,781</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsimplifyusingcpp-metrics">cppcheck/test/testsimplifyusing.cpp</a></td>
+<td align="right">0.04</td>
+<td align="right">243</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#teststlcpp-metrics">cppcheck/test/teststl.cpp</a></td>
+<td align="right">0.04</td>
+<td align="right">1,830</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/tools/zzz-file-metrics.html#generate_cfg_testscpp-metrics">cppcheck/tools/generate_cfg_tests.cpp</a></td>
+<td align="right">0.04</td>
+<td align="right">166</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/tools/triage/zzz-file-metrics.html#mainwindowh-metrics">cppcheck/tools/triage/mainwindow.h</a></td>
+<td align="right">0.04</td>
+<td align="right">19</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testautovariablescpp-metrics">cppcheck/test/testautovariables.cpp</a></td>
+<td align="right">0.05</td>
+<td align="right">1,109</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testboolcpp-metrics">cppcheck/test/testbool.cpp</a></td>
+<td align="right">0.05</td>
+<td align="right">652</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testmemleakcpp-metrics">cppcheck/test/testmemleak.cpp</a></td>
+<td align="right">0.05</td>
+<td align="right">1,069</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/zzz-file-metrics.html#libraryeditargdialogh-metrics">cppcheck/gui/libraryeditargdialog.h</a></td>
+<td align="right">0.06</td>
+<td align="right">12</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#astutilscpp-metrics">cppcheck/lib/astutils.cpp</a></td>
+<td align="right">0.06</td>
+<td align="right">1,437</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkiocpp-metrics">cppcheck/lib/checkio.cpp</a></td>
+<td align="right">0.06</td>
+<td align="right">1,479</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#preprocessorcpp-metrics">cppcheck/lib/preprocessor.cpp</a></td>
+<td align="right">0.06</td>
+<td align="right">687</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#tokencpp-metrics">cppcheck/lib/token.cpp</a></td>
+<td align="right">0.06</td>
+<td align="right">1,520</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#valueflowcpp-metrics">cppcheck/lib/valueflow.cpp</a></td>
+<td align="right">0.06</td>
+<td align="right">4,750</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testclasscpp-metrics">cppcheck/test/testclass.cpp</a></td>
+<td align="right">0.06</td>
+<td align="right">2,807</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testconditioncpp-metrics">cppcheck/test/testcondition.cpp</a></td>
+<td align="right">0.06</td>
+<td align="right">1,745</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testconstructorscpp-metrics">cppcheck/test/testconstructors.cpp</a></td>
+<td align="right">0.06</td>
+<td align="right">1,521</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsimplifytemplatecpp-metrics">cppcheck/test/testsimplifytemplate.cpp</a></td>
+<td align="right">0.06</td>
+<td align="right">2,234</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsizeofcpp-metrics">cppcheck/test/testsizeof.cpp</a></td>
+<td align="right">0.06</td>
+<td align="right">458</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsymboldatabasecpp-metrics">cppcheck/test/testsymboldatabase.cpp</a></td>
+<td align="right">0.06</td>
+<td align="right">7,770</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testtokencpp-metrics">cppcheck/test/testtoken.cpp</a></td>
+<td align="right">0.06</td>
+<td align="right">1,110</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/testsuites/duma/zzz-file-metrics.html#wrong3c-metrics">cppcheck/test/testsuites/duma/wrong3.c</a></td>
+<td align="right">0.06</td>
+<td align="right">17</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/externals/simplecpp/zzz-file-metrics.html#simplecppcpp-metrics">cppcheck/externals/simplecpp/simplecpp.cpp</a></td>
+<td align="right">0.07</td>
+<td align="right">1,887</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/zzz-file-metrics.html#librarydialogcpp-metrics">cppcheck/gui/librarydialog.cpp</a></td>
+<td align="right">0.07</td>
+<td align="right">101</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#ctucpp-metrics">cppcheck/lib/ctu.cpp</a></td>
+<td align="right">0.07</td>
+<td align="right">406</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testfunctionscpp-metrics">cppcheck/test/testfunctions.cpp</a></td>
+<td align="right">0.07</td>
+<td align="right">569</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testvaridcpp-metrics">cppcheck/test/testvarid.cpp</a></td>
+<td align="right">0.07</td>
+<td align="right">1,570</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/zzz-file-metrics.html#settingsdialogcpp-metrics">cppcheck/gui/settingsdialog.cpp</a></td>
+<td align="right">0.08</td>
+<td align="right">88</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkstlcpp-metrics">cppcheck/lib/checkstl.cpp</a></td>
+<td align="right">0.08</td>
+<td align="right">1,575</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#mathlibcpp-metrics">cppcheck/lib/mathlib.cpp</a></td>
+<td align="right">0.08</td>
+<td align="right">1,031</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testexceptionsafetycpp-metrics">cppcheck/test/testexceptionsafety.cpp</a></td>
+<td align="right">0.08</td>
+<td align="right">209</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testleakautovarcpp-metrics">cppcheck/test/testleakautovar.cpp</a></td>
+<td align="right">0.08</td>
+<td align="right">1,177</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testpostfixoperatorcpp-metrics">cppcheck/test/testpostfixoperator.cpp</a></td>
+<td align="right">0.08</td>
+<td align="right">158</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#teststringcpp-metrics">cppcheck/test/teststring.cpp</a></td>
+<td align="right">0.08</td>
+<td align="right">391</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testuninitvarcpp-metrics">cppcheck/test/testuninitvar.cpp</a></td>
+<td align="right">0.08</td>
+<td align="right">1,818</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testunusedvarcpp-metrics">cppcheck/test/testunusedvar.cpp</a></td>
+<td align="right">0.08</td>
+<td align="right">2,113</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/externals/tinyxml/zzz-file-metrics.html#tinyxml2cpp-metrics">cppcheck/externals/tinyxml/tinyxml2.cpp</a></td>
+<td align="right">0.09</td>
+<td align="right">1,462</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/zzz-file-metrics.html#codeeditorh-metrics">cppcheck/gui/codeeditor.h</a></td>
+<td align="right">0.09</td>
+<td align="right">72</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/zzz-file-metrics.html#codeeditorstylecpp-metrics">cppcheck/gui/codeeditorstyle.cpp</a></td>
+<td align="right">0.09</td>
+<td align="right">72</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/zzz-file-metrics.html#codeeditstyledialogcpp-metrics">cppcheck/gui/codeeditstyledialog.cpp</a></td>
+<td align="right">0.09</td>
+<td align="right">57</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkbufferoverruncpp-metrics">cppcheck/lib/checkbufferoverrun.cpp</a></td>
+<td align="right">0.09</td>
+<td align="right">646</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkconditioncpp-metrics">cppcheck/lib/checkcondition.cpp</a></td>
+<td align="right">0.09</td>
+<td align="right">1,102</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#errorloggercpp-metrics">cppcheck/lib/errorlogger.cpp</a></td>
+<td align="right">0.09</td>
+<td align="right">482</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#symboldatabasecpp-metrics">cppcheck/lib/symboldatabase.cpp</a></td>
+<td align="right">0.09</td>
+<td align="right">3,992</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#templatesimplifiercpp-metrics">cppcheck/lib/templatesimplifier.cpp</a></td>
+<td align="right">0.09</td>
+<td align="right">2,557</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#tokenlistcpp-metrics">cppcheck/lib/tokenlist.cpp</a></td>
+<td align="right">0.09</td>
+<td align="right">1,098</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testexprenginecpp-metrics">cppcheck/test/testexprengine.cpp</a></td>
+<td align="right">0.09</td>
+<td align="right">290</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testlibrarycpp-metrics">cppcheck/test/testlibrary.cpp</a></td>
+<td align="right">0.09</td>
+<td align="right">809</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testnullpointercpp-metrics">cppcheck/test/testnullpointer.cpp</a></td>
+<td align="right">0.09</td>
+<td align="right">1,395</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testtokenizecpp-metrics">cppcheck/test/testtokenize.cpp</a></td>
+<td align="right">0.09</td>
+<td align="right">5,905</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testunusedprivfunccpp-metrics">cppcheck/test/testunusedprivfunc.cpp</a></td>
+<td align="right">0.09</td>
+<td align="right">323</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testvalueflowcpp-metrics">cppcheck/test/testvalueflow.cpp</a></td>
+<td align="right">0.09</td>
+<td align="right">2,935</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/cve-test-suite/zzz-file-metrics.html#cve-2018-6836c-metrics">cppcheck/cve-test-suite/cve-2018-6836.c</a></td>
+<td align="right">0.1</td>
+<td align="right">16</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#cppcheckcpp-metrics">cppcheck/lib/cppcheck.cpp</a></td>
+<td align="right">0.1</td>
+<td align="right">638</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#exprengineh-metrics">cppcheck/lib/exprengine.h</a></td>
+<td align="right">0.1</td>
+<td align="right">227</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#importprojectcpp-metrics">cppcheck/lib/importproject.cpp</a></td>
+<td align="right">0.1</td>
+<td align="right">826</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testpreprocessorcpp-metrics">cppcheck/test/testpreprocessor.cpp</a></td>
+<td align="right">0.1</td>
+<td align="right">1,648</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsimplifytokenscpp-metrics">cppcheck/test/testsimplifytokens.cpp</a></td>
+<td align="right">0.1</td>
+<td align="right">2,820</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testunusedfunctionscpp-metrics">cppcheck/test/testunusedfunctions.cpp</a></td>
+<td align="right">0.1</td>
+<td align="right">315</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testvaargcpp-metrics">cppcheck/test/testvaarg.cpp</a></td>
+<td align="right">0.1</td>
+<td align="right">142</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/cli/zzz-file-metrics.html#cmdlineparsercpp-metrics">cppcheck/cli/cmdlineparser.cpp</a></td>
+<td align="right">0.11</td>
+<td align="right">512</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkautovariablescpp-metrics">cppcheck/lib/checkautovariables.cpp</a></td>
+<td align="right">0.11</td>
+<td align="right">438</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkuninitvarcpp-metrics">cppcheck/lib/checkuninitvar.cpp</a></td>
+<td align="right">0.11</td>
+<td align="right">965</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#suppressionscpp-metrics">cppcheck/lib/suppressions.cpp</a></td>
+<td align="right">0.11</td>
+<td align="right">282</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/oss-fuzz/zzz-file-metrics.html#maincpp-metrics">cppcheck/oss-fuzz/main.cpp</a></td>
+<td align="right">0.11</td>
+<td align="right">24</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/oss-fuzz/zzz-file-metrics.html#type2cpp-metrics">cppcheck/oss-fuzz/type2.cpp</a></td>
+<td align="right">0.11</td>
+<td align="right">108</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testbufferoverruncpp-metrics">cppcheck/test/testbufferoverrun.cpp</a></td>
+<td align="right">0.11</td>
+<td align="right">1,915</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testerrorloggercpp-metrics">cppcheck/test/testerrorlogger.cpp</a></td>
+<td align="right">0.11</td>
+<td align="right">379</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsuitecpp-metrics">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">0.11</td>
+<td align="right">198</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/tools/zzz-file-metrics.html#clang-astcpp-metrics">cppcheck/tools/clang-ast.cpp</a></td>
+<td align="right">0.11</td>
+<td align="right">16</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testassertcpp-metrics">cppcheck/test/testassert.cpp</a></td>
+<td align="right">0.12</td>
+<td align="right">98</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testcmdlineparsercpp-metrics">cppcheck/test/testcmdlineparser.cpp</a></td>
+<td align="right">0.12</td>
+<td align="right">1,274</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsimplifytypedefcpp-metrics">cppcheck/test/testsimplifytypedef.cpp</a></td>
+<td align="right">0.12</td>
+<td align="right">1,760</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/tools/zzz-file-metrics.html#dmakecpp-metrics">cppcheck/tools/dmake.cpp</a></td>
+<td align="right">0.12</td>
+<td align="right">263</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#platformcpp-metrics">cppcheck/lib/platform.cpp</a></td>
+<td align="right">0.13</td>
+<td align="right">175</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#tokenizecpp-metrics">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">0.13</td>
+<td align="right">7,484</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testplatformcpp-metrics">cppcheck/test/testplatform.cpp</a></td>
+<td align="right">0.13</td>
+<td align="right">282</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsuppressionscpp-metrics">cppcheck/test/testsuppressions.cpp</a></td>
+<td align="right">0.13</td>
+<td align="right">512</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/zzz-file-metrics.html#applicationlistcpp-metrics">cppcheck/gui/applicationlist.cpp</a></td>
+<td align="right">0.14</td>
+<td align="right">119</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/zzz-file-metrics.html#cppchecklibrarydatah-metrics">cppcheck/gui/cppchecklibrarydata.h</a></td>
+<td align="right">0.14</td>
+<td align="right">131</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkboolcpp-metrics">cppcheck/lib/checkbool.cpp</a></td>
+<td align="right">0.14</td>
+<td align="right">279</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkothercpp-metrics">cppcheck/lib/checkother.cpp</a></td>
+<td align="right">0.14</td>
+<td align="right">1,961</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/cli/zzz-file-metrics.html#threadexecutorcpp-metrics">cppcheck/cli/threadexecutor.cpp</a></td>
+<td align="right">0.15</td>
+<td align="right">188</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#valueflowh-metrics">cppcheck/lib/valueflow.h</a></td>
+<td align="right">0.15</td>
+<td align="right">234</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testcharvarcpp-metrics">cppcheck/test/testcharvar.cpp</a></td>
+<td align="right">0.15</td>
+<td align="right">98</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testincompletestatementcpp-metrics">cppcheck/test/testincompletestatement.cpp</a></td>
+<td align="right">0.15</td>
+<td align="right">294</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testpathmatchcpp-metrics">cppcheck/test/testpathmatch.cpp</a></td>
+<td align="right">0.15</td>
+<td align="right">217</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#analyzerinfocpp-metrics">cppcheck/lib/analyzerinfo.cpp</a></td>
+<td align="right">0.16</td>
+<td align="right">92</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkstringcpp-metrics">cppcheck/lib/checkstring.cpp</a></td>
+<td align="right">0.16</td>
+<td align="right">311</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkunusedvarcpp-metrics">cppcheck/lib/checkunusedvar.cpp</a></td>
+<td align="right">0.16</td>
+<td align="right">890</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#libraryh-metrics">cppcheck/lib/library.h</a></td>
+<td align="right">0.16</td>
+<td align="right">429</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#settingscpp-metrics">cppcheck/lib/settings.cpp</a></td>
+<td align="right">0.16</td>
+<td align="right">68</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testmathlibcpp-metrics">cppcheck/test/testmathlib.cpp</a></td>
+<td align="right">0.16</td>
+<td align="right">1,900</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testtypecpp-metrics">cppcheck/test/testtype.cpp</a></td>
+<td align="right">0.16</td>
+<td align="right">261</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/test/data/benchmark/zzz-file-metrics.html#simplecpp-metrics">cppcheck/gui/test/data/benchmark/simple.cpp</a></td>
+<td align="right">0.17</td>
+<td align="right">233</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkleakautovarcpp-metrics">cppcheck/lib/checkleakautovar.cpp</a></td>
+<td align="right">0.17</td>
+<td align="right">597</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checknullpointercpp-metrics">cppcheck/lib/checknullpointer.cpp</a></td>
+<td align="right">0.17</td>
+<td align="right">432</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#test64bitcpp-metrics">cppcheck/test/test64bit.cpp</a></td>
+<td align="right">0.17</td>
+<td align="right">129</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testastutilscpp-metrics">cppcheck/test/testastutils.cpp</a></td>
+<td align="right">0.17</td>
+<td align="right">220</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testimportprojectcpp-metrics">cppcheck/test/testimportproject.cpp</a></td>
+<td align="right">0.17</td>
+<td align="right">176</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/cli/proj-suppress-syntaxError/zzz-file-metrics.html#1c-metrics">cppcheck/test/cli/proj-suppress-syntaxError/1.c</a></td>
+<td align="right">0.17</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/zzz-file-metrics.html#filelistcpp-metrics">cppcheck/gui/filelist.cpp</a></td>
+<td align="right">0.18</td>
+<td align="right">31</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkclasscpp-metrics">cppcheck/lib/checkclass.cpp</a></td>
+<td align="right">0.18</td>
+<td align="right">1,701</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checksizeofcpp-metrics">cppcheck/lib/checksizeof.cpp</a></td>
+<td align="right">0.18</td>
+<td align="right">258</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/synthetic/zzz-file-metrics.html#datac-metrics">cppcheck/test/synthetic/data.c</a></td>
+<td align="right">0.18</td>
+<td align="right">44</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/cli/zzz-file-metrics.html#cppcheckexecutorcpp-metrics">cppcheck/cli/cppcheckexecutor.cpp</a></td>
+<td align="right">0.19</td>
+<td align="right">496</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/zzz-file-metrics.html#codeeditstylecontrolscpp-metrics">cppcheck/gui/codeeditstylecontrols.cpp</a></td>
+<td align="right">0.19</td>
+<td align="right">19</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkunusedfunctionscpp-metrics">cppcheck/lib/checkunusedfunctions.cpp</a></td>
+<td align="right">0.19</td>
+<td align="right">271</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#pathcpp-metrics">cppcheck/lib/path.cpp</a></td>
+<td align="right">0.19</td>
+<td align="right">89</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testoptionscpp-metrics">cppcheck/test/testoptions.cpp</a></td>
+<td align="right">0.19</td>
+<td align="right">116</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/synthetic/zzz-file-metrics.html#functionsc-metrics">cppcheck/test/synthetic/functions.c</a></td>
+<td align="right">0.19</td>
+<td align="right">13</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/addons/test/misra/zzz-file-metrics.html#misra-testcpp-metrics">cppcheck/addons/test/misra/misra-test.cpp</a></td>
+<td align="right">0.2</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkmemoryleakcpp-metrics">cppcheck/lib/checkmemoryleak.cpp</a></td>
+<td align="right">0.2</td>
+<td align="right">670</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checktypecpp-metrics">cppcheck/lib/checktype.cpp</a></td>
+<td align="right">0.2</td>
+<td align="right">259</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/cli/helloworld/zzz-file-metrics.html#mainc-metrics">cppcheck/test/cli/helloworld/main.c</a></td>
+<td align="right">0.2</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/testsuites/duma/zzz-file-metrics.html#wrong7c-metrics">cppcheck/test/testsuites/duma/wrong7.c</a></td>
+<td align="right">0.2</td>
+<td align="right">11</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/addons/test/zzz-file-metrics.html#cert-testc-metrics">cppcheck/addons/test/cert-test.c</a></td>
+<td align="right">0.21</td>
+<td align="right">117</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkfunctionscpp-metrics">cppcheck/lib/checkfunctions.cpp</a></td>
+<td align="right">0.21</td>
+<td align="right">257</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/synthetic/zzz-file-metrics.html#controlflowc-metrics">cppcheck/test/synthetic/controlflow.c</a></td>
+<td align="right">0.22</td>
+<td align="right">47</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/testsuites/clang/zzz-file-metrics.html#outofboundc-metrics">cppcheck/test/testsuites/clang/outofbound.c</a></td>
+<td align="right">0.22</td>
+<td align="right">81</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testcxx-metrics">cppcheck/test/test.cxx</a></td>
+<td align="right">0.23</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testthreadexecutorcpp-metrics">cppcheck/test/testthreadexecutor.cpp</a></td>
+<td align="right">0.24</td>
+<td align="right">89</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/cfg/zzz-file-metrics.html#libcurlc-metrics">cppcheck/test/cfg/libcurl.c</a></td>
+<td align="right">0.24</td>
+<td align="right">37</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/cve-test-suite/zzz-file-metrics.html#cve-2018-5334c-metrics">cppcheck/cve-test-suite/cve-2018-5334.c</a></td>
+<td align="right">0.25</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/zzz-file-metrics.html#translationhandlercpp-metrics">cppcheck/gui/translationhandler.cpp</a></td>
+<td align="right">0.25</td>
+<td align="right">51</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/externals/simplecpp/zzz-file-metrics.html#simplecpph-metrics">cppcheck/externals/simplecpp/simplecpp.h</a></td>
+<td align="right">0.26</td>
+<td align="right">183</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/addons/test/zzz-file-metrics.html#cert-testcpp-metrics">cppcheck/addons/test/cert-test.cpp</a></td>
+<td align="right">0.27</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/zzz-file-metrics.html#libraryaddfunctiondialogh-metrics">cppcheck/gui/libraryaddfunctiondialog.h</a></td>
+<td align="right">0.27</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testpathcpp-metrics">cppcheck/test/testpath.cpp</a></td>
+<td align="right">0.27</td>
+<td align="right">141</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/test/filelist/zzz-file-metrics.html#testfilelistcpp-metrics">cppcheck/gui/test/filelist/testfilelist.cpp</a></td>
+<td align="right">0.28</td>
+<td align="right">46</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkotherh-metrics">cppcheck/lib/checkother.h</a></td>
+<td align="right">0.28</td>
+<td align="right">215</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#importprojecth-metrics">cppcheck/lib/importproject.h</a></td>
+<td align="right">0.28</td>
+<td align="right">110</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkioh-metrics">cppcheck/lib/checkio.h</a></td>
+<td align="right">0.29</td>
+<td align="right">98</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkvaargcpp-metrics">cppcheck/lib/checkvaarg.cpp</a></td>
+<td align="right">0.29</td>
+<td align="right">103</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/cve-test-suite/zzz-file-metrics.html#cve-2018-1000618cpp-metrics">cppcheck/cve-test-suite/cve-2018-1000618.cpp</a></td>
+<td align="right">0.3</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testgarbagecpp-metrics">cppcheck/test/testgarbage.cpp</a></td>
+<td align="right">0.3</td>
+<td align="right">3,083</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsuiteh-metrics">cppcheck/test/testsuite.h</a></td>
+<td align="right">0.3</td>
+<td align="right">53</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/cfg/zzz-file-metrics.html#gnuc-metrics">cppcheck/test/cfg/gnu.c</a></td>
+<td align="right">0.3</td>
+<td align="right">122</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/cfg/zzz-file-metrics.html#stdcpp-metrics">cppcheck/test/cfg/std.cpp</a></td>
+<td align="right">0.31</td>
+<td align="right">1,737</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/zzz-file-metrics.html#codeeditstyledialogh-metrics">cppcheck/gui/codeeditstyledialog.h</a></td>
+<td align="right">0.32</td>
+<td align="right">54</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#ctuh-metrics">cppcheck/lib/ctu.h</a></td>
+<td align="right">0.32</td>
+<td align="right">92</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsamplescpp-metrics">cppcheck/test/testsamples.cpp</a></td>
+<td align="right">0.32</td>
+<td align="right">108</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#check64bitcpp-metrics">cppcheck/lib/check64bit.cpp</a></td>
+<td align="right">0.33</td>
+<td align="right">64</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/cfg/zzz-file-metrics.html#stdc-metrics">cppcheck/test/cfg/std.c</a></td>
+<td align="right">0.33</td>
+<td align="right">2,095</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/cli/zzz-file-metrics.html#filelistercpp-metrics">cppcheck/cli/filelister.cpp</a></td>
+<td align="right">0.34</td>
+<td align="right">38</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testcppcheckcpp-metrics">cppcheck/test/testcppcheck.cpp</a></td>
+<td align="right">0.34</td>
+<td align="right">90</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/cfg/zzz-file-metrics.html#pythonc-metrics">cppcheck/test/cfg/python.c</a></td>
+<td align="right">0.34</td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/cfg/zzz-file-metrics.html#boostcpp-metrics">cppcheck/test/cfg/boost.cpp</a></td>
+<td align="right">0.36</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/cfg/zzz-file-metrics.html#gtkc-metrics">cppcheck/test/cfg/gtk.c</a></td>
+<td align="right">0.36</td>
+<td align="right">132</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkassertcpp-metrics">cppcheck/lib/checkassert.cpp</a></td>
+<td align="right">0.37</td>
+<td align="right">73</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testboostcpp-metrics">cppcheck/test/testboost.cpp</a></td>
+<td align="right">0.37</td>
+<td align="right">44</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkexceptionsafetycpp-metrics">cppcheck/lib/checkexceptionsafety.cpp</a></td>
+<td align="right">0.38</td>
+<td align="right">170</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/cfg/zzz-file-metrics.html#sqlite3c-metrics">cppcheck/test/cfg/sqlite3.c</a></td>
+<td align="right">0.38</td>
+<td align="right">22</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/cfg/zzz-file-metrics.html#qtcpp-metrics">cppcheck/test/cfg/qt.cpp</a></td>
+<td align="right">0.39</td>
+<td align="right">34</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/addons/test/misra/zzz-file-metrics.html#misra-testc-metrics">cppcheck/addons/test/misra/misra-test.c</a></td>
+<td align="right">0.4</td>
+<td align="right">351</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/zzz-file-metrics.html#applicationdialogcpp-metrics">cppcheck/gui/applicationdialog.cpp</a></td>
+<td align="right">0.41</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/cfg/zzz-file-metrics.html#wxwidgetscpp-metrics">cppcheck/test/cfg/wxwidgets.cpp</a></td>
+<td align="right">0.41</td>
+<td align="right">57</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/zzz-file-metrics.html#fileviewdialogcpp-metrics">cppcheck/gui/fileviewdialog.cpp</a></td>
+<td align="right">0.42</td>
+<td align="right">12</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkconditionh-metrics">cppcheck/lib/checkcondition.h</a></td>
+<td align="right">0.42</td>
+<td align="right">89</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#timercpp-metrics">cppcheck/lib/timer.cpp</a></td>
+<td align="right">0.42</td>
+<td align="right">42</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/cve-test-suite/zzz-file-metrics.html#cve-2018-11360c-metrics">cppcheck/cve-test-suite/cve-2018-11360.c</a></td>
+<td align="right">0.44</td>
+<td align="right">11</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/gui/zzz-file-metrics.html#codeeditorstyleh-metrics">cppcheck/gui/codeeditorstyle.h</a></td>
+<td align="right">0.44</td>
+<td align="right">56</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/cfg/zzz-file-metrics.html#bsdc-metrics">cppcheck/test/cfg/bsd.c</a></td>
+<td align="right">0.44</td>
+<td align="right">46</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/cfg/zzz-file-metrics.html#windowscpp-metrics">cppcheck/test/cfg/windows.cpp</a></td>
+<td align="right">0.44</td>
+<td align="right">172</td>
+</tr>
+</tbody>
+</table>
+<h2 id="badfix">badFix<a class="headerlink" href="#badfix" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Path</th>
+<th align="right">Value</th>
+<th align="right">SLOC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsymboldatabasecpp-metrics">cppcheck/test/testsymboldatabase.cpp</a></td>
+<td align="right">613</td>
+<td align="right">7,770</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkiocpp-metrics">cppcheck/lib/checkio.cpp</a></td>
+<td align="right">413</td>
+<td align="right">1,479</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testtokenizecpp-metrics">cppcheck/test/testtokenize.cpp</a></td>
+<td align="right">358</td>
+<td align="right">5,905</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#tokenizecpp-metrics">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">333</td>
+<td align="right">7,484</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#valueflowcpp-metrics">cppcheck/lib/valueflow.cpp</a></td>
+<td align="right">272</td>
+<td align="right">4,750</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#templatesimplifiercpp-metrics">cppcheck/lib/templatesimplifier.cpp</a></td>
+<td align="right">271</td>
+<td align="right">2,557</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkunusedvarcpp-metrics">cppcheck/lib/checkunusedvar.cpp</a></td>
+<td align="right">213</td>
+<td align="right">890</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testgarbagecpp-metrics">cppcheck/test/testgarbage.cpp</a></td>
+<td align="right">205</td>
+<td align="right">3,083</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/cli/zzz-file-metrics.html#cmdlineparsercpp-metrics">cppcheck/cli/cmdlineparser.cpp</a></td>
+<td align="right">200</td>
+<td align="right">512</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testvalueflowcpp-metrics">cppcheck/test/testvalueflow.cpp</a></td>
+<td align="right">197</td>
+<td align="right">2,935</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsimplifytemplatecpp-metrics">cppcheck/test/testsimplifytemplate.cpp</a></td>
+<td align="right">195</td>
+<td align="right">2,234</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkuninitvarcpp-metrics">cppcheck/lib/checkuninitvar.cpp</a></td>
+<td align="right">178</td>
+<td align="right">965</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#symboldatabasecpp-metrics">cppcheck/lib/symboldatabase.cpp</a></td>
+<td align="right">170</td>
+<td align="right">3,992</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testothercpp-metrics">cppcheck/test/testother.cpp</a></td>
+<td align="right">161</td>
+<td align="right">3,781</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testunusedvarcpp-metrics">cppcheck/test/testunusedvar.cpp</a></td>
+<td align="right">158</td>
+<td align="right">2,113</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testclasscpp-metrics">cppcheck/test/testclass.cpp</a></td>
+<td align="right">156</td>
+<td align="right">2,807</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testvaridcpp-metrics">cppcheck/test/testvarid.cpp</a></td>
+<td align="right">156</td>
+<td align="right">1,570</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkleakautovarcpp-metrics">cppcheck/lib/checkleakautovar.cpp</a></td>
+<td align="right">155</td>
+<td align="right">597</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#librarycpp-metrics">cppcheck/lib/library.cpp</a></td>
+<td align="right">153</td>
+<td align="right">1,053</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsimplifytokenscpp-metrics">cppcheck/test/testsimplifytokens.cpp</a></td>
+<td align="right">143</td>
+<td align="right">2,820</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testpreprocessorcpp-metrics">cppcheck/test/testpreprocessor.cpp</a></td>
+<td align="right">142</td>
+<td align="right">1,648</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testsimplifytypedefcpp-metrics">cppcheck/test/testsimplifytypedef.cpp</a></td>
+<td align="right">134</td>
+<td align="right">1,760</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testconstructorscpp-metrics">cppcheck/test/testconstructors.cpp</a></td>
+<td align="right">133</td>
+<td align="right">1,521</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testbufferoverruncpp-metrics">cppcheck/test/testbufferoverrun.cpp</a></td>
+<td align="right">130</td>
+<td align="right">1,915</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testmathlibcpp-metrics">cppcheck/test/testmathlib.cpp</a></td>
+<td align="right">126</td>
+<td align="right">1,900</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/externals/simplecpp/zzz-file-metrics.html#simplecppcpp-metrics">cppcheck/externals/simplecpp/simplecpp.cpp</a></td>
+<td align="right">125</td>
+<td align="right">1,887</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#astutilscpp-metrics">cppcheck/lib/astutils.cpp</a></td>
+<td align="right">115</td>
+<td align="right">1,437</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testiocpp-metrics">cppcheck/test/testio.cpp</a></td>
+<td align="right">115</td>
+<td align="right">2,749</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#cppcheckcpp-metrics">cppcheck/lib/cppcheck.cpp</a></td>
+<td align="right">112</td>
+<td align="right">638</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#teststlcpp-metrics">cppcheck/test/teststl.cpp</a></td>
+<td align="right">103</td>
+<td align="right">1,830</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testlibrarycpp-metrics">cppcheck/test/testlibrary.cpp</a></td>
+<td align="right">98</td>
+<td align="right">809</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testleakautovarcpp-metrics">cppcheck/test/testleakautovar.cpp</a></td>
+<td align="right">95</td>
+<td align="right">1,177</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkclasscpp-metrics">cppcheck/lib/checkclass.cpp</a></td>
+<td align="right">92</td>
+<td align="right">1,701</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkstlcpp-metrics">cppcheck/lib/checkstl.cpp</a></td>
+<td align="right">92</td>
+<td align="right">1,575</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testcmdlineparsercpp-metrics">cppcheck/test/testcmdlineparser.cpp</a></td>
+<td align="right">90</td>
+<td align="right">1,274</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkconditioncpp-metrics">cppcheck/lib/checkcondition.cpp</a></td>
+<td align="right">89</td>
+<td align="right">1,102</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkothercpp-metrics">cppcheck/lib/checkother.cpp</a></td>
+<td align="right">86</td>
+<td align="right">1,961</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkunusedfunctionscpp-metrics">cppcheck/lib/checkunusedfunctions.cpp</a></td>
+<td align="right">79</td>
+<td align="right">271</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testuninitvarcpp-metrics">cppcheck/test/testuninitvar.cpp</a></td>
+<td align="right">72</td>
+<td align="right">1,818</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testnullpointercpp-metrics">cppcheck/test/testnullpointer.cpp</a></td>
+<td align="right">71</td>
+<td align="right">1,395</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testautovariablescpp-metrics">cppcheck/test/testautovariables.cpp</a></td>
+<td align="right">69</td>
+<td align="right">1,109</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testconditioncpp-metrics">cppcheck/test/testcondition.cpp</a></td>
+<td align="right">69</td>
+<td align="right">1,745</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checknullpointercpp-metrics">cppcheck/lib/checknullpointer.cpp</a></td>
+<td align="right">67</td>
+<td align="right">432</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checksizeofcpp-metrics">cppcheck/lib/checksizeof.cpp</a></td>
+<td align="right">62</td>
+<td align="right">258</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#importprojectcpp-metrics">cppcheck/lib/importproject.cpp</a></td>
+<td align="right">61</td>
+<td align="right">826</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#tokenlistcpp-metrics">cppcheck/lib/tokenlist.cpp</a></td>
+<td align="right">57</td>
+<td align="right">1,098</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#checkmemoryleakcpp-metrics">cppcheck/lib/checkmemoryleak.cpp</a></td>
+<td align="right">53</td>
+<td align="right">670</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#preprocessorcpp-metrics">cppcheck/lib/preprocessor.cpp</a></td>
+<td align="right">53</td>
+<td align="right">687</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/lib/zzz-file-metrics.html#tokencpp-metrics">cppcheck/lib/token.cpp</a></td>
+<td align="right">52</td>
+<td align="right">1,520</td>
+</tr>
+<tr>
+<td align="left"><a href="../Metrics/cppcheck/test/zzz-file-metrics.html#testtokencpp-metrics">cppcheck/test/testtoken.cpp</a></td>
+<td align="right">52</td>
+<td align="right">1,110</td>
+</tr>
+</tbody>
+</table></div>
+                <footer>
+    <div class="footer-buttons">
+        <div class="previous"><a href="file_list_indented_sloc.html" title="File List Indented"><span>Previous</span></a></div>
+    </div>
+    <div class="footer-note">
+        <p>
+<!--            Built with <a href="http://www.mkdocs.org">MkDocs</a> using-->
+<!--            <a href="https://github.com/daizutabi/mkdocs-ivory">Ivory theme</a>.-->
+            Built with MkDocs using Ivory theme.
+        </p>
+    </div>
+</footer>
+            </div>
+        </main>
+    </div>
+    <script>
+        var base_url = '.';
+    </script>
+    <script src="../js/theme.js"></script>
+    <script src="../search/main.js"></script>
+</body>
+
+</html>

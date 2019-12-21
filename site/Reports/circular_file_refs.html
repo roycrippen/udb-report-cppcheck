@@ -1,0 +1,2175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Roy Crippen">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <title>Direct Circular File References &mdash; UDB Metrics Reporting for cpp_check</title>
+<!--    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">-->
+<!--    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">-->
+<!--    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">-->
+<!--    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">-->
+
+    <link rel="stylesheet" href="../css/googleapis_lato_400_700.css">
+    <link rel="stylesheet" href="../css/fira_code.css">
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/v4-shims.css">
+
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="../css/github.min.css">
+<!--    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>-->
+    <script src="../js/jquery-2.1.1.min.js"></script>
+    <script src="../search/lunr.js"></script>
+    <script src="../search/worker.js"></script>
+    <script src="../js/highlight.min.js"></script>
+<!---->
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script> 
+</head>
+
+<body ontouchstart="">
+    <div id="container">
+        <aside>
+            <div class="home">
+                <div class="title">
+                    <button class="hamburger"></button>
+                    <a href="../index.html" class="site-name"> UDB Metrics Reporting for cpp_check</a>
+                </div>
+                <div class="search">
+                    <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+        <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    </form>
+</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="root">
+                    <li class="toctree-l1"><a class="nav-item" href="../index.html">Usage</a></li>
+                    <li class="toctree-l1"><button class="section nav-item">Metrics</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../Metrics/application-metrics.html">Application Metrics</a></li>
+    <li class="toctree-l2"><button class="section nav-item hide">cppcheck</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../Metrics/cppcheck/cppcheck-metrics.html">cppcheck Metrics</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../Metrics/cppcheck/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l3"><button class="section nav-item hide">addons</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/addons/addons-metrics.html">addons Metrics</a></li>
+    <li class="toctree-l4"><button class="section nav-item hide">doc</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/addons/doc/doc-metrics.html">doc Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/addons/doc/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">test</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/addons/test/test-metrics.html">test Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/addons/test/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><button class="section nav-item hide">misra</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/addons/test/misra/misra-metrics.html">misra Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/addons/test/misra/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">path1</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/addons/test/path1/path1-metrics.html">path1 Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/addons/test/path1/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">y2038</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/addons/test/y2038/y2038-metrics.html">y2038 Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/addons/test/y2038/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">cli</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/cli/cli-metrics.html">cli Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/cli/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">cve-test-suite</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/cve-test-suite/cve-test-suite-metrics.html">cve-test-suite Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/cve-test-suite/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">democlient</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/democlient/democlient-metrics.html">democlient Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/democlient/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">externals</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/externals/externals-metrics.html">externals Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/externals/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><button class="section nav-item hide">simplecpp</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/externals/simplecpp/simplecpp-metrics.html">simplecpp Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/externals/simplecpp/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">tinyxml</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/externals/tinyxml/tinyxml-metrics.html">tinyxml Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/externals/tinyxml/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">gui</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/gui/gui-metrics.html">gui Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/gui/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><button class="section nav-item hide">help</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/gui/help/help-metrics.html">help Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/gui/help/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">test</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/gui/test/test-metrics.html">test Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/gui/test/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><button class="section nav-item hide">benchmark</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/gui/test/benchmark/benchmark-metrics.html">benchmark Metrics</a></li>
+    <li class="toctree-l6"><button class="section nav-item hide">simple</button>
+<ul class="subnav hide">
+    <li class="toctree-l7"><a class="nav-item" href="../Metrics/cppcheck/gui/test/benchmark/simple/simple-metrics.html">simple Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../Metrics/cppcheck/gui/test/benchmark/simple/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">data</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/data-metrics.html">data Metrics</a></li>
+    <li class="toctree-l6"><button class="section nav-item hide">benchmark</button>
+<ul class="subnav hide">
+    <li class="toctree-l7"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/benchmark/benchmark-metrics.html">benchmark Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/benchmark/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l6"><button class="section nav-item hide">files</button>
+<ul class="subnav hide">
+    <li class="toctree-l7"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/files/files-metrics.html">files Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/files/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l7"><button class="section nav-item hide">dir1</button>
+<ul class="subnav hide">
+    <li class="toctree-l8"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/files/dir1/dir1-metrics.html">dir1 Metrics</a></li>
+    <li class="toctree-l8"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/files/dir1/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l8"><button class="section nav-item hide">dir11</button>
+<ul class="subnav hide">
+    <li class="toctree-l9"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/files/dir1/dir11/dir11-metrics.html">dir11 Metrics</a></li>
+    <li class="toctree-l9"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/files/dir1/dir11/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l7"><button class="section nav-item hide">dir2</button>
+<ul class="subnav hide">
+    <li class="toctree-l8"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/files/dir2/dir2-metrics.html">dir2 Metrics</a></li>
+    <li class="toctree-l8"><a class="nav-item" href="../Metrics/cppcheck/gui/test/data/files/dir2/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">filelist</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/gui/test/filelist/filelist-metrics.html">filelist Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/gui/test/filelist/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">projectfile</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/gui/test/projectfile/projectfile-metrics.html">projectfile Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/gui/test/projectfile/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">translationhandler</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/gui/test/translationhandler/translationhandler-metrics.html">translationhandler Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/gui/test/translationhandler/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">xmlreportv2</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/gui/test/xmlreportv2/xmlreportv2-metrics.html">xmlreportv2 Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/gui/test/xmlreportv2/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">htmlreport</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/htmlreport/htmlreport-metrics.html">htmlreport Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/htmlreport/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">lib</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/lib/lib-metrics.html">lib Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/lib/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">oss-fuzz</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/oss-fuzz/oss-fuzz-metrics.html">oss-fuzz Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/oss-fuzz/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">samples</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/samples/samples-metrics.html">samples Metrics</a></li>
+    <li class="toctree-l4"><button class="section nav-item hide">AssignmentAddressToInteger</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/AssignmentAddressToInteger/AssignmentAddressToInteger-metrics.html">AssignmentAddressToInteger Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/AssignmentAddressToInteger/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">arrayIndexOutOfBounds</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/arrayIndexOutOfBounds/arrayIndexOutOfBounds-metrics.html">arrayIndexOutOfBounds Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/arrayIndexOutOfBounds/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">autoVariables</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/autoVariables/autoVariables-metrics.html">autoVariables Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/autoVariables/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">bufferAccessOutOfBounds</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/bufferAccessOutOfBounds/bufferAccessOutOfBounds-metrics.html">bufferAccessOutOfBounds Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/bufferAccessOutOfBounds/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">erase</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/erase/erase-metrics.html">erase Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/erase/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">memleak</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/memleak/memleak-metrics.html">memleak Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/memleak/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">outOfBounds</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/outOfBounds/outOfBounds-metrics.html">outOfBounds Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/outOfBounds/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">resourceLeak</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/resourceLeak/resourceLeak-metrics.html">resourceLeak Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/resourceLeak/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">syntaxError</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/syntaxError/syntaxError-metrics.html">syntaxError Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/samples/syntaxError/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">test</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/test/test-metrics.html">test Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/test/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><button class="section nav-item hide">cfg</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/test/cfg/cfg-metrics.html">cfg Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/test/cfg/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">cli</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/test/cli/cli-metrics.html">cli Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/test/cli/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><button class="section nav-item hide">helloworld</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/cli/helloworld/helloworld-metrics.html">helloworld Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/cli/helloworld/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">proj-inline-suppress</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/cli/proj-inline-suppress/proj-inline-suppress-metrics.html">proj-inline-suppress Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/cli/proj-inline-suppress/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">proj-suppress-syntaxError</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/cli/proj-suppress-syntaxError/proj-suppress-syntaxError-metrics.html">proj-suppress-syntaxError Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/cli/proj-suppress-syntaxError/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">proj2</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/cli/proj2/proj2-metrics.html">proj2 Metrics</a></li>
+    <li class="toctree-l6"><button class="section nav-item hide">a</button>
+<ul class="subnav hide">
+    <li class="toctree-l7"><a class="nav-item" href="../Metrics/cppcheck/test/cli/proj2/a/a-metrics.html">a Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../Metrics/cppcheck/test/cli/proj2/a/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l6"><button class="section nav-item hide">b</button>
+<ul class="subnav hide">
+    <li class="toctree-l7"><a class="nav-item" href="../Metrics/cppcheck/test/cli/proj2/b/b-metrics.html">b Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../Metrics/cppcheck/test/cli/proj2/b/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">synthetic</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/test/synthetic/synthetic-metrics.html">synthetic Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/test/synthetic/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">testsuites</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/test/testsuites/testsuites-metrics.html">testsuites Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/test/testsuites/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><button class="section nav-item hide">clang</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/testsuites/clang/clang-metrics.html">clang Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/testsuites/clang/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">duma</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/testsuites/duma/duma-metrics.html">duma Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../Metrics/cppcheck/test/testsuites/duma/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">tools</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/tools/tools-metrics.html">tools Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/tools/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><button class="section nav-item hide">triage</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/tools/triage/triage-metrics.html">triage Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../Metrics/cppcheck/tools/triage/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">win_installer</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/win_installer/win_installer-metrics.html">win_installer Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../Metrics/cppcheck/win_installer/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Reports</button>
+<ul class="subnav">
+    <li class="toctree-l2 current"><a class="nav-item current" href="circular_file_refs.html">Direct Circular File References</a>
+<ul class="subnav">
+<li class="toctree-l3"><a class="nav-item toc" href="#metric-keys">Metric Keys</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#circular-references">Circular References</a></li>
+<li class="toctree-l3"><a class="nav-item toc" href="#metric-keys_1">Metric Keys</a></li>
+</ul></li>
+    <li class="toctree-l2"><a class="nav-item" href="file_dependencies.html">File Dependencies</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="file_list_indented_sloc.html">File List Indented</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="red_metrics.html">Red Metrics</a></li>
+</ul></li>
+                </ul>
+            </nav>
+            <div class="repo">
+    <div class="previous"><a href="../Metrics/cppcheck/win_installer/zzz-file-metrics.html">&laquo; Previous</a></div>
+    <div class="next"><a href="file_dependencies.html">Next &raquo;</a></div>
+</div>
+        </aside>
+        <div id="spacer"><button class="arrow"></button></div>
+        <main>
+            <div class="home-top">
+                <button class="hamburger"></button>
+                <a href="../index.html" class="site-name"> UDB Metrics Reporting for cpp_check</a>
+            </div>
+            <div id="main">
+                <nav class="breadcrumbs">
+<ul>
+    <li>Reports</li>
+</ul>
+</nav>
+                <div id="content"><h1 id="direct-circular-file-references">Direct Circular File References<a class="headerlink" href="#direct-circular-file-references" title="Permanent link">#</a></h1>
+<h3 id="metric-keys">Metric Keys<a class="headerlink" href="#metric-keys" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th>Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td>A</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td>B</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td>C</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td>D</td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td>E</td>
+</tr>
+<tr>
+<td align="left">MaxInheritanceTree</td>
+<td>F</td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td>G</td>
+</tr>
+<tr>
+<td align="left">PercentLackOfCohesion</td>
+<td>H</td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td>I</td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td>J</td>
+</tr>
+</tbody>
+</table>
+<h3 id="circular-references">Circular References<a class="headerlink" href="#circular-references" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th align="right">A</th>
+<th align="right">B</th>
+<th align="right">C</th>
+<th align="right">D</th>
+<th align="right">E</th>
+<th align="right">F</th>
+<th align="right">G</th>
+<th align="right">H</th>
+<th align="right">I</th>
+<th align="right">J</th>
+<th align="left">File 1</th>
+<th align="center">Dep Cnt</th>
+<th align="center"></th>
+<th align="center">Dep Cnt</th>
+<th align="left">File 2</th>
+<th align="right">A</th>
+<th align="right">B</th>
+<th align="right">C</th>
+<th align="right">D</th>
+<th align="right">E</th>
+<th align="right">F</th>
+<th align="right">G</th>
+<th align="right">H</th>
+<th align="right">I</th>
+<th align="right">J</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">-</td>
+<td align="right">8</td>
+<td align="right">512</td>
+<td align="right"><div title="red"> 200 </div></td>
+<td align="right"><div title="red"> 138 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 6 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.11 </div></td>
+<td align="right"><div title="red"> 200 </div></td>
+<td align="left"><a href="file_dependencies.html#cppcheckclicmdlineparsercpp">cppcheck/cli/cmdlineparser.cpp</a></td>
+<td align="center">2</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">2</td>
+<td align="left"><a href="file_dependencies.html#cppcheckclicppcheckexecutorcpp">cppcheck/cli/cppcheckexecutor.cpp</a></td>
+<td align="right">-</td>
+<td align="right">20</td>
+<td align="right">496</td>
+<td align="right"><div title="red"> 45 </div></td>
+<td align="right"><div title="red"> 5 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 5 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.19 </div></td>
+<td align="right"><div title="yellow"> 45 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">20</td>
+<td align="right">496</td>
+<td align="right"><div title="red"> 45 </div></td>
+<td align="right"><div title="red"> 5 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 5 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.19 </div></td>
+<td align="right"><div title="yellow"> 45 </div></td>
+<td align="left"><a href="file_dependencies.html#cppcheckclicppcheckexecutorcpp">cppcheck/cli/cppcheckexecutor.cpp</a></td>
+<td align="center">3</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">1</td>
+<td align="left"><a href="file_dependencies.html#cppcheckclithreadexecutorcpp">cppcheck/cli/threadexecutor.cpp</a></td>
+<td align="right">-</td>
+<td align="right">10</td>
+<td align="right">188</td>
+<td align="right"><div title="red"> 30 </div></td>
+<td align="right"><div title="red"> 9 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 8 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.15 </div></td>
+<td align="right"><div title="green"> 30 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">5</td>
+<td align="right">38</td>
+<td align="right"><div title="yellow"> 15 </div></td>
+<td align="right"><div title="red"> 6 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 5 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.34 </div></td>
+<td align="right"><div title="green"> 15 </div></td>
+<td align="left"><a href="file_dependencies.html#cppcheckclifilelistercpp">cppcheck/cli/filelister.cpp</a></td>
+<td align="center">1</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">1</td>
+<td align="left"><a href="file_dependencies.html#cppcheckclifilelisterh">cppcheck/cli/filelister.h</a></td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">10</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 5.0 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="right">95</td>
+<td align="right">1,887</td>
+<td align="right"><div title="red"> 125 </div></td>
+<td align="right"><div title="red"> 35 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 8 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.07 </div></td>
+<td align="right"><div title="red"> 125 </div></td>
+<td align="left"><a href="file_dependencies.html#cppcheckexternalssimplecppsimplecppcpp">cppcheck/externals/simplecpp/simplecpp.cpp</a></td>
+<td align="center">1601</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">1</td>
+<td align="left"><a href="file_dependencies.html#cppcheckexternalssimplecppsimplecpph">cppcheck/externals/simplecpp/simplecpp.h</a></td>
+<td align="right">6</td>
+<td align="right">23</td>
+<td align="right">183</td>
+<td align="right"><div title="yellow"> 10 </div></td>
+<td align="right"><div title="green"> 3 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.26 </div></td>
+<td align="right"><div title="green"> 10 </div></td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="right">183</td>
+<td align="right">1,462</td>
+<td align="right"><div title="yellow"> 19 </div></td>
+<td align="right"><div title="red"> 13 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 7 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+<td align="right"><div title="green"> 19 </div></td>
+<td align="left"><a href="file_dependencies.html#cppcheckexternalstinyxmltinyxml2cpp">cppcheck/externals/tinyxml/tinyxml2.cpp</a></td>
+<td align="center">843</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">66</td>
+<td align="left"><a href="file_dependencies.html#cppcheckexternalstinyxmltinyxml2h">cppcheck/externals/tinyxml/tinyxml2.h</a></td>
+<td align="right">19</td>
+<td align="right">187</td>
+<td align="right">917</td>
+<td align="right"><div title="green"> 4 </div></td>
+<td align="right"><div title="green"> 3 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 2 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.74 </div></td>
+<td align="right"><div title="green"> 4 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">17</td>
+<td align="right">80</td>
+<td align="right"><div title="yellow"> 6 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 2 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.01 </div></td>
+<td align="right"><div title="green"> 6 </div></td>
+<td align="left"><a href="file_dependencies.html#cppcheckguicodeeditorcpp">cppcheck/gui/codeeditor.cpp</a></td>
+<td align="center">16</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">1</td>
+<td align="left"><a href="file_dependencies.html#cppcheckguicodeeditorh">cppcheck/gui/codeeditor.h</a></td>
+<td align="right">4</td>
+<td align="right">3</td>
+<td align="right">72</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">99</td>
+<td align="right">1,437</td>
+<td align="right"><div title="red"> 115 </div></td>
+<td align="right"><div title="red"> 47 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 6 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.06 </div></td>
+<td align="right"><div title="red"> 115 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibastutilscpp">cppcheck/lib/astutils.cpp</a></td>
+<td align="center">142</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">2</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibastutilsh">cppcheck/lib/astutils.h</a></td>
+<td align="right">5</td>
+<td align="right">8</td>
+<td align="right">158</td>
+<td align="right"><div title="green"> 2 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.83 </div></td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">99</td>
+<td align="right">1,437</td>
+<td align="right"><div title="red"> 115 </div></td>
+<td align="right"><div title="red"> 47 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 6 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.06 </div></td>
+<td align="right"><div title="red"> 115 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibastutilscpp">cppcheck/lib/astutils.cpp</a></td>
+<td align="center">10</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">3</td>
+<td align="left"><a href="file_dependencies.html#cppcheckliblibrarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="right">-</td>
+<td align="right">54</td>
+<td align="right">1,053</td>
+<td align="right"><div title="red"> 153 </div></td>
+<td align="right"><div title="red"> 83 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 7 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.04 </div></td>
+<td align="right"><div title="red"> 153 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">99</td>
+<td align="right">1,437</td>
+<td align="right"><div title="red"> 115 </div></td>
+<td align="right"><div title="red"> 47 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 6 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.06 </div></td>
+<td align="right"><div title="red"> 115 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibastutilscpp">cppcheck/lib/astutils.cpp</a></td>
+<td align="center">15</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">4</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibsymboldatabasecpp">cppcheck/lib/symboldatabase.cpp</a></td>
+<td align="right">-</td>
+<td align="right">116</td>
+<td align="right">3,992</td>
+<td align="right"><div title="red"> 170 </div></td>
+<td align="right"><div title="red"> 43 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 10 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+<td align="right"><div title="red"> 170 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">99</td>
+<td align="right">1,437</td>
+<td align="right"><div title="red"> 115 </div></td>
+<td align="right"><div title="red"> 47 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 6 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.06 </div></td>
+<td align="right"><div title="red"> 115 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibastutilscpp">cppcheck/lib/astutils.cpp</a></td>
+<td align="center">197</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">1</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibtokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="right">-</td>
+<td align="right">89</td>
+<td align="right">1,520</td>
+<td align="right"><div title="red"> 52 </div></td>
+<td align="right"><div title="red"> 33 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 7 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.06 </div></td>
+<td align="right"><div title="red"> 52 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">54</td>
+<td align="right">1,053</td>
+<td align="right"><div title="red"> 153 </div></td>
+<td align="right"><div title="red"> 83 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 7 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.04 </div></td>
+<td align="right"><div title="red"> 153 </div></td>
+<td align="left"><a href="file_dependencies.html#cppcheckliblibrarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="center">427</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">7</td>
+<td align="left"><a href="file_dependencies.html#cppcheckliblibraryh">cppcheck/lib/library.h</a></td>
+<td align="right">15</td>
+<td align="right">55</td>
+<td align="right">429</td>
+<td align="right"><div title="yellow"> 7 </div></td>
+<td align="right"><div title="green"> 3 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 2 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.16 </div></td>
+<td align="right"><div title="green"> 7 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">54</td>
+<td align="right">1,053</td>
+<td align="right"><div title="red"> 153 </div></td>
+<td align="right"><div title="red"> 83 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 7 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.04 </div></td>
+<td align="right"><div title="red"> 153 </div></td>
+<td align="left"><a href="file_dependencies.html#cppcheckliblibrarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="center">40</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">2</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibtokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="right">-</td>
+<td align="right">89</td>
+<td align="right">1,520</td>
+<td align="right"><div title="red"> 52 </div></td>
+<td align="right"><div title="red"> 33 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 7 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.06 </div></td>
+<td align="right"><div title="red"> 52 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">116</td>
+<td align="right">3,992</td>
+<td align="right"><div title="red"> 170 </div></td>
+<td align="right"><div title="red"> 43 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 10 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+<td align="right"><div title="red"> 170 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibsymboldatabasecpp">cppcheck/lib/symboldatabase.cpp</a></td>
+<td align="center">2284</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">5</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibsymboldatabaseh">cppcheck/lib/symboldatabase.h</a></td>
+<td align="right">11</td>
+<td align="right">140</td>
+<td align="right">666</td>
+<td align="right"><div title="yellow"> 9 </div></td>
+<td align="right"><div title="green"> 4 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 2 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 0.54 </div></td>
+<td align="right"><div title="green"> 9 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">116</td>
+<td align="right">3,992</td>
+<td align="right"><div title="red"> 170 </div></td>
+<td align="right"><div title="red"> 43 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 10 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+<td align="right"><div title="red"> 170 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibsymboldatabasecpp">cppcheck/lib/symboldatabase.cpp</a></td>
+<td align="center">539</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">2</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibtokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="right">-</td>
+<td align="right">89</td>
+<td align="right">1,520</td>
+<td align="right"><div title="red"> 52 </div></td>
+<td align="right"><div title="red"> 33 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 7 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.06 </div></td>
+<td align="right"><div title="red"> 52 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">116</td>
+<td align="right">3,992</td>
+<td align="right"><div title="red"> 170 </div></td>
+<td align="right"><div title="red"> 43 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 10 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+<td align="right"><div title="red"> 170 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibsymboldatabasecpp">cppcheck/lib/symboldatabase.cpp</a></td>
+<td align="center">19</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">12</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibtokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">6</td>
+<td align="right">186</td>
+<td align="right">7,484</td>
+<td align="right"><div title="red"> 333 </div></td>
+<td align="right"><div title="red"> 69 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 9 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.13 </div></td>
+<td align="right"><div title="red"> 333 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">116</td>
+<td align="right">3,992</td>
+<td align="right"><div title="red"> 170 </div></td>
+<td align="right"><div title="red"> 43 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 10 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+<td align="right"><div title="red"> 170 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibsymboldatabasecpp">cppcheck/lib/symboldatabase.cpp</a></td>
+<td align="center">3</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">24</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibvalueflowcpp">cppcheck/lib/valueflow.cpp</a></td>
+<td align="right">5</td>
+<td align="right">188</td>
+<td align="right">4,750</td>
+<td align="right"><div title="red"> 272 </div></td>
+<td align="right"><div title="red"> 94 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 6 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.06 </div></td>
+<td align="right"><div title="red"> 272 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">89</td>
+<td align="right">1,520</td>
+<td align="right"><div title="red"> 52 </div></td>
+<td align="right"><div title="red"> 33 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 7 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.06 </div></td>
+<td align="right"><div title="red"> 52 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibtokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="center">52</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">4</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibsymboldatabaseh">cppcheck/lib/symboldatabase.h</a></td>
+<td align="right">11</td>
+<td align="right">140</td>
+<td align="right">666</td>
+<td align="right"><div title="yellow"> 9 </div></td>
+<td align="right"><div title="green"> 4 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 2 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 0.54 </div></td>
+<td align="right"><div title="green"> 9 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">89</td>
+<td align="right">1,520</td>
+<td align="right"><div title="red"> 52 </div></td>
+<td align="right"><div title="red"> 33 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 7 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.06 </div></td>
+<td align="right"><div title="red"> 52 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibtokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="center">896</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">13</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibtokenh">cppcheck/lib/token.h</a></td>
+<td align="right">6</td>
+<td align="right">142</td>
+<td align="right">557</td>
+<td align="right"><div title="yellow"> 12 </div></td>
+<td align="right"><div title="green"> 4 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.59 </div></td>
+<td align="right"><div title="green"> 12 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">5</td>
+<td align="right">24</td>
+<td align="right"><div title="green"> 3 </div></td>
+<td align="right"><div title="green"> 3 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 2 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.56 </div></td>
+<td align="right"><div title="green"> 3 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckcpp">cppcheck/lib/check.cpp</a></td>
+<td align="center">9</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">6</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckh">cppcheck/lib/check.h</a></td>
+<td align="right">2</td>
+<td align="right">15</td>
+<td align="right">80</td>
+<td align="right"><div title="yellow"> 6 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 2 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 0.53 </div></td>
+<td align="right"><div title="green"> 6 </div></td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="right">15</td>
+<td align="right">80</td>
+<td align="right"><div title="yellow"> 6 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 2 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 0.53 </div></td>
+<td align="right"><div title="green"> 6 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckh">cppcheck/lib/check.h</a></td>
+<td align="center">1</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">4</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibctuh">cppcheck/lib/ctu.h</a></td>
+<td align="right">6</td>
+<td align="right">5</td>
+<td align="right">92</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.32 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">5</td>
+<td align="right">64</td>
+<td align="right"><div title="red"> 39 </div></td>
+<td align="right"><div title="red"> 12 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.33 </div></td>
+<td align="right"><div title="yellow"> 39 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheck64bitcpp">cppcheck/lib/check64bit.cpp</a></td>
+<td align="center">3</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">5</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheck64bith">cppcheck/lib/check64bit.h</a></td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">32</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.84 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">5</td>
+<td align="right">73</td>
+<td align="right"><div title="red"> 25 </div></td>
+<td align="right"><div title="red"> 16 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 5 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.37 </div></td>
+<td align="right"><div title="green"> 25 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckassertcpp">cppcheck/lib/checkassert.cpp</a></td>
+<td align="center">3</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">3</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckasserth">cppcheck/lib/checkassert.h</a></td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">32</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.8 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">34</td>
+<td align="right">438</td>
+<td align="right"><div title="red"> 50 </div></td>
+<td align="right"><div title="red"> 20 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 4 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.11 </div></td>
+<td align="right"><div title="yellow"> 50 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckautovariablescpp">cppcheck/lib/checkautovariables.cpp</a></td>
+<td align="center">3</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">17</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckautovariablesh">cppcheck/lib/checkautovariables.h</a></td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">60</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 0.51 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">24</td>
+<td align="right">279</td>
+<td align="right"><div title="red"> 22 </div></td>
+<td align="right"><div title="red"> 12 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.14 </div></td>
+<td align="right"><div title="green"> 22 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckboolcpp">cppcheck/lib/checkbool.cpp</a></td>
+<td align="center">3</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">21</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckboolh">cppcheck/lib/checkbool.h</a></td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">65</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 0.53 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">2</td>
+<td align="right">30</td>
+<td align="right"><div title="yellow"> 9 </div></td>
+<td align="right"><div title="red"> 6 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 4 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 0.55 </div></td>
+<td align="right"><div title="green"> 9 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckboostcpp">cppcheck/lib/checkboost.cpp</a></td>
+<td align="center">3</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">2</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckboosth">cppcheck/lib/checkboost.h</a></td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">27</td>
+<td align="right"><div title="green"> 2 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.94 </div></td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">34</td>
+<td align="right">646</td>
+<td align="right"><div title="red"> 37 </div></td>
+<td align="right"><div title="red"> 12 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 5 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+<td align="right"><div title="yellow"> 37 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckbufferoverruncpp">cppcheck/lib/checkbufferoverrun.cpp</a></td>
+<td align="center">25</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">12</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckbufferoverrunh">cppcheck/lib/checkbufferoverrun.h</a></td>
+<td align="right">2</td>
+<td align="right">6</td>
+<td align="right">63</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.63 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">83</td>
+<td align="right">1,701</td>
+<td align="right"><div title="red"> 92 </div></td>
+<td align="right"><div title="red"> 38 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 7 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.18 </div></td>
+<td align="right"><div title="red"> 92 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckclasscpp">cppcheck/lib/checkclass.cpp</a></td>
+<td align="center">43</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">56</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckclassh">cppcheck/lib/checkclass.h</a></td>
+<td align="right">2</td>
+<td align="right">6</td>
+<td align="right">162</td>
+<td align="right"><div title="green"> 2 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.6 </div></td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">52</td>
+<td align="right">1,102</td>
+<td align="right"><div title="red"> 89 </div></td>
+<td align="right"><div title="red"> 43 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 7 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+<td align="right"><div title="red"> 89 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckconditioncpp">cppcheck/lib/checkcondition.cpp</a></td>
+<td align="center">6</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">30</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckconditionh">cppcheck/lib/checkcondition.h</a></td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">89</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.42 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">8</td>
+<td align="right">170</td>
+<td align="right"><div title="yellow"> 18 </div></td>
+<td align="right"><div title="red"> 12 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 4 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.38 </div></td>
+<td align="right"><div title="green"> 18 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckexceptionsafetycpp">cppcheck/lib/checkexceptionsafety.cpp</a></td>
+<td align="center">12</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">6</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckexceptionsafetyh">cppcheck/lib/checkexceptionsafety.h</a></td>
+<td align="right">1</td>
+<td align="right">12</td>
+<td align="right">55</td>
+<td align="right"><div title="green"> 2 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.56 </div></td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">16</td>
+<td align="right">257</td>
+<td align="right"><div title="red"> 44 </div></td>
+<td align="right"><div title="red"> 12 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 5 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.21 </div></td>
+<td align="right"><div title="yellow"> 44 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckfunctionscpp">cppcheck/lib/checkfunctions.cpp</a></td>
+<td align="center">3</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">16</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckfunctionsh">cppcheck/lib/checkfunctions.h</a></td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">59</td>
+<td align="right"><div title="green"> 2 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.7 </div></td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">41</td>
+<td align="right">1,479</td>
+<td align="right"><div title="red"> 413 </div></td>
+<td align="right"><div title="red"> 37 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 12 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.06 </div></td>
+<td align="right"><div title="red"> 413 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckiocpp">cppcheck/lib/checkio.cpp</a></td>
+<td align="center">393</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">26</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckioh">cppcheck/lib/checkio.h</a></td>
+<td align="right">2</td>
+<td align="right">6</td>
+<td align="right">98</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.29 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">21</td>
+<td align="right">597</td>
+<td align="right"><div title="red"> 155 </div></td>
+<td align="right"><div title="red"> 41 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 7 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.17 </div></td>
+<td align="right"><div title="red"> 155 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckleakautovarcpp">cppcheck/lib/checkleakautovar.cpp</a></td>
+<td align="center">184</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">4</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckleakautovarh">cppcheck/lib/checkleakautovar.h</a></td>
+<td align="right">3</td>
+<td align="right">11</td>
+<td align="right">83</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.58 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">36</td>
+<td align="right">670</td>
+<td align="right"><div title="red"> 53 </div></td>
+<td align="right"><div title="red"> 41 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 7 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.2 </div></td>
+<td align="right"><div title="red"> 53 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckmemoryleakcpp">cppcheck/lib/checkmemoryleak.cpp</a></td>
+<td align="center">30</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">16</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckmemoryleakh">cppcheck/lib/checkmemoryleak.h</a></td>
+<td align="right">5</td>
+<td align="right">25</td>
+<td align="right">151</td>
+<td align="right"><div title="green"> 2 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.88 </div></td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">19</td>
+<td align="right">432</td>
+<td align="right"><div title="red"> 67 </div></td>
+<td align="right"><div title="red"> 26 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 6 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.17 </div></td>
+<td align="right"><div title="red"> 67 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibchecknullpointercpp">cppcheck/lib/checknullpointer.cpp</a></td>
+<td align="center">24</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">7</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibchecknullpointerh">cppcheck/lib/checknullpointer.h</a></td>
+<td align="right">2</td>
+<td align="right">7</td>
+<td align="right">56</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1.03 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">113</td>
+<td align="right">1,961</td>
+<td align="right"><div title="red"> 86 </div></td>
+<td align="right"><div title="red"> 27 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 7 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.14 </div></td>
+<td align="right"><div title="red"> 86 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckothercpp">cppcheck/lib/checkother.cpp</a></td>
+<td align="center">3</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">96</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckotherh">cppcheck/lib/checkother.h</a></td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">215</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.28 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">2</td>
+<td align="right">28</td>
+<td align="right"><div title="yellow"> 15 </div></td>
+<td align="right"><div title="red"> 6 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.76 </div></td>
+<td align="right"><div title="green"> 15 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckpostfixoperatorcpp">cppcheck/lib/checkpostfixoperator.cpp</a></td>
+<td align="center">3</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">2</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckpostfixoperatorh">cppcheck/lib/checkpostfixoperator.h</a></td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">27</td>
+<td align="right"><div title="green"> 2 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1.03 </div></td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">20</td>
+<td align="right">258</td>
+<td align="right"><div title="red"> 62 </div></td>
+<td align="right"><div title="red"> 16 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 6 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.18 </div></td>
+<td align="right"><div title="red"> 62 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibchecksizeofcpp">cppcheck/lib/checksizeof.cpp</a></td>
+<td align="center">3</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">20</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibchecksizeofh">cppcheck/lib/checksizeof.h</a></td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">62</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 0.52 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">86</td>
+<td align="right">1,575</td>
+<td align="right"><div title="red"> 92 </div></td>
+<td align="right"><div title="red"> 23 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 6 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.08 </div></td>
+<td align="right"><div title="red"> 92 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckstlcpp">cppcheck/lib/checkstl.cpp</a></td>
+<td align="center">3</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">52</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckstlh">cppcheck/lib/checkstl.h</a></td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">135</td>
+<td align="right"><div title="green"> 2 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 0.51 </div></td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">18</td>
+<td align="right">311</td>
+<td align="right"><div title="red"> 35 </div></td>
+<td align="right"><div title="red"> 12 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 4 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.16 </div></td>
+<td align="right"><div title="yellow"> 35 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckstringcpp">cppcheck/lib/checkstring.cpp</a></td>
+<td align="center">3</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">18</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckstringh">cppcheck/lib/checkstring.h</a></td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">57</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 0.54 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">13</td>
+<td align="right">259</td>
+<td align="right"><div title="red"> 32 </div></td>
+<td align="right"><div title="red"> 13 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 4 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.2 </div></td>
+<td align="right"><div title="yellow"> 32 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibchecktypecpp">cppcheck/lib/checktype.cpp</a></td>
+<td align="center">3</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">12</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibchecktypeh">cppcheck/lib/checktype.h</a></td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">50</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.59 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">30</td>
+<td align="right">965</td>
+<td align="right"><div title="red"> 178 </div></td>
+<td align="right"><div title="red"> 68 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 7 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.11 </div></td>
+<td align="right"><div title="red"> 178 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckuninitvarcpp">cppcheck/lib/checkuninitvar.cpp</a></td>
+<td align="center">63</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">7</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckuninitvarh">cppcheck/lib/checkuninitvar.h</a></td>
+<td align="right">3</td>
+<td align="right">9</td>
+<td align="right">76</td>
+<td align="right"><div title="green"> 3 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 0.47 </div></td>
+<td align="right"><div title="green"> 3 </div></td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">11</td>
+<td align="right">271</td>
+<td align="right"><div title="red"> 79 </div></td>
+<td align="right"><div title="red"> 22 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 6 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.19 </div></td>
+<td align="right"><div title="red"> 79 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckunusedfunctionscpp">cppcheck/lib/checkunusedfunctions.cpp</a></td>
+<td align="center">67</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">3</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckunusedfunctionsh">cppcheck/lib/checkunusedfunctions.h</a></td>
+<td align="right">3</td>
+<td align="right">8</td>
+<td align="right">55</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.71 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="right">36</td>
+<td align="right">890</td>
+<td align="right"><div title="red"> 213 </div></td>
+<td align="right"><div title="red"> 28 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 9 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.16 </div></td>
+<td align="right"><div title="red"> 213 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckunusedvarcpp">cppcheck/lib/checkunusedvar.cpp</a></td>
+<td align="center">5</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">7</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckunusedvarh">cppcheck/lib/checkunusedvar.h</a></td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">44</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.65 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">7</td>
+<td align="right">103</td>
+<td align="right"><div title="red"> 39 </div></td>
+<td align="right"><div title="red"> 13 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 4 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.29 </div></td>
+<td align="right"><div title="yellow"> 39 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckvaargcpp">cppcheck/lib/checkvaarg.cpp</a></td>
+<td align="center">3</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">7</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcheckvaargh">cppcheck/lib/checkvaarg.h</a></td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">36</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.61 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">29</td>
+<td align="right">638</td>
+<td align="right"><div title="red"> 112 </div></td>
+<td align="right"><div title="red"> 11 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.1 </div></td>
+<td align="right"><div title="red"> 112 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibcppcheckcpp">cppcheck/lib/cppcheck.cpp</a></td>
+<td align="center">22</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">1</td>
+<td align="left"><a href="file_dependencies.html#cppcheckliberrorloggercpp">cppcheck/lib/errorlogger.cpp</a></td>
+<td align="right">-</td>
+<td align="right">32</td>
+<td align="right">482</td>
+<td align="right"><div title="red"> 23 </div></td>
+<td align="right"><div title="red"> 12 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+<td align="right"><div title="green"> 23 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">32</td>
+<td align="right">482</td>
+<td align="right"><div title="red"> 23 </div></td>
+<td align="right"><div title="red"> 12 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+<td align="right"><div title="green"> 23 </div></td>
+<td align="left"><a href="file_dependencies.html#cppcheckliberrorloggercpp">cppcheck/lib/errorlogger.cpp</a></td>
+<td align="center">268</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">1</td>
+<td align="left"><a href="file_dependencies.html#cppcheckliberrorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">6</td>
+<td align="right">16</td>
+<td align="right">173</td>
+<td align="right"><div title="yellow"> 10 </div></td>
+<td align="right"><div title="red"> 10 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.8 </div></td>
+<td align="right"><div title="green"> 10 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">32</td>
+<td align="right">482</td>
+<td align="right"><div title="red"> 23 </div></td>
+<td align="right"><div title="red"> 12 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+<td align="right"><div title="green"> 23 </div></td>
+<td align="left"><a href="file_dependencies.html#cppcheckliberrorloggercpp">cppcheck/lib/errorlogger.cpp</a></td>
+<td align="center">2</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">23</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibmathlibcpp">cppcheck/lib/mathlib.cpp</a></td>
+<td align="right">-</td>
+<td align="right">63</td>
+<td align="right">1,031</td>
+<td align="right"><div title="red"> 49 </div></td>
+<td align="right"><div title="red"> 33 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 4 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.08 </div></td>
+<td align="right"><div title="yellow"> 49 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">32</td>
+<td align="right">482</td>
+<td align="right"><div title="red"> 23 </div></td>
+<td align="right"><div title="red"> 12 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+<td align="right"><div title="green"> 23 </div></td>
+<td align="left"><a href="file_dependencies.html#cppcheckliberrorloggercpp">cppcheck/lib/errorlogger.cpp</a></td>
+<td align="center">1</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">3</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibsuppressionscpp">cppcheck/lib/suppressions.cpp</a></td>
+<td align="right">-</td>
+<td align="right">17</td>
+<td align="right">282</td>
+<td align="right"><div title="yellow"> 18 </div></td>
+<td align="right"><div title="red"> 11 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 4 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.11 </div></td>
+<td align="right"><div title="green"> 18 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">32</td>
+<td align="right">482</td>
+<td align="right"><div title="red"> 23 </div></td>
+<td align="right"><div title="red"> 12 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+<td align="right"><div title="green"> 23 </div></td>
+<td align="left"><a href="file_dependencies.html#cppcheckliberrorloggercpp">cppcheck/lib/errorlogger.cpp</a></td>
+<td align="center">4</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">6</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibtokenlistcpp">cppcheck/lib/tokenlist.cpp</a></td>
+<td align="right">1</td>
+<td align="right">55</td>
+<td align="right">1,098</td>
+<td align="right"><div title="red"> 57 </div></td>
+<td align="right"><div title="red"> 19 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 6 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+<td align="right"><div title="red"> 57 </div></td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="right">63</td>
+<td align="right">1,032</td>
+<td align="right"><div title="red"> 47 </div></td>
+<td align="right"><div title="red"> 17 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 6 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.04 </div></td>
+<td align="right"><div title="yellow"> 47 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibexprenginecpp">cppcheck/lib/exprengine.cpp</a></td>
+<td align="center">638</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">3</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibexprengineh">cppcheck/lib/exprengine.h</a></td>
+<td align="right">15</td>
+<td align="right">27</td>
+<td align="right">227</td>
+<td align="right"><div title="green"> 3 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.1 </div></td>
+<td align="right"><div title="green"> 3 </div></td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="right">3</td>
+<td align="right">110</td>
+<td align="right"><div title="green"> 3 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.28 </div></td>
+<td align="right"><div title="green"> 3 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibimportprojecth">cppcheck/lib/importproject.h</a></td>
+<td align="center">2</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">2</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibsettingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">3</td>
+<td align="right">8</td>
+<td align="right">131</td>
+<td align="right"><div title="green"> 4 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1.16 </div></td>
+<td align="right"><div title="green"> 4 </div></td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="right">8</td>
+<td align="right">131</td>
+<td align="right"><div title="green"> 4 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1.16 </div></td>
+<td align="right"><div title="green"> 4 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibsettingsh">cppcheck/lib/settings.h</a></td>
+<td align="center">2</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">72</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibsettingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">-</td>
+<td align="right">4</td>
+<td align="right">68</td>
+<td align="right"><div title="yellow"> 15 </div></td>
+<td align="right"><div title="red"> 15 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.16 </div></td>
+<td align="right"><div title="green"> 15 </div></td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="right">8</td>
+<td align="right">131</td>
+<td align="right"><div title="green"> 4 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1.16 </div></td>
+<td align="right"><div title="green"> 4 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibsettingsh">cppcheck/lib/settings.h</a></td>
+<td align="center">1</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">3</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibvalueflowh">cppcheck/lib/valueflow.h</a></td>
+<td align="right">4</td>
+<td align="right">36</td>
+<td align="right">234</td>
+<td align="right"><div title="yellow"> 18 </div></td>
+<td align="right"><div title="red"> 17 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 2 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.15 </div></td>
+<td align="right"><div title="green"> 18 </div></td>
+</tr>
+<tr>
+<td align="right">-</td>
+<td align="right">20</td>
+<td align="right">89</td>
+<td align="right"><div title="yellow"> 10 </div></td>
+<td align="right"><div title="red"> 5 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.19 </div></td>
+<td align="right"><div title="green"> 10 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibpathcpp">cppcheck/lib/path.cpp</a></td>
+<td align="center">1</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">1</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibpathh">cppcheck/lib/path.h</a></td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">23</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 5.0 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="right">36</td>
+<td align="right">234</td>
+<td align="right"><div title="yellow"> 18 </div></td>
+<td align="right"><div title="red"> 17 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 2 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.15 </div></td>
+<td align="right"><div title="green"> 18 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibvalueflowh">cppcheck/lib/valueflow.h</a></td>
+<td align="center">15</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">36</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibtokenh">cppcheck/lib/token.h</a></td>
+<td align="right">6</td>
+<td align="right">142</td>
+<td align="right">557</td>
+<td align="right"><div title="yellow"> 12 </div></td>
+<td align="right"><div title="green"> 4 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.59 </div></td>
+<td align="right"><div title="green"> 12 </div></td>
+</tr>
+<tr>
+<td align="right">11</td>
+<td align="right">140</td>
+<td align="right">666</td>
+<td align="right"><div title="yellow"> 9 </div></td>
+<td align="right"><div title="green"> 4 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 2 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 0.54 </div></td>
+<td align="right"><div title="green"> 9 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibsymboldatabaseh">cppcheck/lib/symboldatabase.h</a></td>
+<td align="center">116</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">20</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibtokenh">cppcheck/lib/token.h</a></td>
+<td align="right">6</td>
+<td align="right">142</td>
+<td align="right">557</td>
+<td align="right"><div title="yellow"> 12 </div></td>
+<td align="right"><div title="green"> 4 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.59 </div></td>
+<td align="right"><div title="green"> 12 </div></td>
+</tr>
+<tr>
+<td align="right">11</td>
+<td align="right">140</td>
+<td align="right">666</td>
+<td align="right"><div title="yellow"> 9 </div></td>
+<td align="right"><div title="green"> 4 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 2 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 0.54 </div></td>
+<td align="right"><div title="green"> 9 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibsymboldatabaseh">cppcheck/lib/symboldatabase.h</a></td>
+<td align="center">3</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">2</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibtokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">2</td>
+<td align="right">15</td>
+<td align="right">234</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1.89 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td align="right">186</td>
+<td align="right">7,484</td>
+<td align="right"><div title="red"> 333 </div></td>
+<td align="right"><div title="red"> 69 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 9 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.13 </div></td>
+<td align="right"><div title="red"> 333 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibtokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="center">17</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">10</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibtemplatesimplifiercpp">cppcheck/lib/templatesimplifier.cpp</a></td>
+<td align="right">4</td>
+<td align="right">67</td>
+<td align="right">2,557</td>
+<td align="right"><div title="red"> 271 </div></td>
+<td align="right"><div title="red"> 47 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 9 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+<td align="right"><div title="red"> 271 </div></td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td align="right">142</td>
+<td align="right">557</td>
+<td align="right"><div title="yellow"> 12 </div></td>
+<td align="right"><div title="green"> 4 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.59 </div></td>
+<td align="right"><div title="green"> 12 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibtokenh">cppcheck/lib/token.h</a></td>
+<td align="center">4</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">54</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibtemplatesimplifierh">cppcheck/lib/templatesimplifier.h</a></td>
+<td align="right">2</td>
+<td align="right">30</td>
+<td align="right">153</td>
+<td align="right"><div title="yellow"> 7 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1.23 </div></td>
+<td align="right"><div title="green"> 7 </div></td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="right">15</td>
+<td align="right">234</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1.89 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecklibtokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="center">1</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">2</td>
+<td align="left"><a href="file_dependencies.html#cppchecklibtemplatesimplifierh">cppcheck/lib/templatesimplifier.h</a></td>
+<td align="right">2</td>
+<td align="right">30</td>
+<td align="right">153</td>
+<td align="right"><div title="yellow"> 7 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 1.23 </div></td>
+<td align="right"><div title="green"> 7 </div></td>
+</tr>
+<tr>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">31</td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right">-</td>
+<td align="right"><div title="green"> 0.97 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="left"><a href="file_dependencies.html#cppchecktestredirecth">cppcheck/test/redirect.h</a></td>
+<td align="center">2</td>
+<td align="center">&lt;==&gt;</td>
+<td align="center">5</td>
+<td align="left"><a href="file_dependencies.html#cppchecktesttestsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">2</td>
+<td align="right">29</td>
+<td align="right">198</td>
+<td align="right"><div title="yellow"> 11 </div></td>
+<td align="right"><div title="green"> 1 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+<td align="right">-</td>
+<td align="right"><div title="red"> 0.11 </div></td>
+<td align="right"><div title="green"> 11 </div></td>
+</tr>
+</tbody>
+</table>
+<h3 id="metric-keys_1">Metric Keys<a class="headerlink" href="#metric-keys_1" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th>Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td>A</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td>B</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td>C</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td>D</td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td>E</td>
+</tr>
+<tr>
+<td align="left">MaxInheritanceTree</td>
+<td>F</td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td>G</td>
+</tr>
+<tr>
+<td align="left">PercentLackOfCohesion</td>
+<td>H</td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td>I</td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td>J</td>
+</tr>
+</tbody>
+</table></div>
+                <footer>
+    <div class="footer-buttons">
+        <div class="previous"><a href="../Metrics/cppcheck/win_installer/zzz-file-metrics.html" title="File Metrics"><span>Previous</span></a></div>
+        <div class="next"><a href="file_dependencies.html" title="File Dependencies"><span>Next</span></a></div>
+    </div>
+    <div class="footer-note">
+        <p>
+<!--            Built with <a href="http://www.mkdocs.org">MkDocs</a> using-->
+<!--            <a href="https://github.com/daizutabi/mkdocs-ivory">Ivory theme</a>.-->
+            Built with MkDocs using Ivory theme.
+        </p>
+    </div>
+</footer>
+            </div>
+        </main>
+    </div>
+    <script>
+        var base_url = '.';
+    </script>
+    <script src="../js/theme.js"></script>
+    <script src="../search/main.js"></script>
+</body>
+
+</html>

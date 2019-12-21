@@ -1,0 +1,4477 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Roy Crippen">
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+    <title>File Metrics &mdash; UDB Metrics Reporting for cpp_check</title>
+<!--    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">-->
+<!--    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">-->
+<!--    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">-->
+<!--    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">-->
+
+    <link rel="stylesheet" href="../../../css/googleapis_lato_400_700.css">
+    <link rel="stylesheet" href="../../../css/fira_code.css">
+    <link rel="stylesheet" href="../../../css/all.css">
+    <link rel="stylesheet" href="../../../css/v4-shims.css">
+
+    <link rel="stylesheet" href="../../../css/theme.css">
+    <link rel="stylesheet" href="../../../css/github.min.css">
+<!--    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>-->
+    <script src="../../../js/jquery-2.1.1.min.js"></script>
+    <script src="../../../search/lunr.js"></script>
+    <script src="../../../search/worker.js"></script>
+    <script src="../../../js/highlight.min.js"></script>
+<!---->
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script> 
+</head>
+
+<body ontouchstart="">
+    <div id="container">
+        <aside>
+            <div class="home">
+                <div class="title">
+                    <button class="hamburger"></button>
+                    <a href="../../../index.html" class="site-name"> UDB Metrics Reporting for cpp_check</a>
+                </div>
+                <div class="search">
+                    <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    </form>
+</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="root">
+                    <li class="toctree-l1"><a class="nav-item" href="../../../index.html">Usage</a></li>
+                    <li class="toctree-l1"><button class="section nav-item">Metrics</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../application-metrics.html">Application Metrics</a></li>
+    <li class="toctree-l2 current"><button class="section nav-item">cppcheck</button>
+<ul class="subnav">
+    <li class="toctree-l3"><a class="nav-item" href="../cppcheck-metrics.html">cppcheck Metrics</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l3"><button class="section nav-item hide">addons</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../addons/addons-metrics.html">addons Metrics</a></li>
+    <li class="toctree-l4"><button class="section nav-item hide">doc</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../addons/doc/doc-metrics.html">doc Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../addons/doc/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">test</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../addons/test/test-metrics.html">test Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../addons/test/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><button class="section nav-item hide">misra</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../addons/test/misra/misra-metrics.html">misra Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../addons/test/misra/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">path1</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../addons/test/path1/path1-metrics.html">path1 Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../addons/test/path1/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">y2038</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../addons/test/y2038/y2038-metrics.html">y2038 Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../addons/test/y2038/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">cli</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../cli/cli-metrics.html">cli Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../cli/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">cve-test-suite</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../cve-test-suite/cve-test-suite-metrics.html">cve-test-suite Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../cve-test-suite/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">democlient</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../democlient/democlient-metrics.html">democlient Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../democlient/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">externals</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../externals/externals-metrics.html">externals Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../externals/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><button class="section nav-item hide">simplecpp</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../externals/simplecpp/simplecpp-metrics.html">simplecpp Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../externals/simplecpp/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">tinyxml</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../externals/tinyxml/tinyxml-metrics.html">tinyxml Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../externals/tinyxml/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">gui</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../gui/gui-metrics.html">gui Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../gui/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><button class="section nav-item hide">help</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../gui/help/help-metrics.html">help Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../gui/help/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">test</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../gui/test/test-metrics.html">test Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../gui/test/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><button class="section nav-item hide">benchmark</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../gui/test/benchmark/benchmark-metrics.html">benchmark Metrics</a></li>
+    <li class="toctree-l6"><button class="section nav-item hide">simple</button>
+<ul class="subnav hide">
+    <li class="toctree-l7"><a class="nav-item" href="../gui/test/benchmark/simple/simple-metrics.html">simple Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../gui/test/benchmark/simple/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">data</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../gui/test/data/data-metrics.html">data Metrics</a></li>
+    <li class="toctree-l6"><button class="section nav-item hide">benchmark</button>
+<ul class="subnav hide">
+    <li class="toctree-l7"><a class="nav-item" href="../gui/test/data/benchmark/benchmark-metrics.html">benchmark Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../gui/test/data/benchmark/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l6"><button class="section nav-item hide">files</button>
+<ul class="subnav hide">
+    <li class="toctree-l7"><a class="nav-item" href="../gui/test/data/files/files-metrics.html">files Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../gui/test/data/files/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l7"><button class="section nav-item hide">dir1</button>
+<ul class="subnav hide">
+    <li class="toctree-l8"><a class="nav-item" href="../gui/test/data/files/dir1/dir1-metrics.html">dir1 Metrics</a></li>
+    <li class="toctree-l8"><a class="nav-item" href="../gui/test/data/files/dir1/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l8"><button class="section nav-item hide">dir11</button>
+<ul class="subnav hide">
+    <li class="toctree-l9"><a class="nav-item" href="../gui/test/data/files/dir1/dir11/dir11-metrics.html">dir11 Metrics</a></li>
+    <li class="toctree-l9"><a class="nav-item" href="../gui/test/data/files/dir1/dir11/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l7"><button class="section nav-item hide">dir2</button>
+<ul class="subnav hide">
+    <li class="toctree-l8"><a class="nav-item" href="../gui/test/data/files/dir2/dir2-metrics.html">dir2 Metrics</a></li>
+    <li class="toctree-l8"><a class="nav-item" href="../gui/test/data/files/dir2/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">filelist</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../gui/test/filelist/filelist-metrics.html">filelist Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../gui/test/filelist/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">projectfile</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../gui/test/projectfile/projectfile-metrics.html">projectfile Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../gui/test/projectfile/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">translationhandler</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../gui/test/translationhandler/translationhandler-metrics.html">translationhandler Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../gui/test/translationhandler/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">xmlreportv2</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../gui/test/xmlreportv2/xmlreportv2-metrics.html">xmlreportv2 Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../gui/test/xmlreportv2/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">htmlreport</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../htmlreport/htmlreport-metrics.html">htmlreport Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../htmlreport/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l3 current"><button class="section nav-item">lib</button>
+<ul class="subnav">
+    <li class="toctree-l4"><a class="nav-item" href="lib-metrics.html">lib Metrics</a></li>
+    <li class="toctree-l4 current"><a class="nav-item current" href="zzz-file-metrics.html">File Metrics</a>
+<ul class="subnav">
+<li class="toctree-l5"><a class="nav-item toc" href="#cmakeliststxt-metrics">CMakeLists.txt Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#analyzerinfocpp-metrics">analyzerinfo.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#analyzerinfoh-metrics">analyzerinfo.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#astutilscpp-metrics">astutils.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#astutilsh-metrics">astutils.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkcpp-metrics">check.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkh-metrics">check.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#check64bitcpp-metrics">check64bit.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#check64bith-metrics">check64bit.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkassertcpp-metrics">checkassert.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkasserth-metrics">checkassert.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkautovariablescpp-metrics">checkautovariables.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkautovariablesh-metrics">checkautovariables.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkboolcpp-metrics">checkbool.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkboolh-metrics">checkbool.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkboostcpp-metrics">checkboost.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkboosth-metrics">checkboost.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkbufferoverruncpp-metrics">checkbufferoverrun.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkbufferoverrunh-metrics">checkbufferoverrun.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkclasscpp-metrics">checkclass.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkclassh-metrics">checkclass.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkconditioncpp-metrics">checkcondition.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkconditionh-metrics">checkcondition.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkexceptionsafetycpp-metrics">checkexceptionsafety.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkexceptionsafetyh-metrics">checkexceptionsafety.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkfunctionscpp-metrics">checkfunctions.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkfunctionsh-metrics">checkfunctions.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkinternalcpp-metrics">checkinternal.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkinternalh-metrics">checkinternal.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkiocpp-metrics">checkio.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkioh-metrics">checkio.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkleakautovarcpp-metrics">checkleakautovar.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkleakautovarh-metrics">checkleakautovar.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkmemoryleakcpp-metrics">checkmemoryleak.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkmemoryleakh-metrics">checkmemoryleak.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checknullpointercpp-metrics">checknullpointer.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checknullpointerh-metrics">checknullpointer.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkothercpp-metrics">checkother.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkotherh-metrics">checkother.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkpostfixoperatorcpp-metrics">checkpostfixoperator.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkpostfixoperatorh-metrics">checkpostfixoperator.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checksizeofcpp-metrics">checksizeof.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checksizeofh-metrics">checksizeof.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkstlcpp-metrics">checkstl.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkstlh-metrics">checkstl.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkstringcpp-metrics">checkstring.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkstringh-metrics">checkstring.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checktypecpp-metrics">checktype.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checktypeh-metrics">checktype.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkuninitvarcpp-metrics">checkuninitvar.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkuninitvarh-metrics">checkuninitvar.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkunusedfunctionscpp-metrics">checkunusedfunctions.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkunusedfunctionsh-metrics">checkunusedfunctions.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkunusedvarcpp-metrics">checkunusedvar.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkunusedvarh-metrics">checkunusedvar.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkvaargcpp-metrics">checkvaarg.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkvaargh-metrics">checkvaarg.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#configh-metrics">config.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#cppcheckcpp-metrics">cppcheck.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#cppcheckh-metrics">cppcheck.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#ctucpp-metrics">ctu.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#ctuh-metrics">ctu.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#errorloggercpp-metrics">errorlogger.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#errorloggerh-metrics">errorlogger.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#exprenginecpp-metrics">exprengine.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#exprengineh-metrics">exprengine.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#importprojectcpp-metrics">importproject.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#importprojecth-metrics">importproject.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#librarycpp-metrics">library.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#libraryh-metrics">library.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#matchcompilerh-metrics">matchcompiler.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#mathlibcpp-metrics">mathlib.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#mathlibh-metrics">mathlib.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#pathcpp-metrics">path.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#pathh-metrics">path.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#pathmatchcpp-metrics">pathmatch.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#pathmatchh-metrics">pathmatch.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#platformcpp-metrics">platform.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#platformh-metrics">platform.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#preprocessorcpp-metrics">preprocessor.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#preprocessorh-metrics">preprocessor.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#settingscpp-metrics">settings.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#settingsh-metrics">settings.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#standardsh-metrics">standards.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#suppressionscpp-metrics">suppressions.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#suppressionsh-metrics">suppressions.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#symboldatabasecpp-metrics">symboldatabase.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#symboldatabaseh-metrics">symboldatabase.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#templatesimplifiercpp-metrics">templatesimplifier.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#templatesimplifierh-metrics">templatesimplifier.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#timercpp-metrics">timer.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#timerh-metrics">timer.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#tokencpp-metrics">token.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#tokenh-metrics">token.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#tokenizecpp-metrics">tokenize.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#tokenizeh-metrics">tokenize.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#tokenlistcpp-metrics">tokenlist.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#tokenlisth-metrics">tokenlist.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#utilsh-metrics">utils.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#valueflowcpp-metrics">valueflow.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#valueflowh-metrics">valueflow.h Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#versionh-metrics">version.h Metrics</a></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">oss-fuzz</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../oss-fuzz/oss-fuzz-metrics.html">oss-fuzz Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../oss-fuzz/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">samples</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../samples/samples-metrics.html">samples Metrics</a></li>
+    <li class="toctree-l4"><button class="section nav-item hide">AssignmentAddressToInteger</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../samples/AssignmentAddressToInteger/AssignmentAddressToInteger-metrics.html">AssignmentAddressToInteger Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/AssignmentAddressToInteger/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">arrayIndexOutOfBounds</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../samples/arrayIndexOutOfBounds/arrayIndexOutOfBounds-metrics.html">arrayIndexOutOfBounds Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/arrayIndexOutOfBounds/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">autoVariables</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../samples/autoVariables/autoVariables-metrics.html">autoVariables Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/autoVariables/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">bufferAccessOutOfBounds</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../samples/bufferAccessOutOfBounds/bufferAccessOutOfBounds-metrics.html">bufferAccessOutOfBounds Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/bufferAccessOutOfBounds/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">erase</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../samples/erase/erase-metrics.html">erase Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/erase/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">memleak</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../samples/memleak/memleak-metrics.html">memleak Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/memleak/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">outOfBounds</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../samples/outOfBounds/outOfBounds-metrics.html">outOfBounds Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/outOfBounds/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">resourceLeak</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../samples/resourceLeak/resourceLeak-metrics.html">resourceLeak Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/resourceLeak/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">syntaxError</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../samples/syntaxError/syntaxError-metrics.html">syntaxError Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/syntaxError/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">test</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../test/test-metrics.html">test Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../test/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><button class="section nav-item hide">cfg</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../test/cfg/cfg-metrics.html">cfg Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../test/cfg/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">cli</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../test/cli/cli-metrics.html">cli Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../test/cli/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><button class="section nav-item hide">helloworld</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../test/cli/helloworld/helloworld-metrics.html">helloworld Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../test/cli/helloworld/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">proj-inline-suppress</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../test/cli/proj-inline-suppress/proj-inline-suppress-metrics.html">proj-inline-suppress Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../test/cli/proj-inline-suppress/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">proj-suppress-syntaxError</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../test/cli/proj-suppress-syntaxError/proj-suppress-syntaxError-metrics.html">proj-suppress-syntaxError Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../test/cli/proj-suppress-syntaxError/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">proj2</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../test/cli/proj2/proj2-metrics.html">proj2 Metrics</a></li>
+    <li class="toctree-l6"><button class="section nav-item hide">a</button>
+<ul class="subnav hide">
+    <li class="toctree-l7"><a class="nav-item" href="../test/cli/proj2/a/a-metrics.html">a Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../test/cli/proj2/a/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l6"><button class="section nav-item hide">b</button>
+<ul class="subnav hide">
+    <li class="toctree-l7"><a class="nav-item" href="../test/cli/proj2/b/b-metrics.html">b Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../test/cli/proj2/b/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">synthetic</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../test/synthetic/synthetic-metrics.html">synthetic Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../test/synthetic/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l4"><button class="section nav-item hide">testsuites</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../test/testsuites/testsuites-metrics.html">testsuites Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../test/testsuites/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><button class="section nav-item hide">clang</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../test/testsuites/clang/clang-metrics.html">clang Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../test/testsuites/clang/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+    <li class="toctree-l5"><button class="section nav-item hide">duma</button>
+<ul class="subnav hide">
+    <li class="toctree-l6"><a class="nav-item" href="../test/testsuites/duma/duma-metrics.html">duma Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../test/testsuites/duma/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">tools</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../tools/tools-metrics.html">tools Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../tools/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><button class="section nav-item hide">triage</button>
+<ul class="subnav hide">
+    <li class="toctree-l5"><a class="nav-item" href="../tools/triage/triage-metrics.html">triage Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../tools/triage/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l3"><button class="section nav-item hide">win_installer</button>
+<ul class="subnav hide">
+    <li class="toctree-l4"><a class="nav-item" href="../win_installer/win_installer-metrics.html">win_installer Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../win_installer/zzz-file-metrics.html">File Metrics</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Reports</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../../Reports/circular_file_refs.html">Direct Circular File References</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../../Reports/file_dependencies.html">File Dependencies</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../../Reports/file_list_indented_sloc.html">File List Indented</a></li>
+    <li class="toctree-l2"><a class="nav-item" href="../../../Reports/red_metrics.html">Red Metrics</a></li>
+</ul></li>
+                </ul>
+            </nav>
+            <div class="repo">
+    <div class="previous"><a href="lib-metrics.html">&laquo; Previous</a></div>
+    <div class="next"><a href="../oss-fuzz/oss-fuzz-metrics.html">Next &raquo;</a></div>
+</div>
+        </aside>
+        <div id="spacer"><button class="arrow"></button></div>
+        <main>
+            <div class="home-top">
+                <button class="hamburger"></button>
+                <a href="../../../index.html" class="site-name"> UDB Metrics Reporting for cpp_check</a>
+            </div>
+            <div id="main">
+                <nav class="breadcrumbs">
+<ul>
+    <li>Metrics &raquo; </li><li>cppcheck &raquo; </li><li>lib</li>
+</ul>
+</nav>
+                <div id="content"><h1 id="file-metrics">File Metrics<a class="headerlink" href="#file-metrics" title="Permanent link">#</a></h1>
+<h2 id="cmakeliststxt-metrics">CMakeLists.txt Metrics<a class="headerlink" href="#cmakeliststxt-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="analyzerinfocpp-metrics">analyzerinfo.cpp Metrics<a class="headerlink" href="#analyzerinfocpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">92</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 7 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 5 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.16 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 7 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="analyzerinfoh-metrics">analyzerinfo.h Metrics<a class="headerlink" href="#analyzerinfoh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">14</td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 2.92 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="astutilscpp-metrics">astutils.cpp Metrics<a class="headerlink" href="#astutilscpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">99</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">1,437</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 115 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 47 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 6 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.06 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 115 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="astutilsh-metrics">astutils.h Metrics<a class="headerlink" href="#astutilsh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">158</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.83 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkcpp-metrics">check.cpp Metrics<a class="headerlink" href="#checkcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">24</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 3 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 3 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.56 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 3 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkh-metrics">check.h Metrics<a class="headerlink" href="#checkh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">15</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">80</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 6 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="yellow"> 0.53 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 6 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="check64bitcpp-metrics">check64bit.cpp Metrics<a class="headerlink" href="#check64bitcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">64</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 39 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 12 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.33 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="yellow"> 39 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="check64bith-metrics">check64bit.h Metrics<a class="headerlink" href="#check64bith-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">32</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.84 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkassertcpp-metrics">checkassert.cpp Metrics<a class="headerlink" href="#checkassertcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">73</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 25 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 16 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 5 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.37 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 25 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkasserth-metrics">checkassert.h Metrics<a class="headerlink" href="#checkasserth-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">32</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.8 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkautovariablescpp-metrics">checkautovariables.cpp Metrics<a class="headerlink" href="#checkautovariablescpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">34</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">438</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 50 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 20 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 4 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.11 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="yellow"> 50 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkautovariablesh-metrics">checkautovariables.h Metrics<a class="headerlink" href="#checkautovariablesh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">60</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="yellow"> 0.51 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkboolcpp-metrics">checkbool.cpp Metrics<a class="headerlink" href="#checkboolcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">24</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">279</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 22 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 12 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.14 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 22 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkboolh-metrics">checkbool.h Metrics<a class="headerlink" href="#checkboolh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">65</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="yellow"> 0.53 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkboostcpp-metrics">checkboost.cpp Metrics<a class="headerlink" href="#checkboostcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 9 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 6 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 4 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="yellow"> 0.55 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 9 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkboosth-metrics">checkboost.h Metrics<a class="headerlink" href="#checkboosth-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">27</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.94 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkbufferoverruncpp-metrics">checkbufferoverrun.cpp Metrics<a class="headerlink" href="#checkbufferoverruncpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">34</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">646</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 37 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 12 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 5 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="yellow"> 37 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkbufferoverrunh-metrics">checkbufferoverrun.h Metrics<a class="headerlink" href="#checkbufferoverrunh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">63</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.63 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkclasscpp-metrics">checkclass.cpp Metrics<a class="headerlink" href="#checkclasscpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">83</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">1,701</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 92 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 38 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 7 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.18 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 92 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkclassh-metrics">checkclass.h Metrics<a class="headerlink" href="#checkclassh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">162</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.6 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkconditioncpp-metrics">checkcondition.cpp Metrics<a class="headerlink" href="#checkconditioncpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">52</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">1,102</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 89 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 43 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 7 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 89 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkconditionh-metrics">checkcondition.h Metrics<a class="headerlink" href="#checkconditionh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">89</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.42 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkexceptionsafetycpp-metrics">checkexceptionsafety.cpp Metrics<a class="headerlink" href="#checkexceptionsafetycpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">170</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 18 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 12 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 4 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.38 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 18 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkexceptionsafetyh-metrics">checkexceptionsafety.h Metrics<a class="headerlink" href="#checkexceptionsafetyh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">12</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">55</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.56 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkfunctionscpp-metrics">checkfunctions.cpp Metrics<a class="headerlink" href="#checkfunctionscpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">16</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">257</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 44 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 12 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 5 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.21 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="yellow"> 44 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkfunctionsh-metrics">checkfunctions.h Metrics<a class="headerlink" href="#checkfunctionsh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">59</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.7 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkinternalcpp-metrics">checkinternal.cpp Metrics<a class="headerlink" href="#checkinternalcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkinternalh-metrics">checkinternal.h Metrics<a class="headerlink" href="#checkinternalh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">54</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.65 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkiocpp-metrics">checkio.cpp Metrics<a class="headerlink" href="#checkiocpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">41</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">1,479</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 413 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 37 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 12 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.06 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 413 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkioh-metrics">checkio.h Metrics<a class="headerlink" href="#checkioh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">98</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.29 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkleakautovarcpp-metrics">checkleakautovar.cpp Metrics<a class="headerlink" href="#checkleakautovarcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">21</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">597</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 155 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 41 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 7 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.17 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 155 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkleakautovarh-metrics">checkleakautovar.h Metrics<a class="headerlink" href="#checkleakautovarh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">11</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">83</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.58 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkmemoryleakcpp-metrics">checkmemoryleak.cpp Metrics<a class="headerlink" href="#checkmemoryleakcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">36</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">670</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 53 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 41 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 7 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.2 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 53 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkmemoryleakh-metrics">checkmemoryleak.h Metrics<a class="headerlink" href="#checkmemoryleakh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">25</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">151</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.88 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checknullpointercpp-metrics">checknullpointer.cpp Metrics<a class="headerlink" href="#checknullpointercpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">19</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">432</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 67 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 26 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 6 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.17 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 67 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checknullpointerh-metrics">checknullpointer.h Metrics<a class="headerlink" href="#checknullpointerh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">56</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 1.03 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkothercpp-metrics">checkother.cpp Metrics<a class="headerlink" href="#checkothercpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">113</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">1,961</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 86 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 27 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 7 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.14 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 86 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkotherh-metrics">checkother.h Metrics<a class="headerlink" href="#checkotherh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">215</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.28 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkpostfixoperatorcpp-metrics">checkpostfixoperator.cpp Metrics<a class="headerlink" href="#checkpostfixoperatorcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">28</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 15 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 6 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.76 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 15 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkpostfixoperatorh-metrics">checkpostfixoperator.h Metrics<a class="headerlink" href="#checkpostfixoperatorh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">27</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 1.03 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checksizeofcpp-metrics">checksizeof.cpp Metrics<a class="headerlink" href="#checksizeofcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">258</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 62 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 16 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 6 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.18 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 62 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checksizeofh-metrics">checksizeof.h Metrics<a class="headerlink" href="#checksizeofh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">62</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="yellow"> 0.52 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkstlcpp-metrics">checkstl.cpp Metrics<a class="headerlink" href="#checkstlcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">86</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">1,575</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 92 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 23 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 6 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.08 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 92 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkstlh-metrics">checkstl.h Metrics<a class="headerlink" href="#checkstlh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">135</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="yellow"> 0.51 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkstringcpp-metrics">checkstring.cpp Metrics<a class="headerlink" href="#checkstringcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">18</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">311</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 35 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 12 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 4 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.16 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="yellow"> 35 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkstringh-metrics">checkstring.h Metrics<a class="headerlink" href="#checkstringh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">57</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="yellow"> 0.54 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checktypecpp-metrics">checktype.cpp Metrics<a class="headerlink" href="#checktypecpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">13</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">259</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 32 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 13 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 4 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.2 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="yellow"> 32 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checktypeh-metrics">checktype.h Metrics<a class="headerlink" href="#checktypeh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">50</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.59 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkuninitvarcpp-metrics">checkuninitvar.cpp Metrics<a class="headerlink" href="#checkuninitvarcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">965</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 178 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 68 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 7 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.11 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 178 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkuninitvarh-metrics">checkuninitvar.h Metrics<a class="headerlink" href="#checkuninitvarh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">76</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 3 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="yellow"> 0.47 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 3 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkunusedfunctionscpp-metrics">checkunusedfunctions.cpp Metrics<a class="headerlink" href="#checkunusedfunctionscpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">11</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">271</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 79 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 22 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 6 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.19 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 79 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkunusedfunctionsh-metrics">checkunusedfunctions.h Metrics<a class="headerlink" href="#checkunusedfunctionsh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">55</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.71 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkunusedvarcpp-metrics">checkunusedvar.cpp Metrics<a class="headerlink" href="#checkunusedvarcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">36</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">890</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 213 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 28 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 9 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.16 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 213 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkunusedvarh-metrics">checkunusedvar.h Metrics<a class="headerlink" href="#checkunusedvarh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">44</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.65 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkvaargcpp-metrics">checkvaarg.cpp Metrics<a class="headerlink" href="#checkvaargcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">103</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 39 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 13 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 4 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.29 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="yellow"> 39 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="checkvaargh-metrics">checkvaarg.h Metrics<a class="headerlink" href="#checkvaargh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">36</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.61 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="configh-metrics">config.h Metrics<a class="headerlink" href="#configh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 3.0 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="cppcheckcpp-metrics">cppcheck.cpp Metrics<a class="headerlink" href="#cppcheckcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">29</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">638</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 112 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 11 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.1 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 112 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="cppcheckh-metrics">cppcheck.h Metrics<a class="headerlink" href="#cppcheckh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">46</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 2.77 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ctucpp-metrics">ctu.cpp Metrics<a class="headerlink" href="#ctucpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">24</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">406</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 36 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 15 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.07 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="yellow"> 36 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ctuh-metrics">ctu.h Metrics<a class="headerlink" href="#ctuh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">92</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.32 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="errorloggercpp-metrics">errorlogger.cpp Metrics<a class="headerlink" href="#errorloggercpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">32</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">482</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 23 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 12 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 23 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="errorloggerh-metrics">errorlogger.h Metrics<a class="headerlink" href="#errorloggerh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">16</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">173</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 10 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 10 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.8 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 10 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="exprenginecpp-metrics">exprengine.cpp Metrics<a class="headerlink" href="#exprenginecpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">63</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">1,032</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 47 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 17 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 6 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.04 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="yellow"> 47 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="exprengineh-metrics">exprengine.h Metrics<a class="headerlink" href="#exprengineh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">15</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">27</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">227</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 3 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.1 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 3 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="importprojectcpp-metrics">importproject.cpp Metrics<a class="headerlink" href="#importprojectcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">26</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">826</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 61 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 30 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 6 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.1 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 61 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="importprojecth-metrics">importproject.h Metrics<a class="headerlink" href="#importprojecth-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">110</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 3 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.28 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 3 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="librarycpp-metrics">library.cpp Metrics<a class="headerlink" href="#librarycpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">54</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">1,053</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 153 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 83 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 7 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.04 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 153 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="libraryh-metrics">library.h Metrics<a class="headerlink" href="#libraryh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">15</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">55</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">429</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 7 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 3 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.16 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 7 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="matchcompilerh-metrics">matchcompiler.h Metrics<a class="headerlink" href="#matchcompilerh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">24</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="yellow"> 0.47 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="mathlibcpp-metrics">mathlib.cpp Metrics<a class="headerlink" href="#mathlibcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">63</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">1,031</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 49 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 33 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 4 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.08 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="yellow"> 49 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="mathlibh-metrics">mathlib.h Metrics<a class="headerlink" href="#mathlibh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">88</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.58 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="pathcpp-metrics">path.cpp Metrics<a class="headerlink" href="#pathcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">89</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 10 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 5 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.19 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 10 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="pathh-metrics">path.h Metrics<a class="headerlink" href="#pathh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">23</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 5.0 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="pathmatchcpp-metrics">pathmatch.cpp Metrics<a class="headerlink" href="#pathmatchcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">36</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 13 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 9 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.66 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 13 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="pathmatchh-metrics">pathmatch.h Metrics<a class="headerlink" href="#pathmatchh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">14</td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 3.64 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="platformcpp-metrics">platform.cpp Metrics<a class="headerlink" href="#platformcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">175</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 19 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 4 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 4 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.13 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 19 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="platformh-metrics">platform.h Metrics<a class="headerlink" href="#platformh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">11</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">82</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 9 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="yellow"> 0.51 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 9 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="preprocessorcpp-metrics">preprocessor.cpp Metrics<a class="headerlink" href="#preprocessorcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">43</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">687</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 53 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 17 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 5 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.06 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 53 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="preprocessorh-metrics">preprocessor.h Metrics<a class="headerlink" href="#preprocessorh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">60</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 1.83 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="settingscpp-metrics">settings.cpp Metrics<a class="headerlink" href="#settingscpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">68</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 15 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 15 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.16 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 15 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="settingsh-metrics">settings.h Metrics<a class="headerlink" href="#settingsh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">131</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 4 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 1.16 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 4 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="standardsh-metrics">standards.h Metrics<a class="headerlink" href="#standardsh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">71</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 11 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 6 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="yellow"> 0.45 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 11 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="suppressionscpp-metrics">suppressions.cpp Metrics<a class="headerlink" href="#suppressionscpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">17</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">282</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 18 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 11 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 4 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.11 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 18 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="suppressionsh-metrics">suppressions.h Metrics<a class="headerlink" href="#suppressionsh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">69</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 5 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 5 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 1.14 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 5 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="symboldatabasecpp-metrics">symboldatabase.cpp Metrics<a class="headerlink" href="#symboldatabasecpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">116</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">3,992</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 170 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 43 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 10 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 170 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="symboldatabaseh-metrics">symboldatabase.h Metrics<a class="headerlink" href="#symboldatabaseh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">11</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">140</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">666</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 9 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 4 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="yellow"> 0.54 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 9 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="templatesimplifiercpp-metrics">templatesimplifier.cpp Metrics<a class="headerlink" href="#templatesimplifiercpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">67</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">2,557</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 271 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 47 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 9 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 271 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="templatesimplifierh-metrics">templatesimplifier.h Metrics<a class="headerlink" href="#templatesimplifierh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">153</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 7 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 1.23 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 7 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="timercpp-metrics">timer.cpp Metrics<a class="headerlink" href="#timercpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">42</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 5 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="yellow"> 3 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.42 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 5 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="timerh-metrics">timer.h Metrics<a class="headerlink" href="#timerh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">47</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="yellow"> 0.5 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="tokencpp-metrics">token.cpp Metrics<a class="headerlink" href="#tokencpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">89</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">1,520</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 52 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 33 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 7 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.06 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 52 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="tokenh-metrics">token.h Metrics<a class="headerlink" href="#tokenh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">142</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">557</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 12 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 4 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.59 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 12 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="tokenizecpp-metrics">tokenize.cpp Metrics<a class="headerlink" href="#tokenizecpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">186</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">7,484</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 333 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 69 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 9 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.13 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 333 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="tokenizeh-metrics">tokenize.h Metrics<a class="headerlink" href="#tokenizeh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">15</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">234</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 1.89 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="tokenlistcpp-metrics">tokenlist.cpp Metrics<a class="headerlink" href="#tokenlistcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">55</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">1,098</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 57 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 19 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 6 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.09 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 57 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="tokenlisth-metrics">tokenlist.h Metrics<a class="headerlink" href="#tokenlisth-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">57</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 1.49 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 1 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="utilsh-metrics">utils.h Metrics<a class="headerlink" href="#utilsh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">24</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 6 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="green"> 4 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="green"> 0.7 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 6 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="valueflowcpp-metrics">valueflow.cpp Metrics<a class="headerlink" href="#valueflowcpp-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">188</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">4,750</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="red"> 272 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 94 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="red"> 6 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.06 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="red"> 272 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="valueflowh-metrics">valueflow.h Metrics<a class="headerlink" href="#valueflowh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountDeclClass</td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left">CountDeclFunction</td>
+<td align="right">36</td>
+</tr>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">234</td>
+</tr>
+<tr>
+<td align="left">MaxCyclomaticStrict</td>
+<td align="right"><div title="yellow"> 18 </div></td>
+</tr>
+<tr>
+<td align="left">MaxEssential</td>
+<td align="right"><div title="red"> 17 </div></td>
+</tr>
+<tr>
+<td align="left">MaxNesting</td>
+<td align="right"><div title="green"> 2 </div></td>
+</tr>
+<tr>
+<td align="left">RatioCommentToCode</td>
+<td align="right"><div title="red"> 0.15 </div></td>
+</tr>
+<tr>
+<td align="left">badFix</td>
+<td align="right"><div title="green"> 18 </div></td>
+</tr>
+</tbody>
+</table>
+<h2 id="versionh-metrics">version.h Metrics<a class="headerlink" href="#versionh-metrics" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Metric</th>
+<th align="right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CountStmt</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table></div>
+                <footer>
+    <div class="footer-buttons">
+        <div class="previous"><a href="lib-metrics.html" title="lib Metrics"><span>Previous</span></a></div>
+        <div class="next"><a href="../oss-fuzz/oss-fuzz-metrics.html" title="oss-fuzz Metrics"><span>Next</span></a></div>
+    </div>
+    <div class="footer-note">
+        <p>
+<!--            Built with <a href="http://www.mkdocs.org">MkDocs</a> using-->
+<!--            <a href="https://github.com/daizutabi/mkdocs-ivory">Ivory theme</a>.-->
+            Built with MkDocs using Ivory theme.
+        </p>
+    </div>
+</footer>
+            </div>
+        </main>
+    </div>
+    <script>
+        var base_url = '.';
+    </script>
+    <script src="../../../js/theme.js"></script>
+    <script src="../../../search/main.js"></script>
+</body>
+
+</html>
