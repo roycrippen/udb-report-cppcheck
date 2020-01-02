@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Roy Crippen">
     <link rel="shortcut icon" href="../../../img/favicon.ico">
-    <title>File Metrics &mdash; UDB Metrics Reporting for cpp_check</title>
+    <title>File Metrics and Dependencies &mdash; UDB Metrics Reporting for cpp_check</title>
 <!--    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">-->
 <!--    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">-->
 <!--    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">-->
@@ -56,86 +56,74 @@
     <li class="toctree-l2 current"><button class="section nav-item">cppcheck</button>
 <ul class="subnav">
     <li class="toctree-l3"><a class="nav-item" href="../cppcheck-metrics.html">cppcheck Metrics</a></li>
-    <li class="toctree-l3"><a class="nav-item" href="../zzz-file-metrics.html">File Metrics</a></li>
     <li class="toctree-l3"><button class="section nav-item hide">addons</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../addons/addons-metrics.html">addons Metrics</a></li>
-    <li class="toctree-l4"><button class="section nav-item hide">doc</button>
-<ul class="subnav hide">
-    <li class="toctree-l5"><a class="nav-item" href="../addons/doc/doc-metrics.html">doc Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../addons/doc/zzz-file-metrics.html">File Metrics</a></li>
-</ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">test</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../addons/test/test-metrics.html">test Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../addons/test/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../addons/test/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
     <li class="toctree-l5"><button class="section nav-item hide">misra</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../addons/test/misra/misra-metrics.html">misra Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../addons/test/misra/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../addons/test/misra/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">path1</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../addons/test/path1/path1-metrics.html">path1 Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../addons/test/path1/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../addons/test/path1/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">y2038</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../addons/test/y2038/y2038-metrics.html">y2038 Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../addons/test/y2038/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../addons/test/y2038/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">cli</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../cli/cli-metrics.html">cli Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../cli/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../cli/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">cve-test-suite</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../cve-test-suite/cve-test-suite-metrics.html">cve-test-suite Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../cve-test-suite/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../cve-test-suite/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">democlient</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../democlient/democlient-metrics.html">democlient Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../democlient/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../democlient/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">externals</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../externals/externals-metrics.html">externals Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../externals/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../externals/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
     <li class="toctree-l4"><button class="section nav-item hide">simplecpp</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../externals/simplecpp/simplecpp-metrics.html">simplecpp Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../externals/simplecpp/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../externals/simplecpp/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">tinyxml</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../externals/tinyxml/tinyxml-metrics.html">tinyxml Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../externals/tinyxml/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../externals/tinyxml/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">gui</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../gui/gui-metrics.html">gui Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../gui/zzz-file-metrics.html">File Metrics</a></li>
-    <li class="toctree-l4"><button class="section nav-item hide">help</button>
-<ul class="subnav hide">
-    <li class="toctree-l5"><a class="nav-item" href="../gui/help/help-metrics.html">help Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../gui/help/zzz-file-metrics.html">File Metrics</a></li>
-</ul></li>
+    <li class="toctree-l4"><a class="nav-item" href="../gui/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
     <li class="toctree-l4"><button class="section nav-item hide">test</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../gui/test/test-metrics.html">test Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../gui/test/zzz-file-metrics.html">File Metrics</a></li>
     <li class="toctree-l5"><button class="section nav-item hide">benchmark</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../gui/test/benchmark/benchmark-metrics.html">benchmark Metrics</a></li>
     <li class="toctree-l6"><button class="section nav-item hide">simple</button>
 <ul class="subnav hide">
     <li class="toctree-l7"><a class="nav-item" href="../gui/test/benchmark/simple/simple-metrics.html">simple Metrics</a></li>
-    <li class="toctree-l7"><a class="nav-item" href="../gui/test/benchmark/simple/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../gui/test/benchmark/simple/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">data</button>
@@ -144,65 +132,65 @@
     <li class="toctree-l6"><button class="section nav-item hide">benchmark</button>
 <ul class="subnav hide">
     <li class="toctree-l7"><a class="nav-item" href="../gui/test/data/benchmark/benchmark-metrics.html">benchmark Metrics</a></li>
-    <li class="toctree-l7"><a class="nav-item" href="../gui/test/data/benchmark/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../gui/test/data/benchmark/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l6"><button class="section nav-item hide">files</button>
 <ul class="subnav hide">
     <li class="toctree-l7"><a class="nav-item" href="../gui/test/data/files/files-metrics.html">files Metrics</a></li>
-    <li class="toctree-l7"><a class="nav-item" href="../gui/test/data/files/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../gui/test/data/files/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
     <li class="toctree-l7"><button class="section nav-item hide">dir1</button>
 <ul class="subnav hide">
     <li class="toctree-l8"><a class="nav-item" href="../gui/test/data/files/dir1/dir1-metrics.html">dir1 Metrics</a></li>
-    <li class="toctree-l8"><a class="nav-item" href="../gui/test/data/files/dir1/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l8"><a class="nav-item" href="../gui/test/data/files/dir1/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
     <li class="toctree-l8"><button class="section nav-item hide">dir11</button>
 <ul class="subnav hide">
     <li class="toctree-l9"><a class="nav-item" href="../gui/test/data/files/dir1/dir11/dir11-metrics.html">dir11 Metrics</a></li>
-    <li class="toctree-l9"><a class="nav-item" href="../gui/test/data/files/dir1/dir11/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l9"><a class="nav-item" href="../gui/test/data/files/dir1/dir11/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l7"><button class="section nav-item hide">dir2</button>
 <ul class="subnav hide">
     <li class="toctree-l8"><a class="nav-item" href="../gui/test/data/files/dir2/dir2-metrics.html">dir2 Metrics</a></li>
-    <li class="toctree-l8"><a class="nav-item" href="../gui/test/data/files/dir2/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l8"><a class="nav-item" href="../gui/test/data/files/dir2/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">filelist</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../gui/test/filelist/filelist-metrics.html">filelist Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../gui/test/filelist/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../gui/test/filelist/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">projectfile</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../gui/test/projectfile/projectfile-metrics.html">projectfile Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../gui/test/projectfile/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../gui/test/projectfile/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">translationhandler</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../gui/test/translationhandler/translationhandler-metrics.html">translationhandler Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../gui/test/translationhandler/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../gui/test/translationhandler/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">xmlreportv2</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../gui/test/xmlreportv2/xmlreportv2-metrics.html">xmlreportv2 Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../gui/test/xmlreportv2/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../gui/test/xmlreportv2/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">htmlreport</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../htmlreport/htmlreport-metrics.html">htmlreport Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../htmlreport/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../htmlreport/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">lib</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../lib/lib-metrics.html">lib Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../lib/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../lib/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">oss-fuzz</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../oss-fuzz/oss-fuzz-metrics.html">oss-fuzz Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../oss-fuzz/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../oss-fuzz/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">samples</button>
 <ul class="subnav hide">
@@ -210,145 +198,143 @@
     <li class="toctree-l4"><button class="section nav-item hide">AssignmentAddressToInteger</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../samples/AssignmentAddressToInteger/AssignmentAddressToInteger-metrics.html">AssignmentAddressToInteger Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../samples/AssignmentAddressToInteger/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/AssignmentAddressToInteger/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">arrayIndexOutOfBounds</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../samples/arrayIndexOutOfBounds/arrayIndexOutOfBounds-metrics.html">arrayIndexOutOfBounds Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../samples/arrayIndexOutOfBounds/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/arrayIndexOutOfBounds/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">autoVariables</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../samples/autoVariables/autoVariables-metrics.html">autoVariables Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../samples/autoVariables/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/autoVariables/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">bufferAccessOutOfBounds</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../samples/bufferAccessOutOfBounds/bufferAccessOutOfBounds-metrics.html">bufferAccessOutOfBounds Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../samples/bufferAccessOutOfBounds/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/bufferAccessOutOfBounds/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">erase</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../samples/erase/erase-metrics.html">erase Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../samples/erase/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/erase/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">memleak</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../samples/memleak/memleak-metrics.html">memleak Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../samples/memleak/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/memleak/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">outOfBounds</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../samples/outOfBounds/outOfBounds-metrics.html">outOfBounds Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../samples/outOfBounds/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/outOfBounds/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">resourceLeak</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../samples/resourceLeak/resourceLeak-metrics.html">resourceLeak Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../samples/resourceLeak/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/resourceLeak/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">syntaxError</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../samples/syntaxError/syntaxError-metrics.html">syntaxError Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../samples/syntaxError/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/syntaxError/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l3 current"><button class="section nav-item">test</button>
 <ul class="subnav">
     <li class="toctree-l4"><a class="nav-item" href="test-metrics.html">test Metrics</a></li>
-    <li class="toctree-l4 current"><a class="nav-item current" href="zzz-file-metrics.html">File Metrics</a>
+    <li class="toctree-l4 current"><a class="nav-item current" href="zzz-file-metrics.html">File Metrics and Dependencies</a>
 <ul class="subnav">
-<li class="toctree-l5"><a class="nav-item toc" href="#cmakeliststxt-metrics">CMakeLists.txt Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#optionscpp-metrics">options.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#optionsh-metrics">options.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#redirecth-metrics">redirect.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testcxx-metrics">test.cxx Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#test64bitcpp-metrics">test64bit.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testassertcpp-metrics">testassert.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testastutilscpp-metrics">testastutils.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testautovariablescpp-metrics">testautovariables.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testboolcpp-metrics">testbool.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testboostcpp-metrics">testboost.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testbufferoverruncpp-metrics">testbufferoverrun.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testcharvarcpp-metrics">testcharvar.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testclasscpp-metrics">testclass.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testcmdlineparsercpp-metrics">testcmdlineparser.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testconditioncpp-metrics">testcondition.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testconstructorscpp-metrics">testconstructors.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testcppcheckcpp-metrics">testcppcheck.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testerrorloggercpp-metrics">testerrorlogger.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testexceptionsafetycpp-metrics">testexceptionsafety.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testexprenginecpp-metrics">testexprengine.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testfilelistercpp-metrics">testfilelister.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testfunctionscpp-metrics">testfunctions.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testgarbagecpp-metrics">testgarbage.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testimportprojectcpp-metrics">testimportproject.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testincompletestatementcpp-metrics">testincompletestatement.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testinternalcpp-metrics">testinternal.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testiocpp-metrics">testio.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testleakautovarcpp-metrics">testleakautovar.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testlibrarycpp-metrics">testlibrary.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testmathlibcpp-metrics">testmathlib.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testmemleakcpp-metrics">testmemleak.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testnullpointercpp-metrics">testnullpointer.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testoptionscpp-metrics">testoptions.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testothercpp-metrics">testother.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testpathcpp-metrics">testpath.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testpathmatchcpp-metrics">testpathmatch.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testplatformcpp-metrics">testplatform.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testpostfixoperatorcpp-metrics">testpostfixoperator.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testpreprocessorcpp-metrics">testpreprocessor.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testrunnercpp-metrics">testrunner.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testsamplescpp-metrics">testsamples.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testsimplifytemplatecpp-metrics">testsimplifytemplate.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testsimplifytokenscpp-metrics">testsimplifytokens.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testsimplifytypedefcpp-metrics">testsimplifytypedef.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testsimplifyusingcpp-metrics">testsimplifyusing.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testsizeofcpp-metrics">testsizeof.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#teststlcpp-metrics">teststl.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#teststringcpp-metrics">teststring.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testsuitecpp-metrics">testsuite.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testsuiteh-metrics">testsuite.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testsuppressionscpp-metrics">testsuppressions.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testsymboldatabasecpp-metrics">testsymboldatabase.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testthreadexecutorcpp-metrics">testthreadexecutor.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testtimercpp-metrics">testtimer.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testtokencpp-metrics">testtoken.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testtokenizecpp-metrics">testtokenize.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testtokenlistcpp-metrics">testtokenlist.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testtypecpp-metrics">testtype.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testuninitvarcpp-metrics">testuninitvar.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testunusedfunctionscpp-metrics">testunusedfunctions.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testunusedprivfunccpp-metrics">testunusedprivfunc.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testunusedvarcpp-metrics">testunusedvar.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testutilsh-metrics">testutils.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testvaargcpp-metrics">testvaarg.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testvalueflowcpp-metrics">testvalueflow.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#testvaridcpp-metrics">testvarid.cpp Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#optionscpp">options.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#optionsh">options.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#redirecth">redirect.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testcxx">test.cxx</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#test64bitcpp">test64bit.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testassertcpp">testassert.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testastutilscpp">testastutils.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testautovariablescpp">testautovariables.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testboolcpp">testbool.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testboostcpp">testboost.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testbufferoverruncpp">testbufferoverrun.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testcharvarcpp">testcharvar.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testclasscpp">testclass.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testcmdlineparsercpp">testcmdlineparser.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testconditioncpp">testcondition.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testconstructorscpp">testconstructors.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testcppcheckcpp">testcppcheck.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testerrorloggercpp">testerrorlogger.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testexceptionsafetycpp">testexceptionsafety.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testexprenginecpp">testexprengine.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testfilelistercpp">testfilelister.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testfunctionscpp">testfunctions.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testgarbagecpp">testgarbage.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testimportprojectcpp">testimportproject.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testincompletestatementcpp">testincompletestatement.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testinternalcpp">testinternal.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testiocpp">testio.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testleakautovarcpp">testleakautovar.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testlibrarycpp">testlibrary.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testmathlibcpp">testmathlib.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testmemleakcpp">testmemleak.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testnullpointercpp">testnullpointer.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testoptionscpp">testoptions.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testothercpp">testother.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testpathcpp">testpath.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testpathmatchcpp">testpathmatch.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testplatformcpp">testplatform.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testpostfixoperatorcpp">testpostfixoperator.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testpreprocessorcpp">testpreprocessor.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testrunnercpp">testrunner.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testsamplescpp">testsamples.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testsimplifytemplatecpp">testsimplifytemplate.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testsimplifytokenscpp">testsimplifytokens.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testsimplifytypedefcpp">testsimplifytypedef.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testsimplifyusingcpp">testsimplifyusing.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testsizeofcpp">testsizeof.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#teststlcpp">teststl.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#teststringcpp">teststring.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testsuitecpp">testsuite.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testsuiteh">testsuite.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testsuppressionscpp">testsuppressions.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testsymboldatabasecpp">testsymboldatabase.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testthreadexecutorcpp">testthreadexecutor.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testtimercpp">testtimer.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testtokencpp">testtoken.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testtokenizecpp">testtokenize.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testtokenlistcpp">testtokenlist.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testtypecpp">testtype.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testuninitvarcpp">testuninitvar.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testunusedfunctionscpp">testunusedfunctions.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testunusedprivfunccpp">testunusedprivfunc.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testunusedvarcpp">testunusedvar.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testutilsh">testutils.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testvaargcpp">testvaarg.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testvalueflowcpp">testvalueflow.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#testvaridcpp">testvarid.cpp</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">cfg</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="cfg/cfg-metrics.html">cfg Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="cfg/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="cfg/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">cli</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="cli/cli-metrics.html">cli Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="cli/zzz-file-metrics.html">File Metrics</a></li>
     <li class="toctree-l5"><button class="section nav-item hide">helloworld</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="cli/helloworld/helloworld-metrics.html">helloworld Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="cli/helloworld/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="cli/helloworld/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">proj-inline-suppress</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="cli/proj-inline-suppress/proj-inline-suppress-metrics.html">proj-inline-suppress Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="cli/proj-inline-suppress/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="cli/proj-inline-suppress/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">proj-suppress-syntaxError</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="cli/proj-suppress-syntaxError/proj-suppress-syntaxError-metrics.html">proj-suppress-syntaxError Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="cli/proj-suppress-syntaxError/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="cli/proj-suppress-syntaxError/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">proj2</button>
 <ul class="subnav hide">
@@ -356,57 +342,50 @@
     <li class="toctree-l6"><button class="section nav-item hide">a</button>
 <ul class="subnav hide">
     <li class="toctree-l7"><a class="nav-item" href="cli/proj2/a/a-metrics.html">a Metrics</a></li>
-    <li class="toctree-l7"><a class="nav-item" href="cli/proj2/a/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="cli/proj2/a/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l6"><button class="section nav-item hide">b</button>
 <ul class="subnav hide">
     <li class="toctree-l7"><a class="nav-item" href="cli/proj2/b/b-metrics.html">b Metrics</a></li>
-    <li class="toctree-l7"><a class="nav-item" href="cli/proj2/b/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="cli/proj2/b/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">synthetic</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="synthetic/synthetic-metrics.html">synthetic Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="synthetic/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="synthetic/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">testsuites</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="testsuites/testsuites-metrics.html">testsuites Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="testsuites/zzz-file-metrics.html">File Metrics</a></li>
     <li class="toctree-l5"><button class="section nav-item hide">clang</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="testsuites/clang/clang-metrics.html">clang Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="testsuites/clang/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="testsuites/clang/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">duma</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="testsuites/duma/duma-metrics.html">duma Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="testsuites/duma/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="testsuites/duma/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">tools</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../tools/tools-metrics.html">tools Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../tools/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../tools/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
     <li class="toctree-l4"><button class="section nav-item hide">triage</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../tools/triage/triage-metrics.html">triage Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../tools/triage/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../tools/triage/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
-</ul></li>
-    <li class="toctree-l3"><button class="section nav-item hide">win_installer</button>
-<ul class="subnav hide">
-    <li class="toctree-l4"><a class="nav-item" href="../win_installer/win_installer-metrics.html">win_installer Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../win_installer/zzz-file-metrics.html">File Metrics</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
                     <li class="toctree-l1"><button class="section nav-item">Reports</button>
 <ul class="subnav">
     <li class="toctree-l2"><a class="nav-item" href="../../../Reports/circular_file_refs.html">Direct Circular File References</a></li>
-    <li class="toctree-l2"><a class="nav-item" href="../../../Reports/file_dependencies.html">File Dependencies</a></li>
     <li class="toctree-l2"><a class="nav-item" href="../../../Reports/file_list_indented_sloc.html">File List Indented</a></li>
     <li class="toctree-l2"><a class="nav-item" href="../../../Reports/red_metrics.html">Red Metrics</a></li>
 </ul></li>
@@ -429,23 +408,9 @@
     <li>Metrics &raquo; </li><li>cppcheck &raquo; </li><li>test</li>
 </ul>
 </nav>
-                <div id="content"><h1 id="file-metrics">File Metrics<a class="headerlink" href="#file-metrics" title="Permanent link">#</a></h1>
-<h2 id="cmakeliststxt-metrics">CMakeLists.txt Metrics<a class="headerlink" href="#cmakeliststxt-metrics" title="Permanent link">#</a></h2>
-<table>
-<thead>
-<tr>
-<th align="left">Metric</th>
-<th align="right">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">CountStmt</td>
-<td align="right">0</td>
-</tr>
-</tbody>
-</table>
-<h2 id="optionscpp-metrics">options.cpp Metrics<a class="headerlink" href="#optionscpp-metrics" title="Permanent link">#</a></h2>
+                <div id="content"><h1 id="file-metrics-and-dependencies">File Metrics and Dependencies<a class="headerlink" href="#file-metrics-and-dependencies" title="Permanent link">#</a></h1>
+<h2 id="optionscpp">options.cpp<a class="headerlink" href="#optionscpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/options.cpp</p>
 <table>
 <thead>
 <tr>
@@ -484,7 +449,47 @@
 </tr>
 </tbody>
 </table>
-<h2 id="optionsh-metrics">options.h Metrics<a class="headerlink" href="#optionsh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#optionsh">cppcheck/test/options.h</a></td>
+<td align="right">16</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testoptionscpp">cppcheck/test/testoptions.cpp</a></td>
+<td align="right">23</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testrunnercpp">cppcheck/test/testrunner.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">2</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="optionsh">options.h<a class="headerlink" href="#optionsh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/options.h</p>
 <table>
 <thead>
 <tr>
@@ -507,7 +512,40 @@
 </tr>
 </tbody>
 </table>
-<h2 id="redirecth-metrics">redirect.h Metrics<a class="headerlink" href="#redirecth-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#optionscpp">cppcheck/test/options.cpp</a></td>
+<td align="right">16</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testoptionscpp">cppcheck/test/testoptions.cpp</a></td>
+<td align="right">12</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testrunnercpp">cppcheck/test/testrunner.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">2</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="redirecth">redirect.h<a class="headerlink" href="#redirecth" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/redirect.h</p>
 <table>
 <thead>
 <tr>
@@ -546,7 +584,47 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testcxx-metrics">test.cxx Metrics<a class="headerlink" href="#testcxx-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">2</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testcmdlineparsercpp">cppcheck/test/testcmdlineparser.cpp</a></td>
+<td align="right">377</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsamplescpp">cppcheck/test/testsamples.cpp</a></td>
+<td align="right">27</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">5</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testcxx">test.cxx<a class="headerlink" href="#testcxx" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/test.cxx</p>
 <table>
 <thead>
 <tr>
@@ -585,7 +663,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="test64bitcpp-metrics">test64bit.cpp Metrics<a class="headerlink" href="#test64bitcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<h2 id="test64bitcpp">test64bit.cpp<a class="headerlink" href="#test64bitcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/test64bit.cpp</p>
 <table>
 <thead>
 <tr>
@@ -628,7 +708,56 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testassertcpp-metrics">testassert.cpp Metrics<a class="headerlink" href="#testassertcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#check64bitcpp">cppcheck/lib/check64bit.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#check64bith">cppcheck/lib/check64bit.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">60</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">41</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testassertcpp">testassert.cpp<a class="headerlink" href="#testassertcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testassert.cpp</p>
 <table>
 <thead>
 <tr>
@@ -671,7 +800,52 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testastutilscpp-metrics">testastutils.cpp Metrics<a class="headerlink" href="#testastutilscpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkasserth">cppcheck/lib/checkassert.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">44</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">30</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testastutilscpp">testastutils.cpp<a class="headerlink" href="#testastutilscpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testastutils.cpp</p>
 <table>
 <thead>
 <tr>
@@ -714,7 +888,68 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testautovariablescpp-metrics">testautovariables.cpp Metrics<a class="headerlink" href="#testautovariablescpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#astutilscpp">cppcheck/lib/astutils.cpp</a></td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#astutilsh">cppcheck/lib/astutils.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenh">cppcheck/lib/token.h</a></td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">18</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">16</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenlisth">cppcheck/lib/tokenlist.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">72</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">80</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testautovariablescpp">testautovariables.cpp<a class="headerlink" href="#testautovariablescpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testautovariables.cpp</p>
 <table>
 <thead>
 <tr>
@@ -757,7 +992,64 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testboolcpp-metrics">testbool.cpp Metrics<a class="headerlink" href="#testboolcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkautovariablesh">cppcheck/lib/checkautovariables.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#librarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">565</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">384</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testboolcpp">testbool.cpp<a class="headerlink" href="#testboolcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testbool.cpp</p>
 <table>
 <thead>
 <tr>
@@ -800,7 +1092,52 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testboostcpp-metrics">testboost.cpp Metrics<a class="headerlink" href="#testboostcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkboolh">cppcheck/lib/checkbool.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">350</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">222</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testboostcpp">testboost.cpp<a class="headerlink" href="#testboostcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testboost.cpp</p>
 <table>
 <thead>
 <tr>
@@ -843,7 +1180,52 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testbufferoverruncpp-metrics">testbufferoverrun.cpp Metrics<a class="headerlink" href="#testbufferoverruncpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkboosth">cppcheck/lib/checkboost.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">15</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">11</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testbufferoverruncpp">testbufferoverrun.cpp<a class="headerlink" href="#testbufferoverruncpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testbufferoverrun.cpp</p>
 <table>
 <thead>
 <tr>
@@ -886,7 +1268,92 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testcharvarcpp-metrics">testcharvar.cpp Metrics<a class="headerlink" href="#testcharvarcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../externals/tinyxml/zzz-file-metrics.html#tinyxml2cpp">cppcheck/externals/tinyxml/tinyxml2.cpp</a></td>
+<td align="right">15</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/tinyxml/zzz-file-metrics.html#tinyxml2h">cppcheck/externals/tinyxml/tinyxml2.h</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkh">cppcheck/lib/check.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkbufferoverruncpp">cppcheck/lib/checkbufferoverrun.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkbufferoverrunh">cppcheck/lib/checkbufferoverrun.h</a></td>
+<td align="right">12</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#ctucpp">cppcheck/lib/ctu.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#ctuh">cppcheck/lib/ctu.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#librarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformh">cppcheck/lib/platform.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">18</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenh">cppcheck/lib/token.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">916</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">651</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testcharvarcpp">testcharvar.cpp<a class="headerlink" href="#testcharvarcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testcharvar.cpp</p>
 <table>
 <thead>
 <tr>
@@ -929,7 +1396,64 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testclasscpp-metrics">testclass.cpp Metrics<a class="headerlink" href="#testclasscpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkothercpp">cppcheck/lib/checkother.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkotherh">cppcheck/lib/checkother.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformcpp">cppcheck/lib/platform.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformh">cppcheck/lib/platform.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">45</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">29</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testclasscpp">testclass.cpp<a class="headerlink" href="#testclasscpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testclass.cpp</p>
 <table>
 <thead>
 <tr>
@@ -972,7 +1496,72 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testcmdlineparsercpp-metrics">testcmdlineparser.cpp Metrics<a class="headerlink" href="#testcmdlineparsercpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../externals/tinyxml/zzz-file-metrics.html#tinyxml2cpp">cppcheck/externals/tinyxml/tinyxml2.cpp</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/tinyxml/zzz-file-metrics.html#tinyxml2h">cppcheck/externals/tinyxml/tinyxml2.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkclasscpp">cppcheck/lib/checkclass.cpp</a></td>
+<td align="right">36</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkclassh">cppcheck/lib/checkclass.h</a></td>
+<td align="right">19</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#librarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">21</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">24</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">68</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">19</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">1404</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">928</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testcmdlineparsercpp">testcmdlineparser.cpp<a class="headerlink" href="#testcmdlineparsercpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testcmdlineparser.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1015,7 +1604,76 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testconditioncpp-metrics">testcondition.cpp Metrics<a class="headerlink" href="#testconditioncpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../cli/zzz-file-metrics.html#cmdlineparsercpp">cppcheck/cli/cmdlineparser.cpp</a></td>
+<td align="right">113</td>
+</tr>
+<tr>
+<td align="left"><a href="../cli/zzz-file-metrics.html#cmdlineparserh">cppcheck/cli/cmdlineparser.h</a></td>
+<td align="right">29</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformcpp">cppcheck/lib/platform.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformh">cppcheck/lib/platform.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">14</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">164</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#standardsh">cppcheck/lib/standards.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#suppressionscpp">cppcheck/lib/suppressions.cpp</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#suppressionsh">cppcheck/lib/suppressions.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#timerh">cppcheck/lib/timer.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#redirecth">cppcheck/test/redirect.h</a></td>
+<td align="right">377</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">311</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">402</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testconditioncpp">testcondition.cpp<a class="headerlink" href="#testconditioncpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testcondition.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1058,7 +1716,76 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testconstructorscpp-metrics">testconstructors.cpp Metrics<a class="headerlink" href="#testconstructorscpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../externals/simplecpp/zzz-file-metrics.html#simplecppcpp">cppcheck/externals/simplecpp/simplecpp.cpp</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/simplecpp/zzz-file-metrics.html#simplecpph">cppcheck/externals/simplecpp/simplecpp.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/tinyxml/zzz-file-metrics.html#tinyxml2cpp">cppcheck/externals/tinyxml/tinyxml2.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/tinyxml/zzz-file-metrics.html#tinyxml2h">cppcheck/externals/tinyxml/tinyxml2.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkconditionh">cppcheck/lib/checkcondition.h</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#librarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">1004</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">589</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testconstructorscpp">testconstructors.cpp<a class="headerlink" href="#testconstructorscpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testconstructors.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1101,7 +1828,60 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testcppcheckcpp-metrics">testcppcheck.cpp Metrics<a class="headerlink" href="#testcppcheckcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkclasscpp">cppcheck/lib/checkclass.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkclassh">cppcheck/lib/checkclass.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#standardsh">cppcheck/lib/standards.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">694</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">547</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testcppcheckcpp">testcppcheck.cpp<a class="headerlink" href="#testcppcheckcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testcppcheck.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1144,7 +1924,52 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testerrorloggercpp-metrics">testerrorlogger.cpp Metrics<a class="headerlink" href="#testerrorloggercpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkcpp">cppcheck/lib/check.cpp</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkh">cppcheck/lib/check.h</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#cppcheckcpp">cppcheck/lib/cppcheck.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#cppcheckh">cppcheck/lib/cppcheck.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">12</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">17</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testerrorloggercpp">testerrorlogger.cpp<a class="headerlink" href="#testerrorloggercpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testerrorlogger.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1187,7 +2012,52 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testexceptionsafetycpp-metrics">testexceptionsafety.cpp Metrics<a class="headerlink" href="#testexceptionsafetycpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">18</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#cppcheckcpp">cppcheck/lib/cppcheck.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#cppcheckh">cppcheck/lib/cppcheck.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggercpp">cppcheck/lib/errorlogger.cpp</a></td>
+<td align="right">69</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">92</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#suppressionsh">cppcheck/lib/suppressions.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">111</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">119</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testexceptionsafetycpp">testexceptionsafety.cpp<a class="headerlink" href="#testexceptionsafetycpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testexceptionsafety.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1230,7 +2100,52 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testexprenginecpp-metrics">testexprengine.cpp Metrics<a class="headerlink" href="#testexprenginecpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkexceptionsafetyh">cppcheck/lib/checkexceptionsafety.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">87</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">71</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testexprenginecpp">testexprengine.cpp<a class="headerlink" href="#testexprenginecpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testexprengine.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1273,7 +2188,76 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testfilelistercpp-metrics">testfilelister.cpp Metrics<a class="headerlink" href="#testfilelistercpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#exprenginecpp">cppcheck/lib/exprengine.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#exprengineh">cppcheck/lib/exprengine.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformcpp">cppcheck/lib/platform.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#symboldatabaseh">cppcheck/lib/symboldatabase.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenh">cppcheck/lib/token.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">71</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">108</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testfilelistercpp">testfilelister.cpp<a class="headerlink" href="#testfilelistercpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testfilelister.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1316,7 +2300,48 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testfunctionscpp-metrics">testfunctions.cpp Metrics<a class="headerlink" href="#testfunctionscpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../cli/zzz-file-metrics.html#filelistercpp">cppcheck/cli/filelister.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../cli/zzz-file-metrics.html#filelisterh">cppcheck/cli/filelister.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#pathmatchcpp">cppcheck/lib/pathmatch.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#pathmatchh">cppcheck/lib/pathmatch.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">14</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testfunctionscpp">testfunctions.cpp<a class="headerlink" href="#testfunctionscpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testfunctions.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1359,7 +2384,72 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testgarbagecpp-metrics">testgarbage.cpp Metrics<a class="headerlink" href="#testgarbagecpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../externals/tinyxml/zzz-file-metrics.html#tinyxml2cpp">cppcheck/externals/tinyxml/tinyxml2.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/tinyxml/zzz-file-metrics.html#tinyxml2h">cppcheck/externals/tinyxml/tinyxml2.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkfunctionsh">cppcheck/lib/checkfunctions.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#librarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">16</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#standardsh">cppcheck/lib/standards.h</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">292</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">188</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testgarbagecpp">testgarbage.cpp<a class="headerlink" href="#testgarbagecpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testgarbage.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1402,7 +2492,72 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testimportprojectcpp-metrics">testimportproject.cpp Metrics<a class="headerlink" href="#testimportprojectcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkcpp">cppcheck/lib/check.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkh">cppcheck/lib/check.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">483</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#mathlibh">cppcheck/lib/mathlib.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenh">cppcheck/lib/token.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">22</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">689</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">662</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testimportprojectcpp">testimportproject.cpp<a class="headerlink" href="#testimportprojectcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testimportproject.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1445,7 +2600,48 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testincompletestatementcpp-metrics">testincompletestatement.cpp Metrics<a class="headerlink" href="#testincompletestatementcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#importprojectcpp">cppcheck/lib/importproject.cpp</a></td>
+<td align="right">16</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#importprojecth">cppcheck/lib/importproject.h</a></td>
+<td align="right">41</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">37</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">50</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testincompletestatementcpp">testincompletestatement.cpp<a class="headerlink" href="#testincompletestatementcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testincompletestatement.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1488,7 +2684,64 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testinternalcpp-metrics">testinternal.cpp Metrics<a class="headerlink" href="#testinternalcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../externals/simplecpp/zzz-file-metrics.html#simplecppcpp">cppcheck/externals/simplecpp/simplecpp.cpp</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/simplecpp/zzz-file-metrics.html#simplecpph">cppcheck/externals/simplecpp/simplecpp.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkothercpp">cppcheck/lib/checkother.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkotherh">cppcheck/lib/checkother.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">118</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">100</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testinternalcpp">testinternal.cpp<a class="headerlink" href="#testinternalcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testinternal.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1503,7 +2756,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testiocpp-metrics">testio.cpp Metrics<a class="headerlink" href="#testiocpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<h2 id="testiocpp">testio.cpp<a class="headerlink" href="#testiocpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testio.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1546,7 +2801,72 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testleakautovarcpp-metrics">testleakautovar.cpp Metrics<a class="headerlink" href="#testleakautovarcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkiocpp">cppcheck/lib/checkio.cpp</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkioh">cppcheck/lib/checkio.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#librarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformcpp">cppcheck/lib/platform.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformh">cppcheck/lib/platform.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">639</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">345</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testleakautovarcpp">testleakautovar.cpp<a class="headerlink" href="#testleakautovarcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testleakautovar.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1589,7 +2909,80 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testlibrarycpp-metrics">testlibrary.cpp Metrics<a class="headerlink" href="#testlibrarycpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../externals/simplecpp/zzz-file-metrics.html#simplecppcpp">cppcheck/externals/simplecpp/simplecpp.cpp</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/simplecpp/zzz-file-metrics.html#simplecpph">cppcheck/externals/simplecpp/simplecpp.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/tinyxml/zzz-file-metrics.html#tinyxml2cpp">cppcheck/externals/tinyxml/tinyxml2.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/tinyxml/zzz-file-metrics.html#tinyxml2h">cppcheck/externals/tinyxml/tinyxml2.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkleakautovarh">cppcheck/lib/checkleakautovar.h</a></td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#librarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">13</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">16</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">520</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">403</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testlibrarycpp">testlibrary.cpp<a class="headerlink" href="#testlibrarycpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testlibrary.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1632,7 +3025,88 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testmathlibcpp-metrics">testmathlib.cpp Metrics<a class="headerlink" href="#testmathlibcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../externals/tinyxml/zzz-file-metrics.html#tinyxml2cpp">cppcheck/externals/tinyxml/tinyxml2.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/tinyxml/zzz-file-metrics.html#tinyxml2h">cppcheck/externals/tinyxml/tinyxml2.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#librarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="right">146</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">211</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#standardsh">cppcheck/lib/standards.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="right">15</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenh">cppcheck/lib/token.h</a></td>
+<td align="right">24</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">12</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenlistcpp">cppcheck/lib/tokenlist.cpp</a></td>
+<td align="right">53</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenlisth">cppcheck/lib/tokenlist.h</a></td>
+<td align="right">160</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">269</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">295</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testmathlibcpp">testmathlib.cpp<a class="headerlink" href="#testmathlibcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testmathlib.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1675,7 +3149,44 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testmemleakcpp-metrics">testmemleak.cpp Metrics<a class="headerlink" href="#testmemleakcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">28</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#mathlibcpp">cppcheck/lib/mathlib.cpp</a></td>
+<td align="right">852</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#mathlibh">cppcheck/lib/mathlib.h</a></td>
+<td align="right">11</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">882</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">902</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testmemleakcpp">testmemleak.cpp<a class="headerlink" href="#testmemleakcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testmemleak.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1718,7 +3229,92 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testnullpointercpp-metrics">testnullpointer.cpp Metrics<a class="headerlink" href="#testnullpointercpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../externals/simplecpp/zzz-file-metrics.html#simplecpph">cppcheck/externals/simplecpp/simplecpp.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkmemoryleakcpp">cppcheck/lib/checkmemoryleak.cpp</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkmemoryleakh">cppcheck/lib/checkmemoryleak.h</a></td>
+<td align="right">13</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#librarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="right">16</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">16</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#preprocessorh">cppcheck/lib/preprocessor.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">27</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#standardsh">cppcheck/lib/standards.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#symboldatabaseh">cppcheck/lib/symboldatabase.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenh">cppcheck/lib/token.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenlisth">cppcheck/lib/tokenlist.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">446</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">352</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testnullpointercpp">testnullpointer.cpp<a class="headerlink" href="#testnullpointercpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testnullpointer.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1761,7 +3357,100 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testoptionscpp-metrics">testoptions.cpp Metrics<a class="headerlink" href="#testoptionscpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../externals/simplecpp/zzz-file-metrics.html#simplecppcpp">cppcheck/externals/simplecpp/simplecpp.cpp</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/simplecpp/zzz-file-metrics.html#simplecpph">cppcheck/externals/simplecpp/simplecpp.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/tinyxml/zzz-file-metrics.html#tinyxml2h">cppcheck/externals/tinyxml/tinyxml2.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkh">cppcheck/lib/check.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checknullpointercpp">cppcheck/lib/checknullpointer.cpp</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checknullpointerh">cppcheck/lib/checknullpointer.h</a></td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkuninitvarh">cppcheck/lib/checkuninitvar.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#ctucpp">cppcheck/lib/ctu.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#ctuh">cppcheck/lib/ctu.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#librarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">24</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenh">cppcheck/lib/token.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">13</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">726</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">469</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testoptionscpp">testoptions.cpp<a class="headerlink" href="#testoptionscpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testoptions.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1804,7 +3493,40 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testothercpp-metrics">testother.cpp Metrics<a class="headerlink" href="#testothercpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#optionscpp">cppcheck/test/options.cpp</a></td>
+<td align="right">23</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#optionsh">cppcheck/test/options.h</a></td>
+<td align="right">12</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">24</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">37</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testothercpp">testother.cpp<a class="headerlink" href="#testothercpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testother.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1847,7 +3569,92 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testpathcpp-metrics">testpath.cpp Metrics<a class="headerlink" href="#testpathcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../externals/simplecpp/zzz-file-metrics.html#simplecppcpp">cppcheck/externals/simplecpp/simplecpp.cpp</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/simplecpp/zzz-file-metrics.html#simplecpph">cppcheck/externals/simplecpp/simplecpp.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/tinyxml/zzz-file-metrics.html#tinyxml2cpp">cppcheck/externals/tinyxml/tinyxml2.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/tinyxml/zzz-file-metrics.html#tinyxml2h">cppcheck/externals/tinyxml/tinyxml2.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkothercpp">cppcheck/lib/checkother.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkotherh">cppcheck/lib/checkother.h</a></td>
+<td align="right">11</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#librarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformcpp">cppcheck/lib/platform.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformh">cppcheck/lib/platform.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">31</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#standardsh">cppcheck/lib/standards.h</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">13</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">2081</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">1281</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testpathcpp">testpath.cpp<a class="headerlink" href="#testpathcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testpath.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1890,7 +3697,40 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testpathmatchcpp-metrics">testpathmatch.cpp Metrics<a class="headerlink" href="#testpathmatchcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#pathcpp">cppcheck/lib/path.cpp</a></td>
+<td align="right">34</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#pathh">cppcheck/lib/path.h</a></td>
+<td align="right">12</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">53</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">63</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testpathmatchcpp">testpathmatch.cpp<a class="headerlink" href="#testpathmatchcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testpathmatch.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1933,7 +3773,40 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testplatformcpp-metrics">testplatform.cpp Metrics<a class="headerlink" href="#testplatformcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#pathmatchcpp">cppcheck/lib/pathmatch.cpp</a></td>
+<td align="right">37</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#pathmatchh">cppcheck/lib/pathmatch.h</a></td>
+<td align="right">11</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">55</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">84</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testplatformcpp">testplatform.cpp<a class="headerlink" href="#testplatformcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testplatform.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1976,7 +3849,52 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testpostfixoperatorcpp-metrics">testpostfixoperator.cpp Metrics<a class="headerlink" href="#testpostfixoperatorcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../externals/tinyxml/zzz-file-metrics.html#tinyxml2cpp">cppcheck/externals/tinyxml/tinyxml2.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/tinyxml/zzz-file-metrics.html#tinyxml2h">cppcheck/externals/tinyxml/tinyxml2.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformcpp">cppcheck/lib/platform.cpp</a></td>
+<td align="right">13</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformh">cppcheck/lib/platform.h</a></td>
+<td align="right">114</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">115</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">125</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testpostfixoperatorcpp">testpostfixoperator.cpp<a class="headerlink" href="#testpostfixoperatorcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testpostfixoperator.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2019,7 +3937,56 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testpreprocessorcpp-metrics">testpreprocessor.cpp Metrics<a class="headerlink" href="#testpreprocessorcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkpostfixoperatorcpp">cppcheck/lib/checkpostfixoperator.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkpostfixoperatorh">cppcheck/lib/checkpostfixoperator.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">70</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">52</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testpreprocessorcpp">testpreprocessor.cpp<a class="headerlink" href="#testpreprocessorcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testpreprocessor.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2062,7 +4029,68 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testrunnercpp-metrics">testrunner.cpp Metrics<a class="headerlink" href="#testrunnercpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../externals/simplecpp/zzz-file-metrics.html#simplecppcpp">cppcheck/externals/simplecpp/simplecpp.cpp</a></td>
+<td align="right">15</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/simplecpp/zzz-file-metrics.html#simplecpph">cppcheck/externals/simplecpp/simplecpp.h</a></td>
+<td align="right">21</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformcpp">cppcheck/lib/platform.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformh">cppcheck/lib/platform.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#preprocessorcpp">cppcheck/lib/preprocessor.cpp</a></td>
+<td align="right">80</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#preprocessorh">cppcheck/lib/preprocessor.h</a></td>
+<td align="right">16</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">12</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">426</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">538</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testrunnercpp">testrunner.cpp<a class="headerlink" href="#testrunnercpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testrunner.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2101,7 +4129,44 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testsamplescpp-metrics">testsamples.cpp Metrics<a class="headerlink" href="#testsamplescpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#preprocessorcpp">cppcheck/lib/preprocessor.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#preprocessorh">cppcheck/lib/preprocessor.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#optionscpp">cppcheck/test/options.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#optionsh">cppcheck/test/options.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testsamplescpp">testsamples.cpp<a class="headerlink" href="#testsamplescpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsamples.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2144,7 +4209,84 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testsimplifytemplatecpp-metrics">testsimplifytemplate.cpp Metrics<a class="headerlink" href="#testsimplifytemplatecpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../cli/zzz-file-metrics.html#cppcheckexecutorcpp">cppcheck/cli/cppcheckexecutor.cpp</a></td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left"><a href="../cli/zzz-file-metrics.html#cppcheckexecutorh">cppcheck/cli/cppcheckexecutor.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../cli/zzz-file-metrics.html#filelisterh">cppcheck/cli/filelister.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#cppcheckh">cppcheck/lib/cppcheck.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggercpp">cppcheck/lib/errorlogger.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#pathcpp">cppcheck/lib/path.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#pathh">cppcheck/lib/path.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#pathmatchcpp">cppcheck/lib/pathmatch.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#pathmatchh">cppcheck/lib/pathmatch.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#redirecth">cppcheck/test/redirect.h</a></td>
+<td align="right">27</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">12</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testsimplifytemplatecpp">testsimplifytemplate.cpp<a class="headerlink" href="#testsimplifytemplatecpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsimplifytemplate.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2187,7 +4329,80 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testsimplifytokenscpp-metrics">testsimplifytokens.cpp Metrics<a class="headerlink" href="#testsimplifytokenscpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">13</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformcpp">cppcheck/lib/platform.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformh">cppcheck/lib/platform.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#templatesimplifiercpp">cppcheck/lib/templatesimplifier.cpp</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#templatesimplifierh">cppcheck/lib/templatesimplifier.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenh">cppcheck/lib/token.h</a></td>
+<td align="right">13</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">18</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">17</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenlisth">cppcheck/lib/tokenlist.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">571</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">742</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testsimplifytokenscpp">testsimplifytokens.cpp<a class="headerlink" href="#testsimplifytokenscpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsimplifytokens.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2230,7 +4445,76 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testsimplifytypedefcpp-metrics">testsimplifytypedef.cpp Metrics<a class="headerlink" href="#testsimplifytypedefcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#librarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformcpp">cppcheck/lib/platform.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformh">cppcheck/lib/platform.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="right">24</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenh">cppcheck/lib/token.h</a></td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">52</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">38</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenlisth">cppcheck/lib/tokenlist.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">878</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">990</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testsimplifytypedefcpp">testsimplifytypedef.cpp<a class="headerlink" href="#testsimplifytypedefcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsimplifytypedef.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2273,7 +4557,76 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testsimplifyusingcpp-metrics">testsimplifyusing.cpp Metrics<a class="headerlink" href="#testsimplifyusingcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformcpp">cppcheck/lib/platform.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformh">cppcheck/lib/platform.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenh">cppcheck/lib/token.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">11</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenlistcpp">cppcheck/lib/tokenlist.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenlisth">cppcheck/lib/tokenlist.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">576</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">576</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testsimplifyusingcpp">testsimplifyusing.cpp<a class="headerlink" href="#testsimplifyusingcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsimplifyusing.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2316,7 +4669,68 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testsizeofcpp-metrics">testsizeof.cpp Metrics<a class="headerlink" href="#testsizeofcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformcpp">cppcheck/lib/platform.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformh">cppcheck/lib/platform.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenh">cppcheck/lib/token.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenlisth">cppcheck/lib/tokenlist.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">56</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">76</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testsizeofcpp">testsizeof.cpp<a class="headerlink" href="#testsizeofcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsizeof.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2359,7 +4773,60 @@
 </tr>
 </tbody>
 </table>
-<h2 id="teststlcpp-metrics">teststl.cpp Metrics<a class="headerlink" href="#teststlcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../externals/simplecpp/zzz-file-metrics.html#simplecppcpp">cppcheck/externals/simplecpp/simplecpp.cpp</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/simplecpp/zzz-file-metrics.html#simplecpph">cppcheck/externals/simplecpp/simplecpp.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checksizeofh">cppcheck/lib/checksizeof.h</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">258</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">147</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="teststlcpp">teststl.cpp<a class="headerlink" href="#teststlcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/teststl.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2402,7 +4869,64 @@
 </tr>
 </tbody>
 </table>
-<h2 id="teststringcpp-metrics">teststring.cpp Metrics<a class="headerlink" href="#teststringcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkstlh">cppcheck/lib/checkstl.h</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#librarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#standardsh">cppcheck/lib/standards.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">954</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">631</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="teststringcpp">teststring.cpp<a class="headerlink" href="#teststringcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/teststring.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2445,7 +4969,52 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testsuitecpp-metrics">testsuite.cpp Metrics<a class="headerlink" href="#testsuitecpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkstringh">cppcheck/lib/checkstring.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">205</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">133</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testsuitecpp">testsuite.cpp<a class="headerlink" href="#testsuitecpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsuite.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2488,7 +5057,291 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testsuiteh-metrics">testsuite.h Metrics<a class="headerlink" href="#testsuiteh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggercpp">cppcheck/lib/errorlogger.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#optionscpp">cppcheck/test/options.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#optionsh">cppcheck/test/options.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#redirecth">cppcheck/test/redirect.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">33</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#redirecth">cppcheck/test/redirect.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#test64bitcpp">cppcheck/test/test64bit.cpp</a></td>
+<td align="right">60</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testassertcpp">cppcheck/test/testassert.cpp</a></td>
+<td align="right">44</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testastutilscpp">cppcheck/test/testastutils.cpp</a></td>
+<td align="right">72</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testautovariablescpp">cppcheck/test/testautovariables.cpp</a></td>
+<td align="right">565</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testboolcpp">cppcheck/test/testbool.cpp</a></td>
+<td align="right">350</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testboostcpp">cppcheck/test/testboost.cpp</a></td>
+<td align="right">15</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testbufferoverruncpp">cppcheck/test/testbufferoverrun.cpp</a></td>
+<td align="right">916</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testcharvarcpp">cppcheck/test/testcharvar.cpp</a></td>
+<td align="right">45</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testclasscpp">cppcheck/test/testclass.cpp</a></td>
+<td align="right">1404</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testcmdlineparsercpp">cppcheck/test/testcmdlineparser.cpp</a></td>
+<td align="right">311</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testconditioncpp">cppcheck/test/testcondition.cpp</a></td>
+<td align="right">1004</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testconstructorscpp">cppcheck/test/testconstructors.cpp</a></td>
+<td align="right">694</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testcppcheckcpp">cppcheck/test/testcppcheck.cpp</a></td>
+<td align="right">12</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testerrorloggercpp">cppcheck/test/testerrorlogger.cpp</a></td>
+<td align="right">111</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testexceptionsafetycpp">cppcheck/test/testexceptionsafety.cpp</a></td>
+<td align="right">87</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testexprenginecpp">cppcheck/test/testexprengine.cpp</a></td>
+<td align="right">71</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testfilelistercpp">cppcheck/test/testfilelister.cpp</a></td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testfunctionscpp">cppcheck/test/testfunctions.cpp</a></td>
+<td align="right">292</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testgarbagecpp">cppcheck/test/testgarbage.cpp</a></td>
+<td align="right">689</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testimportprojectcpp">cppcheck/test/testimportproject.cpp</a></td>
+<td align="right">37</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testincompletestatementcpp">cppcheck/test/testincompletestatement.cpp</a></td>
+<td align="right">118</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testiocpp">cppcheck/test/testio.cpp</a></td>
+<td align="right">639</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testleakautovarcpp">cppcheck/test/testleakautovar.cpp</a></td>
+<td align="right">520</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testlibrarycpp">cppcheck/test/testlibrary.cpp</a></td>
+<td align="right">269</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testmathlibcpp">cppcheck/test/testmathlib.cpp</a></td>
+<td align="right">882</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testmemleakcpp">cppcheck/test/testmemleak.cpp</a></td>
+<td align="right">446</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testnullpointercpp">cppcheck/test/testnullpointer.cpp</a></td>
+<td align="right">726</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testoptionscpp">cppcheck/test/testoptions.cpp</a></td>
+<td align="right">24</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testothercpp">cppcheck/test/testother.cpp</a></td>
+<td align="right">2081</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testpathcpp">cppcheck/test/testpath.cpp</a></td>
+<td align="right">53</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testpathmatchcpp">cppcheck/test/testpathmatch.cpp</a></td>
+<td align="right">55</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testplatformcpp">cppcheck/test/testplatform.cpp</a></td>
+<td align="right">115</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testpostfixoperatorcpp">cppcheck/test/testpostfixoperator.cpp</a></td>
+<td align="right">70</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testpreprocessorcpp">cppcheck/test/testpreprocessor.cpp</a></td>
+<td align="right">426</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testrunnercpp">cppcheck/test/testrunner.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsamplescpp">cppcheck/test/testsamples.cpp</a></td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsimplifytemplatecpp">cppcheck/test/testsimplifytemplate.cpp</a></td>
+<td align="right">571</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsimplifytokenscpp">cppcheck/test/testsimplifytokens.cpp</a></td>
+<td align="right">878</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsimplifytypedefcpp">cppcheck/test/testsimplifytypedef.cpp</a></td>
+<td align="right">576</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsimplifyusingcpp">cppcheck/test/testsimplifyusing.cpp</a></td>
+<td align="right">56</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsizeofcpp">cppcheck/test/testsizeof.cpp</a></td>
+<td align="right">258</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#teststlcpp">cppcheck/test/teststl.cpp</a></td>
+<td align="right">954</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#teststringcpp">cppcheck/test/teststring.cpp</a></td>
+<td align="right">205</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuppressionscpp">cppcheck/test/testsuppressions.cpp</a></td>
+<td align="right">160</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsymboldatabasecpp">cppcheck/test/testsymboldatabase.cpp</a></td>
+<td align="right">2552</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testthreadexecutorcpp">cppcheck/test/testthreadexecutor.cpp</a></td>
+<td align="right">12</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testtimercpp">cppcheck/test/testtimer.cpp</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testtokencpp">cppcheck/test/testtoken.cpp</a></td>
+<td align="right">283</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testtokenizecpp">cppcheck/test/testtokenize.cpp</a></td>
+<td align="right">1877</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testtokenlistcpp">cppcheck/test/testtokenlist.cpp</a></td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testtypecpp">cppcheck/test/testtype.cpp</a></td>
+<td align="right">128</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testuninitvarcpp">cppcheck/test/testuninitvar.cpp</a></td>
+<td align="right">1073</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testunusedfunctionscpp">cppcheck/test/testunusedfunctions.cpp</a></td>
+<td align="right">134</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testunusedprivfunccpp">cppcheck/test/testunusedprivfunc.cpp</a></td>
+<td align="right">127</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testunusedvarcpp">cppcheck/test/testunusedvar.cpp</a></td>
+<td align="right">1005</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testvaargcpp">cppcheck/test/testvaarg.cpp</a></td>
+<td align="right">68</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testvalueflowcpp">cppcheck/test/testvalueflow.cpp</a></td>
+<td align="right">870</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testvaridcpp">cppcheck/test/testvarid.cpp</a></td>
+<td align="right">383</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testsuiteh">testsuite.h<a class="headerlink" href="#testsuiteh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsuite.h</p>
 <table>
 <thead>
 <tr>
@@ -2527,7 +5380,279 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testsuppressionscpp-metrics">testsuppressions.cpp Metrics<a class="headerlink" href="#testsuppressionscpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">11</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#optionsh">cppcheck/test/options.h</a></td>
+<td align="right">2</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#test64bitcpp">cppcheck/test/test64bit.cpp</a></td>
+<td align="right">41</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testassertcpp">cppcheck/test/testassert.cpp</a></td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testastutilscpp">cppcheck/test/testastutils.cpp</a></td>
+<td align="right">80</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testautovariablescpp">cppcheck/test/testautovariables.cpp</a></td>
+<td align="right">384</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testboolcpp">cppcheck/test/testbool.cpp</a></td>
+<td align="right">222</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testboostcpp">cppcheck/test/testboost.cpp</a></td>
+<td align="right">11</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testbufferoverruncpp">cppcheck/test/testbufferoverrun.cpp</a></td>
+<td align="right">651</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testcharvarcpp">cppcheck/test/testcharvar.cpp</a></td>
+<td align="right">29</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testclasscpp">cppcheck/test/testclass.cpp</a></td>
+<td align="right">928</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testcmdlineparsercpp">cppcheck/test/testcmdlineparser.cpp</a></td>
+<td align="right">402</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testconditioncpp">cppcheck/test/testcondition.cpp</a></td>
+<td align="right">589</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testconstructorscpp">cppcheck/test/testconstructors.cpp</a></td>
+<td align="right">547</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testcppcheckcpp">cppcheck/test/testcppcheck.cpp</a></td>
+<td align="right">17</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testerrorloggercpp">cppcheck/test/testerrorlogger.cpp</a></td>
+<td align="right">119</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testexceptionsafetycpp">cppcheck/test/testexceptionsafety.cpp</a></td>
+<td align="right">71</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testexprenginecpp">cppcheck/test/testexprengine.cpp</a></td>
+<td align="right">108</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testfilelistercpp">cppcheck/test/testfilelister.cpp</a></td>
+<td align="right">14</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testfunctionscpp">cppcheck/test/testfunctions.cpp</a></td>
+<td align="right">188</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testgarbagecpp">cppcheck/test/testgarbage.cpp</a></td>
+<td align="right">662</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testimportprojectcpp">cppcheck/test/testimportproject.cpp</a></td>
+<td align="right">50</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testincompletestatementcpp">cppcheck/test/testincompletestatement.cpp</a></td>
+<td align="right">100</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testiocpp">cppcheck/test/testio.cpp</a></td>
+<td align="right">345</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testleakautovarcpp">cppcheck/test/testleakautovar.cpp</a></td>
+<td align="right">403</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testlibrarycpp">cppcheck/test/testlibrary.cpp</a></td>
+<td align="right">295</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testmathlibcpp">cppcheck/test/testmathlib.cpp</a></td>
+<td align="right">902</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testmemleakcpp">cppcheck/test/testmemleak.cpp</a></td>
+<td align="right">352</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testnullpointercpp">cppcheck/test/testnullpointer.cpp</a></td>
+<td align="right">469</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testoptionscpp">cppcheck/test/testoptions.cpp</a></td>
+<td align="right">37</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testothercpp">cppcheck/test/testother.cpp</a></td>
+<td align="right">1281</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testpathcpp">cppcheck/test/testpath.cpp</a></td>
+<td align="right">63</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testpathmatchcpp">cppcheck/test/testpathmatch.cpp</a></td>
+<td align="right">84</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testplatformcpp">cppcheck/test/testplatform.cpp</a></td>
+<td align="right">125</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testpostfixoperatorcpp">cppcheck/test/testpostfixoperator.cpp</a></td>
+<td align="right">52</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testpreprocessorcpp">cppcheck/test/testpreprocessor.cpp</a></td>
+<td align="right">538</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testrunnercpp">cppcheck/test/testrunner.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsamplescpp">cppcheck/test/testsamples.cpp</a></td>
+<td align="right">12</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsimplifytemplatecpp">cppcheck/test/testsimplifytemplate.cpp</a></td>
+<td align="right">742</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsimplifytokenscpp">cppcheck/test/testsimplifytokens.cpp</a></td>
+<td align="right">990</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsimplifytypedefcpp">cppcheck/test/testsimplifytypedef.cpp</a></td>
+<td align="right">576</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsimplifyusingcpp">cppcheck/test/testsimplifyusing.cpp</a></td>
+<td align="right">76</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsizeofcpp">cppcheck/test/testsizeof.cpp</a></td>
+<td align="right">147</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#teststlcpp">cppcheck/test/teststl.cpp</a></td>
+<td align="right">631</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#teststringcpp">cppcheck/test/teststring.cpp</a></td>
+<td align="right">133</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">33</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuppressionscpp">cppcheck/test/testsuppressions.cpp</a></td>
+<td align="right">155</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsymboldatabasecpp">cppcheck/test/testsymboldatabase.cpp</a></td>
+<td align="right">2738</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testthreadexecutorcpp">cppcheck/test/testthreadexecutor.cpp</a></td>
+<td align="right">19</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testtimercpp">cppcheck/test/testtimer.cpp</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testtokencpp">cppcheck/test/testtoken.cpp</a></td>
+<td align="right">335</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testtokenizecpp">cppcheck/test/testtokenize.cpp</a></td>
+<td align="right">2086</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testtokenlistcpp">cppcheck/test/testtokenlist.cpp</a></td>
+<td align="right">13</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testtypecpp">cppcheck/test/testtype.cpp</a></td>
+<td align="right">75</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testuninitvarcpp">cppcheck/test/testuninitvar.cpp</a></td>
+<td align="right">609</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testunusedfunctionscpp">cppcheck/test/testunusedfunctions.cpp</a></td>
+<td align="right">104</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testunusedprivfunccpp">cppcheck/test/testunusedprivfunc.cpp</a></td>
+<td align="right">112</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testunusedvarcpp">cppcheck/test/testunusedvar.cpp</a></td>
+<td align="right">737</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testvaargcpp">cppcheck/test/testvaarg.cpp</a></td>
+<td align="right">45</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testvalueflowcpp">cppcheck/test/testvalueflow.cpp</a></td>
+<td align="right">915</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testvaridcpp">cppcheck/test/testvarid.cpp</a></td>
+<td align="right">535</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testsuppressionscpp">testsuppressions.cpp<a class="headerlink" href="#testsuppressionscpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsuppressions.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2570,7 +5695,72 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testsymboldatabasecpp-metrics">testsymboldatabase.cpp Metrics<a class="headerlink" href="#testsymboldatabasecpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../cli/zzz-file-metrics.html#threadexecutorcpp">cppcheck/cli/threadexecutor.cpp</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../cli/zzz-file-metrics.html#threadexecutorh">cppcheck/cli/threadexecutor.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#cppcheckcpp">cppcheck/lib/cppcheck.cpp</a></td>
+<td align="right">13</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#cppcheckh">cppcheck/lib/cppcheck.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggercpp">cppcheck/lib/errorlogger.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#pathh">cppcheck/lib/path.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">22</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#suppressionscpp">cppcheck/lib/suppressions.cpp</a></td>
+<td align="right">76</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#suppressionsh">cppcheck/lib/suppressions.h</a></td>
+<td align="right">42</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">160</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">155</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testsymboldatabasecpp">testsymboldatabase.cpp<a class="headerlink" href="#testsymboldatabasecpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsymboldatabase.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2613,7 +5803,100 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testthreadexecutorcpp-metrics">testthreadexecutor.cpp Metrics<a class="headerlink" href="#testthreadexecutorcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#librarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">29</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformcpp">cppcheck/lib/platform.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformh">cppcheck/lib/platform.h</a></td>
+<td align="right">19</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">21</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#symboldatabasecpp">cppcheck/lib/symboldatabase.cpp</a></td>
+<td align="right">270</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#symboldatabaseh">cppcheck/lib/symboldatabase.h</a></td>
+<td align="right">2916</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="right">369</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenh">cppcheck/lib/token.h</a></td>
+<td align="right">2014</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">506</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">552</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenlistcpp">cppcheck/lib/tokenlist.cpp</a></td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenlisth">cppcheck/lib/tokenlist.h</a></td>
+<td align="right">16</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#utilsh">cppcheck/lib/utils.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">2552</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">2738</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testutilsh">cppcheck/test/testutils.h</a></td>
+<td align="right">109</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testthreadexecutorcpp">testthreadexecutor.cpp<a class="headerlink" href="#testthreadexecutorcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testthreadexecutor.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2656,7 +5939,56 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testtimercpp-metrics">testtimer.cpp Metrics<a class="headerlink" href="#testtimercpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../cli/zzz-file-metrics.html#threadexecutorcpp">cppcheck/cli/threadexecutor.cpp</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../cli/zzz-file-metrics.html#threadexecutorh">cppcheck/cli/threadexecutor.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#librarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">12</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">19</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testtimercpp">testtimer.cpp<a class="headerlink" href="#testtimercpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testtimer.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2699,7 +6031,36 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testtokencpp-metrics">testtoken.cpp Metrics<a class="headerlink" href="#testtokencpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#timerh">cppcheck/lib/timer.h</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">7</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testtokencpp">testtoken.cpp<a class="headerlink" href="#testtokencpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testtoken.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2742,7 +6103,76 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testtokenizecpp-metrics">testtokenize.cpp Metrics<a class="headerlink" href="#testtokenizecpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="right">287</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenh">cppcheck/lib/token.h</a></td>
+<td align="right">209</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenlistcpp">cppcheck/lib/tokenlist.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenlisth">cppcheck/lib/tokenlist.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#valueflowh">cppcheck/lib/valueflow.h</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">283</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">335</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testutilsh">cppcheck/test/testutils.h</a></td>
+<td align="right">269</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testtokenizecpp">testtokenize.cpp<a class="headerlink" href="#testtokenizecpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testtokenize.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2785,7 +6215,96 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testtokenlistcpp-metrics">testtokenlist.cpp Metrics<a class="headerlink" href="#testtokenlistcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">68</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#librarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformcpp">cppcheck/lib/platform.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformh">cppcheck/lib/platform.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#preprocessorcpp">cppcheck/lib/preprocessor.cpp</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#preprocessorh">cppcheck/lib/preprocessor.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">21</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#standardsh">cppcheck/lib/standards.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="right">155</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenh">cppcheck/lib/token.h</a></td>
+<td align="right">112</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">206</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">114</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenlistcpp">cppcheck/lib/tokenlist.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenlisth">cppcheck/lib/tokenlist.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">1877</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">2086</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testtokenlistcpp">testtokenlist.cpp<a class="headerlink" href="#testtokenlistcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testtokenlist.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2828,7 +6347,60 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testtypecpp-metrics">testtype.cpp Metrics<a class="headerlink" href="#testtypecpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformh">cppcheck/lib/platform.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenh">cppcheck/lib/token.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenlistcpp">cppcheck/lib/tokenlist.cpp</a></td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenlisth">cppcheck/lib/tokenlist.h</a></td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">13</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testtypecpp">testtype.cpp<a class="headerlink" href="#testtypecpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testtype.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2871,7 +6443,64 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testuninitvarcpp-metrics">testuninitvar.cpp Metrics<a class="headerlink" href="#testuninitvarcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checktypeh">cppcheck/lib/checktype.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformcpp">cppcheck/lib/platform.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformh">cppcheck/lib/platform.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#standardsh">cppcheck/lib/standards.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">128</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">75</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testuninitvarcpp">testuninitvar.cpp<a class="headerlink" href="#testuninitvarcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testuninitvar.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2914,7 +6543,80 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testunusedfunctionscpp-metrics">testunusedfunctions.cpp Metrics<a class="headerlink" href="#testunusedfunctionscpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkh">cppcheck/lib/check.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkuninitvarcpp">cppcheck/lib/checkuninitvar.cpp</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkuninitvarh">cppcheck/lib/checkuninitvar.h</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#ctucpp">cppcheck/lib/ctu.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#ctuh">cppcheck/lib/ctu.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#librarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">11</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">1073</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">609</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testunusedfunctionscpp">testunusedfunctions.cpp<a class="headerlink" href="#testunusedfunctionscpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testunusedfunctions.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2957,7 +6659,64 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testunusedprivfunccpp-metrics">testunusedprivfunc.cpp Metrics<a class="headerlink" href="#testunusedprivfunccpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkunusedfunctionscpp">cppcheck/lib/checkunusedfunctions.cpp</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkunusedfunctionsh">cppcheck/lib/checkunusedfunctions.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformcpp">cppcheck/lib/platform.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformh">cppcheck/lib/platform.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">8</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">134</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">104</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testunusedprivfunccpp">testunusedprivfunc.cpp<a class="headerlink" href="#testunusedprivfunccpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testunusedprivfunc.cpp</p>
 <table>
 <thead>
 <tr>
@@ -3000,7 +6759,72 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testunusedvarcpp-metrics">testunusedvar.cpp Metrics<a class="headerlink" href="#testunusedvarcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../externals/simplecpp/zzz-file-metrics.html#simplecppcpp">cppcheck/externals/simplecpp/simplecpp.cpp</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/simplecpp/zzz-file-metrics.html#simplecpph">cppcheck/externals/simplecpp/simplecpp.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkclasscpp">cppcheck/lib/checkclass.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkclassh">cppcheck/lib/checkclass.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformcpp">cppcheck/lib/platform.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformh">cppcheck/lib/platform.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">127</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">112</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testunusedvarcpp">testunusedvar.cpp<a class="headerlink" href="#testunusedvarcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testunusedvar.cpp</p>
 <table>
 <thead>
 <tr>
@@ -3043,7 +6867,64 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testutilsh-metrics">testutils.h Metrics<a class="headerlink" href="#testutilsh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkunusedvarcpp">cppcheck/lib/checkunusedvar.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkunusedvarh">cppcheck/lib/checkunusedvar.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#librarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">1005</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">737</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testutilsh">testutils.h<a class="headerlink" href="#testutilsh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testutils.h</p>
 <table>
 <thead>
 <tr>
@@ -3086,7 +6967,79 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testvaargcpp-metrics">testvaarg.cpp Metrics<a class="headerlink" href="#testvaargcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggercpp">cppcheck/lib/errorlogger.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#suppressionscpp">cppcheck/lib/suppressions.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenh">cppcheck/lib/token.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenlistcpp">cppcheck/lib/tokenlist.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsymboldatabasecpp">cppcheck/test/testsymboldatabase.cpp</a></td>
+<td align="right">109</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testtokencpp">cppcheck/test/testtoken.cpp</a></td>
+<td align="right">269</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testvaargcpp">testvaarg.cpp<a class="headerlink" href="#testvaargcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testvaarg.cpp</p>
 <table>
 <thead>
 <tr>
@@ -3129,7 +7082,52 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testvalueflowcpp-metrics">testvalueflow.cpp Metrics<a class="headerlink" href="#testvalueflowcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#checkvaargh">cppcheck/lib/checkvaarg.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">68</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">45</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testvalueflowcpp">testvalueflow.cpp<a class="headerlink" href="#testvalueflowcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testvalueflow.cpp</p>
 <table>
 <thead>
 <tr>
@@ -3172,7 +7170,92 @@
 </tr>
 </tbody>
 </table>
-<h2 id="testvaridcpp-metrics">testvarid.cpp Metrics<a class="headerlink" href="#testvaridcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../externals/simplecpp/zzz-file-metrics.html#simplecppcpp">cppcheck/externals/simplecpp/simplecpp.cpp</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../externals/simplecpp/zzz-file-metrics.html#simplecpph">cppcheck/externals/simplecpp/simplecpp.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#librarycpp">cppcheck/lib/library.cpp</a></td>
+<td align="right">15</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">15</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#mathlibcpp">cppcheck/lib/mathlib.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#mathlibh">cppcheck/lib/mathlib.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformcpp">cppcheck/lib/platform.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformh">cppcheck/lib/platform.h</a></td>
+<td align="right">83</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenh">cppcheck/lib/token.h</a></td>
+<td align="right">45</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">31</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#valueflowh">cppcheck/lib/valueflow.h</a></td>
+<td align="right">305</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">870</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">915</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="testvaridcpp">testvarid.cpp<a class="headerlink" href="#testvaridcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testvarid.cpp</p>
 <table>
 <thead>
 <tr>
@@ -3214,7 +7297,75 @@
 <td align="right"><div title="red"> 156 </div></td>
 </tr>
 </tbody>
-</table></div>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#configh">cppcheck/lib/config.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#mathlibh">cppcheck/lib/mathlib.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformcpp">cppcheck/lib/platform.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#platformh">cppcheck/lib/platform.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingscpp">cppcheck/lib/settings.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#standardsh">cppcheck/lib/standards.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokencpp">cppcheck/lib/token.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenh">cppcheck/lib/token.h</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizecpp">cppcheck/lib/tokenize.cpp</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#tokenizeh">cppcheck/lib/tokenize.h</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuitecpp">cppcheck/test/testsuite.cpp</a></td>
+<td align="right">383</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#testsuiteh">cppcheck/test/testsuite.h</a></td>
+<td align="right">535</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p></div>
                 <footer>
     <div class="footer-buttons">
         <div class="previous"><a href="test-metrics.html" title="test Metrics"><span>Previous</span></a></div>

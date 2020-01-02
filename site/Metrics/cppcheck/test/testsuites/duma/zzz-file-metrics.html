@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Roy Crippen">
     <link rel="shortcut icon" href="../../../../../img/favicon.ico">
-    <title>File Metrics &mdash; UDB Metrics Reporting for cpp_check</title>
+    <title>File Metrics and Dependencies &mdash; UDB Metrics Reporting for cpp_check</title>
 <!--    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">-->
 <!--    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">-->
 <!--    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">-->
@@ -56,86 +56,74 @@
     <li class="toctree-l2 current"><button class="section nav-item">cppcheck</button>
 <ul class="subnav">
     <li class="toctree-l3"><a class="nav-item" href="../../../cppcheck-metrics.html">cppcheck Metrics</a></li>
-    <li class="toctree-l3"><a class="nav-item" href="../../../zzz-file-metrics.html">File Metrics</a></li>
     <li class="toctree-l3"><button class="section nav-item hide">addons</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../../../addons/addons-metrics.html">addons Metrics</a></li>
-    <li class="toctree-l4"><button class="section nav-item hide">doc</button>
-<ul class="subnav hide">
-    <li class="toctree-l5"><a class="nav-item" href="../../../addons/doc/doc-metrics.html">doc Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../../../addons/doc/zzz-file-metrics.html">File Metrics</a></li>
-</ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">test</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../../../addons/test/test-metrics.html">test Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../../../addons/test/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../../../addons/test/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
     <li class="toctree-l5"><button class="section nav-item hide">misra</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../../../addons/test/misra/misra-metrics.html">misra Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../../../addons/test/misra/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../../../addons/test/misra/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">path1</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../../../addons/test/path1/path1-metrics.html">path1 Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../../../addons/test/path1/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../../../addons/test/path1/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">y2038</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../../../addons/test/y2038/y2038-metrics.html">y2038 Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../../../addons/test/y2038/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../../../addons/test/y2038/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">cli</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../../../cli/cli-metrics.html">cli Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../../../cli/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../../../cli/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">cve-test-suite</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../../../cve-test-suite/cve-test-suite-metrics.html">cve-test-suite Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../../../cve-test-suite/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../../../cve-test-suite/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">democlient</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../../../democlient/democlient-metrics.html">democlient Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../../../democlient/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../../../democlient/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">externals</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../../../externals/externals-metrics.html">externals Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../../../externals/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../../../externals/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
     <li class="toctree-l4"><button class="section nav-item hide">simplecpp</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../../../externals/simplecpp/simplecpp-metrics.html">simplecpp Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../../../externals/simplecpp/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../../../externals/simplecpp/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">tinyxml</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../../../externals/tinyxml/tinyxml-metrics.html">tinyxml Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../../../externals/tinyxml/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../../../externals/tinyxml/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">gui</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../../../gui/gui-metrics.html">gui Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../../../gui/zzz-file-metrics.html">File Metrics</a></li>
-    <li class="toctree-l4"><button class="section nav-item hide">help</button>
-<ul class="subnav hide">
-    <li class="toctree-l5"><a class="nav-item" href="../../../gui/help/help-metrics.html">help Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../../../gui/help/zzz-file-metrics.html">File Metrics</a></li>
-</ul></li>
+    <li class="toctree-l4"><a class="nav-item" href="../../../gui/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
     <li class="toctree-l4"><button class="section nav-item hide">test</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../../../gui/test/test-metrics.html">test Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../../../gui/test/zzz-file-metrics.html">File Metrics</a></li>
     <li class="toctree-l5"><button class="section nav-item hide">benchmark</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../../../gui/test/benchmark/benchmark-metrics.html">benchmark Metrics</a></li>
     <li class="toctree-l6"><button class="section nav-item hide">simple</button>
 <ul class="subnav hide">
     <li class="toctree-l7"><a class="nav-item" href="../../../gui/test/benchmark/simple/simple-metrics.html">simple Metrics</a></li>
-    <li class="toctree-l7"><a class="nav-item" href="../../../gui/test/benchmark/simple/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../../../gui/test/benchmark/simple/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">data</button>
@@ -144,65 +132,65 @@
     <li class="toctree-l6"><button class="section nav-item hide">benchmark</button>
 <ul class="subnav hide">
     <li class="toctree-l7"><a class="nav-item" href="../../../gui/test/data/benchmark/benchmark-metrics.html">benchmark Metrics</a></li>
-    <li class="toctree-l7"><a class="nav-item" href="../../../gui/test/data/benchmark/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../../../gui/test/data/benchmark/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l6"><button class="section nav-item hide">files</button>
 <ul class="subnav hide">
     <li class="toctree-l7"><a class="nav-item" href="../../../gui/test/data/files/files-metrics.html">files Metrics</a></li>
-    <li class="toctree-l7"><a class="nav-item" href="../../../gui/test/data/files/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../../../gui/test/data/files/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
     <li class="toctree-l7"><button class="section nav-item hide">dir1</button>
 <ul class="subnav hide">
     <li class="toctree-l8"><a class="nav-item" href="../../../gui/test/data/files/dir1/dir1-metrics.html">dir1 Metrics</a></li>
-    <li class="toctree-l8"><a class="nav-item" href="../../../gui/test/data/files/dir1/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l8"><a class="nav-item" href="../../../gui/test/data/files/dir1/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
     <li class="toctree-l8"><button class="section nav-item hide">dir11</button>
 <ul class="subnav hide">
     <li class="toctree-l9"><a class="nav-item" href="../../../gui/test/data/files/dir1/dir11/dir11-metrics.html">dir11 Metrics</a></li>
-    <li class="toctree-l9"><a class="nav-item" href="../../../gui/test/data/files/dir1/dir11/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l9"><a class="nav-item" href="../../../gui/test/data/files/dir1/dir11/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l7"><button class="section nav-item hide">dir2</button>
 <ul class="subnav hide">
     <li class="toctree-l8"><a class="nav-item" href="../../../gui/test/data/files/dir2/dir2-metrics.html">dir2 Metrics</a></li>
-    <li class="toctree-l8"><a class="nav-item" href="../../../gui/test/data/files/dir2/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l8"><a class="nav-item" href="../../../gui/test/data/files/dir2/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">filelist</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../../../gui/test/filelist/filelist-metrics.html">filelist Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../../../gui/test/filelist/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../../../gui/test/filelist/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">projectfile</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../../../gui/test/projectfile/projectfile-metrics.html">projectfile Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../../../gui/test/projectfile/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../../../gui/test/projectfile/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">translationhandler</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../../../gui/test/translationhandler/translationhandler-metrics.html">translationhandler Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../../../gui/test/translationhandler/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../../../gui/test/translationhandler/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">xmlreportv2</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../../../gui/test/xmlreportv2/xmlreportv2-metrics.html">xmlreportv2 Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../../../gui/test/xmlreportv2/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../../../gui/test/xmlreportv2/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">htmlreport</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../../../htmlreport/htmlreport-metrics.html">htmlreport Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../../../htmlreport/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../../../htmlreport/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">lib</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../../../lib/lib-metrics.html">lib Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../../../lib/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../../../lib/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">oss-fuzz</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../../../oss-fuzz/oss-fuzz-metrics.html">oss-fuzz Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../../../oss-fuzz/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../../../oss-fuzz/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">samples</button>
 <ul class="subnav hide">
@@ -210,76 +198,75 @@
     <li class="toctree-l4"><button class="section nav-item hide">AssignmentAddressToInteger</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../../../samples/AssignmentAddressToInteger/AssignmentAddressToInteger-metrics.html">AssignmentAddressToInteger Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../../../samples/AssignmentAddressToInteger/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../../../samples/AssignmentAddressToInteger/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">arrayIndexOutOfBounds</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../../../samples/arrayIndexOutOfBounds/arrayIndexOutOfBounds-metrics.html">arrayIndexOutOfBounds Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../../../samples/arrayIndexOutOfBounds/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../../../samples/arrayIndexOutOfBounds/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">autoVariables</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../../../samples/autoVariables/autoVariables-metrics.html">autoVariables Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../../../samples/autoVariables/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../../../samples/autoVariables/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">bufferAccessOutOfBounds</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../../../samples/bufferAccessOutOfBounds/bufferAccessOutOfBounds-metrics.html">bufferAccessOutOfBounds Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../../../samples/bufferAccessOutOfBounds/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../../../samples/bufferAccessOutOfBounds/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">erase</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../../../samples/erase/erase-metrics.html">erase Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../../../samples/erase/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../../../samples/erase/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">memleak</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../../../samples/memleak/memleak-metrics.html">memleak Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../../../samples/memleak/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../../../samples/memleak/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">outOfBounds</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../../../samples/outOfBounds/outOfBounds-metrics.html">outOfBounds Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../../../samples/outOfBounds/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../../../samples/outOfBounds/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">resourceLeak</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../../../samples/resourceLeak/resourceLeak-metrics.html">resourceLeak Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../../../samples/resourceLeak/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../../../samples/resourceLeak/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">syntaxError</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../../../samples/syntaxError/syntaxError-metrics.html">syntaxError Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../../../samples/syntaxError/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../../../samples/syntaxError/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l3 current"><button class="section nav-item">test</button>
 <ul class="subnav">
     <li class="toctree-l4"><a class="nav-item" href="../../test-metrics.html">test Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../../zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../../zzz-file-metrics.html">File Metrics and Dependencies</a></li>
     <li class="toctree-l4"><button class="section nav-item hide">cfg</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../../cfg/cfg-metrics.html">cfg Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../../cfg/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../../cfg/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">cli</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../../cli/cli-metrics.html">cli Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../../cli/zzz-file-metrics.html">File Metrics</a></li>
     <li class="toctree-l5"><button class="section nav-item hide">helloworld</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../../cli/helloworld/helloworld-metrics.html">helloworld Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../../cli/helloworld/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../../cli/helloworld/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">proj-inline-suppress</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../../cli/proj-inline-suppress/proj-inline-suppress-metrics.html">proj-inline-suppress Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../../cli/proj-inline-suppress/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../../cli/proj-inline-suppress/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">proj-suppress-syntaxError</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../../cli/proj-suppress-syntaxError/proj-suppress-syntaxError-metrics.html">proj-suppress-syntaxError Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../../cli/proj-suppress-syntaxError/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../../cli/proj-suppress-syntaxError/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">proj2</button>
 <ul class="subnav hide">
@@ -287,48 +274,47 @@
     <li class="toctree-l6"><button class="section nav-item hide">a</button>
 <ul class="subnav hide">
     <li class="toctree-l7"><a class="nav-item" href="../../cli/proj2/a/a-metrics.html">a Metrics</a></li>
-    <li class="toctree-l7"><a class="nav-item" href="../../cli/proj2/a/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../../cli/proj2/a/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l6"><button class="section nav-item hide">b</button>
 <ul class="subnav hide">
     <li class="toctree-l7"><a class="nav-item" href="../../cli/proj2/b/b-metrics.html">b Metrics</a></li>
-    <li class="toctree-l7"><a class="nav-item" href="../../cli/proj2/b/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../../cli/proj2/b/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">synthetic</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../../synthetic/synthetic-metrics.html">synthetic Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../../synthetic/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../../synthetic/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4 current"><button class="section nav-item">testsuites</button>
 <ul class="subnav">
     <li class="toctree-l5"><a class="nav-item" href="../testsuites-metrics.html">testsuites Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../zzz-file-metrics.html">File Metrics</a></li>
     <li class="toctree-l5"><button class="section nav-item hide">clang</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../clang/clang-metrics.html">clang Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../clang/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../clang/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5 current"><button class="section nav-item">duma</button>
 <ul class="subnav">
     <li class="toctree-l6"><a class="nav-item" href="duma-metrics.html">duma Metrics</a></li>
-    <li class="toctree-l6 current"><a class="nav-item current" href="zzz-file-metrics.html">File Metrics</a>
+    <li class="toctree-l6 current"><a class="nav-item current" href="zzz-file-metrics.html">File Metrics and Dependencies</a>
 <ul class="subnav">
-<li class="toctree-l7"><a class="nav-item toc" href="#leak1c-metrics">leak1.c Metrics</a></li>
-<li class="toctree-l7"><a class="nav-item toc" href="#leak1cc-metrics">leak1.cc Metrics</a></li>
-<li class="toctree-l7"><a class="nav-item toc" href="#leak2c-metrics">leak2.c Metrics</a></li>
-<li class="toctree-l7"><a class="nav-item toc" href="#leak2cc-metrics">leak2.cc Metrics</a></li>
-<li class="toctree-l7"><a class="nav-item toc" href="#wrong1c-metrics">wrong1.c Metrics</a></li>
-<li class="toctree-l7"><a class="nav-item toc" href="#wrong1cc-metrics">wrong1.cc Metrics</a></li>
-<li class="toctree-l7"><a class="nav-item toc" href="#wrong2cc-metrics">wrong2.cc Metrics</a></li>
-<li class="toctree-l7"><a class="nav-item toc" href="#wrong3c-metrics">wrong3.c Metrics</a></li>
-<li class="toctree-l7"><a class="nav-item toc" href="#wrong3cc-metrics">wrong3.cc Metrics</a></li>
-<li class="toctree-l7"><a class="nav-item toc" href="#wrong4cc-metrics">wrong4.cc Metrics</a></li>
-<li class="toctree-l7"><a class="nav-item toc" href="#wrong5cc-metrics">wrong5.cc Metrics</a></li>
-<li class="toctree-l7"><a class="nav-item toc" href="#wrong6c-metrics">wrong6.c Metrics</a></li>
-<li class="toctree-l7"><a class="nav-item toc" href="#wrong6cc-metrics">wrong6.cc Metrics</a></li>
-<li class="toctree-l7"><a class="nav-item toc" href="#wrong7c-metrics">wrong7.c Metrics</a></li>
+<li class="toctree-l7"><a class="nav-item toc" href="#leak1c">leak1.c</a></li>
+<li class="toctree-l7"><a class="nav-item toc" href="#leak1cc">leak1.cc</a></li>
+<li class="toctree-l7"><a class="nav-item toc" href="#leak2c">leak2.c</a></li>
+<li class="toctree-l7"><a class="nav-item toc" href="#leak2cc">leak2.cc</a></li>
+<li class="toctree-l7"><a class="nav-item toc" href="#wrong1c">wrong1.c</a></li>
+<li class="toctree-l7"><a class="nav-item toc" href="#wrong1cc">wrong1.cc</a></li>
+<li class="toctree-l7"><a class="nav-item toc" href="#wrong2cc">wrong2.cc</a></li>
+<li class="toctree-l7"><a class="nav-item toc" href="#wrong3c">wrong3.c</a></li>
+<li class="toctree-l7"><a class="nav-item toc" href="#wrong3cc">wrong3.cc</a></li>
+<li class="toctree-l7"><a class="nav-item toc" href="#wrong4cc">wrong4.cc</a></li>
+<li class="toctree-l7"><a class="nav-item toc" href="#wrong5cc">wrong5.cc</a></li>
+<li class="toctree-l7"><a class="nav-item toc" href="#wrong6c">wrong6.c</a></li>
+<li class="toctree-l7"><a class="nav-item toc" href="#wrong6cc">wrong6.cc</a></li>
+<li class="toctree-l7"><a class="nav-item toc" href="#wrong7c">wrong7.c</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -336,24 +322,18 @@
     <li class="toctree-l3"><button class="section nav-item hide">tools</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../../../tools/tools-metrics.html">tools Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../../../tools/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../../../tools/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
     <li class="toctree-l4"><button class="section nav-item hide">triage</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../../../tools/triage/triage-metrics.html">triage Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../../../tools/triage/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../../../tools/triage/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
-</ul></li>
-    <li class="toctree-l3"><button class="section nav-item hide">win_installer</button>
-<ul class="subnav hide">
-    <li class="toctree-l4"><a class="nav-item" href="../../../win_installer/win_installer-metrics.html">win_installer Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../../../win_installer/zzz-file-metrics.html">File Metrics</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
                     <li class="toctree-l1"><button class="section nav-item">Reports</button>
 <ul class="subnav">
     <li class="toctree-l2"><a class="nav-item" href="../../../../../Reports/circular_file_refs.html">Direct Circular File References</a></li>
-    <li class="toctree-l2"><a class="nav-item" href="../../../../../Reports/file_dependencies.html">File Dependencies</a></li>
     <li class="toctree-l2"><a class="nav-item" href="../../../../../Reports/file_list_indented_sloc.html">File List Indented</a></li>
     <li class="toctree-l2"><a class="nav-item" href="../../../../../Reports/red_metrics.html">Red Metrics</a></li>
 </ul></li>
@@ -376,8 +356,9 @@
     <li>Metrics &raquo; </li><li>cppcheck &raquo; </li><li>test &raquo; </li><li>testsuites &raquo; </li><li>duma</li>
 </ul>
 </nav>
-                <div id="content"><h1 id="file-metrics">File Metrics<a class="headerlink" href="#file-metrics" title="Permanent link">#</a></h1>
-<h2 id="leak1c-metrics">leak1.c Metrics<a class="headerlink" href="#leak1c-metrics" title="Permanent link">#</a></h2>
+                <div id="content"><h1 id="file-metrics-and-dependencies">File Metrics and Dependencies<a class="headerlink" href="#file-metrics-and-dependencies" title="Permanent link">#</a></h1>
+<h2 id="leak1c">leak1.c<a class="headerlink" href="#leak1c" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsuites/duma/leak1.c</p>
 <table>
 <thead>
 <tr>
@@ -408,7 +389,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="leak1cc-metrics">leak1.cc Metrics<a class="headerlink" href="#leak1cc-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<h2 id="leak1cc">leak1.cc<a class="headerlink" href="#leak1cc" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsuites/duma/leak1.cc</p>
 <table>
 <thead>
 <tr>
@@ -423,7 +406,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="leak2c-metrics">leak2.c Metrics<a class="headerlink" href="#leak2c-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<h2 id="leak2c">leak2.c<a class="headerlink" href="#leak2c" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsuites/duma/leak2.c</p>
 <table>
 <thead>
 <tr>
@@ -458,7 +443,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="leak2cc-metrics">leak2.cc Metrics<a class="headerlink" href="#leak2cc-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<h2 id="leak2cc">leak2.cc<a class="headerlink" href="#leak2cc" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsuites/duma/leak2.cc</p>
 <table>
 <thead>
 <tr>
@@ -473,7 +460,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="wrong1c-metrics">wrong1.c Metrics<a class="headerlink" href="#wrong1c-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<h2 id="wrong1c">wrong1.c<a class="headerlink" href="#wrong1c" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsuites/duma/wrong1.c</p>
 <table>
 <thead>
 <tr>
@@ -504,7 +493,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="wrong1cc-metrics">wrong1.cc Metrics<a class="headerlink" href="#wrong1cc-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<h2 id="wrong1cc">wrong1.cc<a class="headerlink" href="#wrong1cc" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsuites/duma/wrong1.cc</p>
 <table>
 <thead>
 <tr>
@@ -519,7 +510,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="wrong2cc-metrics">wrong2.cc Metrics<a class="headerlink" href="#wrong2cc-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<h2 id="wrong2cc">wrong2.cc<a class="headerlink" href="#wrong2cc" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsuites/duma/wrong2.cc</p>
 <table>
 <thead>
 <tr>
@@ -534,7 +527,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="wrong3c-metrics">wrong3.c Metrics<a class="headerlink" href="#wrong3c-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<h2 id="wrong3c">wrong3.c<a class="headerlink" href="#wrong3c" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsuites/duma/wrong3.c</p>
 <table>
 <thead>
 <tr>
@@ -569,7 +564,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="wrong3cc-metrics">wrong3.cc Metrics<a class="headerlink" href="#wrong3cc-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<h2 id="wrong3cc">wrong3.cc<a class="headerlink" href="#wrong3cc" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsuites/duma/wrong3.cc</p>
 <table>
 <thead>
 <tr>
@@ -584,7 +581,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="wrong4cc-metrics">wrong4.cc Metrics<a class="headerlink" href="#wrong4cc-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<h2 id="wrong4cc">wrong4.cc<a class="headerlink" href="#wrong4cc" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsuites/duma/wrong4.cc</p>
 <table>
 <thead>
 <tr>
@@ -599,7 +598,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="wrong5cc-metrics">wrong5.cc Metrics<a class="headerlink" href="#wrong5cc-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<h2 id="wrong5cc">wrong5.cc<a class="headerlink" href="#wrong5cc" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsuites/duma/wrong5.cc</p>
 <table>
 <thead>
 <tr>
@@ -614,7 +615,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="wrong6c-metrics">wrong6.c Metrics<a class="headerlink" href="#wrong6c-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<h2 id="wrong6c">wrong6.c<a class="headerlink" href="#wrong6c" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsuites/duma/wrong6.c</p>
 <table>
 <thead>
 <tr>
@@ -645,7 +648,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="wrong6cc-metrics">wrong6.cc Metrics<a class="headerlink" href="#wrong6cc-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<h2 id="wrong6cc">wrong6.cc<a class="headerlink" href="#wrong6cc" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsuites/duma/wrong6.cc</p>
 <table>
 <thead>
 <tr>
@@ -660,7 +665,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="wrong7c-metrics">wrong7.c Metrics<a class="headerlink" href="#wrong7c-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<h2 id="wrong7c">wrong7.c<a class="headerlink" href="#wrong7c" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/test/testsuites/duma/wrong7.c</p>
 <table>
 <thead>
 <tr>
@@ -694,7 +701,8 @@
 <td align="right"><div title="green"> 1 </div></td>
 </tr>
 </tbody>
-</table></div>
+</table>
+<p>&nbsp;</p></div>
                 <footer>
     <div class="footer-buttons">
         <div class="previous"><a href="duma-metrics.html" title="duma Metrics"><span>Previous</span></a></div>

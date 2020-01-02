@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Roy Crippen">
     <link rel="shortcut icon" href="../../../img/favicon.ico">
-    <title>File Metrics &mdash; UDB Metrics Reporting for cpp_check</title>
+    <title>File Metrics and Dependencies &mdash; UDB Metrics Reporting for cpp_check</title>
 <!--    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">-->
 <!--    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">-->
 <!--    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">-->
@@ -56,168 +56,153 @@
     <li class="toctree-l2 current"><button class="section nav-item">cppcheck</button>
 <ul class="subnav">
     <li class="toctree-l3"><a class="nav-item" href="../cppcheck-metrics.html">cppcheck Metrics</a></li>
-    <li class="toctree-l3"><a class="nav-item" href="../zzz-file-metrics.html">File Metrics</a></li>
     <li class="toctree-l3"><button class="section nav-item hide">addons</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../addons/addons-metrics.html">addons Metrics</a></li>
-    <li class="toctree-l4"><button class="section nav-item hide">doc</button>
-<ul class="subnav hide">
-    <li class="toctree-l5"><a class="nav-item" href="../addons/doc/doc-metrics.html">doc Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../addons/doc/zzz-file-metrics.html">File Metrics</a></li>
-</ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">test</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../addons/test/test-metrics.html">test Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../addons/test/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../addons/test/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
     <li class="toctree-l5"><button class="section nav-item hide">misra</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../addons/test/misra/misra-metrics.html">misra Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../addons/test/misra/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../addons/test/misra/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">path1</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../addons/test/path1/path1-metrics.html">path1 Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../addons/test/path1/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../addons/test/path1/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">y2038</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../addons/test/y2038/y2038-metrics.html">y2038 Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../addons/test/y2038/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../addons/test/y2038/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">cli</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../cli/cli-metrics.html">cli Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../cli/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../cli/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">cve-test-suite</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../cve-test-suite/cve-test-suite-metrics.html">cve-test-suite Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../cve-test-suite/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../cve-test-suite/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">democlient</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../democlient/democlient-metrics.html">democlient Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../democlient/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../democlient/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">externals</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../externals/externals-metrics.html">externals Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../externals/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../externals/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
     <li class="toctree-l4"><button class="section nav-item hide">simplecpp</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../externals/simplecpp/simplecpp-metrics.html">simplecpp Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../externals/simplecpp/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../externals/simplecpp/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">tinyxml</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../externals/tinyxml/tinyxml-metrics.html">tinyxml Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../externals/tinyxml/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../externals/tinyxml/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l3 current"><button class="section nav-item">gui</button>
 <ul class="subnav">
     <li class="toctree-l4"><a class="nav-item" href="gui-metrics.html">gui Metrics</a></li>
-    <li class="toctree-l4 current"><a class="nav-item current" href="zzz-file-metrics.html">File Metrics</a>
+    <li class="toctree-l4 current"><a class="nav-item current" href="zzz-file-metrics.html">File Metrics and Dependencies</a>
 <ul class="subnav">
-<li class="toctree-l5"><a class="nav-item toc" href="#cmakeliststxt-metrics">CMakeLists.txt Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#aboutdialogcpp-metrics">aboutdialog.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#aboutdialogh-metrics">aboutdialog.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#applicationcpp-metrics">application.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#applicationh-metrics">application.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#applicationdialogcpp-metrics">applicationdialog.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#applicationdialogh-metrics">applicationdialog.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#applicationlistcpp-metrics">applicationlist.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#applicationlisth-metrics">applicationlist.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#checkstatisticscpp-metrics">checkstatistics.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#checkstatisticsh-metrics">checkstatistics.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#checkthreadcpp-metrics">checkthread.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#checkthreadh-metrics">checkthread.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#codeeditorcpp-metrics">codeeditor.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#codeeditorh-metrics">codeeditor.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#codeeditorstylecpp-metrics">codeeditorstyle.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#codeeditorstyleh-metrics">codeeditorstyle.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#codeeditstylecontrolscpp-metrics">codeeditstylecontrols.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#codeeditstylecontrolsh-metrics">codeeditstylecontrols.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#codeeditstyledialogcpp-metrics">codeeditstyledialog.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#codeeditstyledialogh-metrics">codeeditstyledialog.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#commoncpp-metrics">common.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#commonh-metrics">common.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#cppchecklibrarydatacpp-metrics">cppchecklibrarydata.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#cppchecklibrarydatah-metrics">cppchecklibrarydata.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#csvreportcpp-metrics">csvreport.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#csvreporth-metrics">csvreport.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#erroritemcpp-metrics">erroritem.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#erroritemh-metrics">erroritem.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#filelistcpp-metrics">filelist.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#filelisth-metrics">filelist.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#fileviewdialogcpp-metrics">fileviewdialog.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#fileviewdialogh-metrics">fileviewdialog.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#libraryaddfunctiondialogcpp-metrics">libraryaddfunctiondialog.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#libraryaddfunctiondialogh-metrics">libraryaddfunctiondialog.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#librarydialogcpp-metrics">librarydialog.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#librarydialogh-metrics">librarydialog.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#libraryeditargdialogcpp-metrics">libraryeditargdialog.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#libraryeditargdialogh-metrics">libraryeditargdialog.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#maincpp-metrics">main.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#mainwindowcpp-metrics">mainwindow.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#mainwindowh-metrics">mainwindow.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#newsuppressiondialogcpp-metrics">newsuppressiondialog.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#newsuppressiondialogh-metrics">newsuppressiondialog.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#platformscpp-metrics">platforms.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#platformsh-metrics">platforms.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#printablereportcpp-metrics">printablereport.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#printablereporth-metrics">printablereport.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#projectfilecpp-metrics">projectfile.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#projectfileh-metrics">projectfile.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#projectfiletxt-metrics">projectfile.txt Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#projectfiledialogcpp-metrics">projectfiledialog.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#projectfiledialogh-metrics">projectfiledialog.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#readmetxt-metrics">readme.txt Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#reportcpp-metrics">report.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#reporth-metrics">report.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#resultstreecpp-metrics">resultstree.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#resultstreeh-metrics">resultstree.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#resultsviewcpp-metrics">resultsview.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#resultsviewh-metrics">resultsview.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#scratchpadcpp-metrics">scratchpad.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#scratchpadh-metrics">scratchpad.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#settingsdialogcpp-metrics">settingsdialog.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#settingsdialogh-metrics">settingsdialog.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#showtypescpp-metrics">showtypes.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#showtypesh-metrics">showtypes.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#statsdialogcpp-metrics">statsdialog.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#statsdialogh-metrics">statsdialog.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#threadhandlercpp-metrics">threadhandler.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#threadhandlerh-metrics">threadhandler.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#threadresultcpp-metrics">threadresult.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#threadresulth-metrics">threadresult.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#translationhandlercpp-metrics">translationhandler.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#translationhandlerh-metrics">translationhandler.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#txtreportcpp-metrics">txtreport.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#txtreporth-metrics">txtreport.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#xmlreportcpp-metrics">xmlreport.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#xmlreporth-metrics">xmlreport.h Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#xmlreportv2cpp-metrics">xmlreportv2.cpp Metrics</a></li>
-<li class="toctree-l5"><a class="nav-item toc" href="#xmlreportv2h-metrics">xmlreportv2.h Metrics</a></li>
-</ul></li>
-    <li class="toctree-l4"><button class="section nav-item hide">help</button>
-<ul class="subnav hide">
-    <li class="toctree-l5"><a class="nav-item" href="help/help-metrics.html">help Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="help/zzz-file-metrics.html">File Metrics</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#aboutdialogcpp">aboutdialog.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#aboutdialogh">aboutdialog.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#applicationcpp">application.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#applicationh">application.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#applicationdialogcpp">applicationdialog.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#applicationdialogh">applicationdialog.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#applicationlistcpp">applicationlist.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#applicationlisth">applicationlist.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkstatisticscpp">checkstatistics.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkstatisticsh">checkstatistics.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkthreadcpp">checkthread.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#checkthreadh">checkthread.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#codeeditorcpp">codeeditor.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#codeeditorh">codeeditor.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#codeeditorstylecpp">codeeditorstyle.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#codeeditorstyleh">codeeditorstyle.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#codeeditstylecontrolscpp">codeeditstylecontrols.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#codeeditstylecontrolsh">codeeditstylecontrols.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#codeeditstyledialogcpp">codeeditstyledialog.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#codeeditstyledialogh">codeeditstyledialog.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#commoncpp">common.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#commonh">common.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#cppchecklibrarydatacpp">cppchecklibrarydata.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#cppchecklibrarydatah">cppchecklibrarydata.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#csvreportcpp">csvreport.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#csvreporth">csvreport.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#erroritemcpp">erroritem.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#erroritemh">erroritem.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#filelistcpp">filelist.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#filelisth">filelist.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#fileviewdialogcpp">fileviewdialog.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#fileviewdialogh">fileviewdialog.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#libraryaddfunctiondialogcpp">libraryaddfunctiondialog.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#libraryaddfunctiondialogh">libraryaddfunctiondialog.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#librarydialogcpp">librarydialog.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#librarydialogh">librarydialog.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#libraryeditargdialogcpp">libraryeditargdialog.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#libraryeditargdialogh">libraryeditargdialog.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#maincpp">main.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#mainwindowcpp">mainwindow.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#mainwindowh">mainwindow.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#newsuppressiondialogcpp">newsuppressiondialog.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#newsuppressiondialogh">newsuppressiondialog.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#platformscpp">platforms.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#platformsh">platforms.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#printablereportcpp">printablereport.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#printablereporth">printablereport.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#projectfilecpp">projectfile.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#projectfileh">projectfile.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#projectfiledialogcpp">projectfiledialog.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#projectfiledialogh">projectfiledialog.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#reportcpp">report.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#reporth">report.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#resultstreecpp">resultstree.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#resultstreeh">resultstree.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#resultsviewcpp">resultsview.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#resultsviewh">resultsview.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#scratchpadcpp">scratchpad.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#scratchpadh">scratchpad.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#settingsdialogcpp">settingsdialog.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#settingsdialogh">settingsdialog.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#showtypescpp">showtypes.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#showtypesh">showtypes.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#statsdialogcpp">statsdialog.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#statsdialogh">statsdialog.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#threadhandlercpp">threadhandler.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#threadhandlerh">threadhandler.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#threadresultcpp">threadresult.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#threadresulth">threadresult.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#translationhandlercpp">translationhandler.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#translationhandlerh">translationhandler.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#txtreportcpp">txtreport.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#txtreporth">txtreport.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#xmlreportcpp">xmlreport.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#xmlreporth">xmlreport.h</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#xmlreportv2cpp">xmlreportv2.cpp</a></li>
+<li class="toctree-l5"><a class="nav-item toc" href="#xmlreportv2h">xmlreportv2.h</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">test</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="test/test-metrics.html">test Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="test/zzz-file-metrics.html">File Metrics</a></li>
     <li class="toctree-l5"><button class="section nav-item hide">benchmark</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="test/benchmark/benchmark-metrics.html">benchmark Metrics</a></li>
     <li class="toctree-l6"><button class="section nav-item hide">simple</button>
 <ul class="subnav hide">
     <li class="toctree-l7"><a class="nav-item" href="test/benchmark/simple/simple-metrics.html">simple Metrics</a></li>
-    <li class="toctree-l7"><a class="nav-item" href="test/benchmark/simple/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="test/benchmark/simple/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">data</button>
@@ -226,65 +211,65 @@
     <li class="toctree-l6"><button class="section nav-item hide">benchmark</button>
 <ul class="subnav hide">
     <li class="toctree-l7"><a class="nav-item" href="test/data/benchmark/benchmark-metrics.html">benchmark Metrics</a></li>
-    <li class="toctree-l7"><a class="nav-item" href="test/data/benchmark/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="test/data/benchmark/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l6"><button class="section nav-item hide">files</button>
 <ul class="subnav hide">
     <li class="toctree-l7"><a class="nav-item" href="test/data/files/files-metrics.html">files Metrics</a></li>
-    <li class="toctree-l7"><a class="nav-item" href="test/data/files/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="test/data/files/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
     <li class="toctree-l7"><button class="section nav-item hide">dir1</button>
 <ul class="subnav hide">
     <li class="toctree-l8"><a class="nav-item" href="test/data/files/dir1/dir1-metrics.html">dir1 Metrics</a></li>
-    <li class="toctree-l8"><a class="nav-item" href="test/data/files/dir1/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l8"><a class="nav-item" href="test/data/files/dir1/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
     <li class="toctree-l8"><button class="section nav-item hide">dir11</button>
 <ul class="subnav hide">
     <li class="toctree-l9"><a class="nav-item" href="test/data/files/dir1/dir11/dir11-metrics.html">dir11 Metrics</a></li>
-    <li class="toctree-l9"><a class="nav-item" href="test/data/files/dir1/dir11/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l9"><a class="nav-item" href="test/data/files/dir1/dir11/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l7"><button class="section nav-item hide">dir2</button>
 <ul class="subnav hide">
     <li class="toctree-l8"><a class="nav-item" href="test/data/files/dir2/dir2-metrics.html">dir2 Metrics</a></li>
-    <li class="toctree-l8"><a class="nav-item" href="test/data/files/dir2/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l8"><a class="nav-item" href="test/data/files/dir2/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">filelist</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="test/filelist/filelist-metrics.html">filelist Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="test/filelist/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="test/filelist/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">projectfile</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="test/projectfile/projectfile-metrics.html">projectfile Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="test/projectfile/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="test/projectfile/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">translationhandler</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="test/translationhandler/translationhandler-metrics.html">translationhandler Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="test/translationhandler/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="test/translationhandler/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">xmlreportv2</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="test/xmlreportv2/xmlreportv2-metrics.html">xmlreportv2 Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="test/xmlreportv2/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="test/xmlreportv2/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">htmlreport</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../htmlreport/htmlreport-metrics.html">htmlreport Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../htmlreport/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../htmlreport/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">lib</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../lib/lib-metrics.html">lib Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../lib/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../lib/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">oss-fuzz</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../oss-fuzz/oss-fuzz-metrics.html">oss-fuzz Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../oss-fuzz/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../oss-fuzz/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">samples</button>
 <ul class="subnav hide">
@@ -292,76 +277,75 @@
     <li class="toctree-l4"><button class="section nav-item hide">AssignmentAddressToInteger</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../samples/AssignmentAddressToInteger/AssignmentAddressToInteger-metrics.html">AssignmentAddressToInteger Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../samples/AssignmentAddressToInteger/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/AssignmentAddressToInteger/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">arrayIndexOutOfBounds</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../samples/arrayIndexOutOfBounds/arrayIndexOutOfBounds-metrics.html">arrayIndexOutOfBounds Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../samples/arrayIndexOutOfBounds/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/arrayIndexOutOfBounds/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">autoVariables</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../samples/autoVariables/autoVariables-metrics.html">autoVariables Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../samples/autoVariables/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/autoVariables/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">bufferAccessOutOfBounds</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../samples/bufferAccessOutOfBounds/bufferAccessOutOfBounds-metrics.html">bufferAccessOutOfBounds Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../samples/bufferAccessOutOfBounds/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/bufferAccessOutOfBounds/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">erase</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../samples/erase/erase-metrics.html">erase Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../samples/erase/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/erase/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">memleak</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../samples/memleak/memleak-metrics.html">memleak Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../samples/memleak/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/memleak/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">outOfBounds</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../samples/outOfBounds/outOfBounds-metrics.html">outOfBounds Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../samples/outOfBounds/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/outOfBounds/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">resourceLeak</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../samples/resourceLeak/resourceLeak-metrics.html">resourceLeak Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../samples/resourceLeak/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/resourceLeak/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">syntaxError</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../samples/syntaxError/syntaxError-metrics.html">syntaxError Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../samples/syntaxError/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../samples/syntaxError/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">test</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../test/test-metrics.html">test Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../test/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../test/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
     <li class="toctree-l4"><button class="section nav-item hide">cfg</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../test/cfg/cfg-metrics.html">cfg Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../test/cfg/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../test/cfg/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">cli</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../test/cli/cli-metrics.html">cli Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../test/cli/zzz-file-metrics.html">File Metrics</a></li>
     <li class="toctree-l5"><button class="section nav-item hide">helloworld</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../test/cli/helloworld/helloworld-metrics.html">helloworld Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../test/cli/helloworld/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../test/cli/helloworld/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">proj-inline-suppress</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../test/cli/proj-inline-suppress/proj-inline-suppress-metrics.html">proj-inline-suppress Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../test/cli/proj-inline-suppress/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../test/cli/proj-inline-suppress/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">proj-suppress-syntaxError</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../test/cli/proj-suppress-syntaxError/proj-suppress-syntaxError-metrics.html">proj-suppress-syntaxError Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../test/cli/proj-suppress-syntaxError/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../test/cli/proj-suppress-syntaxError/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">proj2</button>
 <ul class="subnav hide">
@@ -369,57 +353,50 @@
     <li class="toctree-l6"><button class="section nav-item hide">a</button>
 <ul class="subnav hide">
     <li class="toctree-l7"><a class="nav-item" href="../test/cli/proj2/a/a-metrics.html">a Metrics</a></li>
-    <li class="toctree-l7"><a class="nav-item" href="../test/cli/proj2/a/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../test/cli/proj2/a/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l6"><button class="section nav-item hide">b</button>
 <ul class="subnav hide">
     <li class="toctree-l7"><a class="nav-item" href="../test/cli/proj2/b/b-metrics.html">b Metrics</a></li>
-    <li class="toctree-l7"><a class="nav-item" href="../test/cli/proj2/b/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l7"><a class="nav-item" href="../test/cli/proj2/b/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">synthetic</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../test/synthetic/synthetic-metrics.html">synthetic Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../test/synthetic/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../test/synthetic/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l4"><button class="section nav-item hide">testsuites</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../test/testsuites/testsuites-metrics.html">testsuites Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../test/testsuites/zzz-file-metrics.html">File Metrics</a></li>
     <li class="toctree-l5"><button class="section nav-item hide">clang</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../test/testsuites/clang/clang-metrics.html">clang Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../test/testsuites/clang/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../test/testsuites/clang/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
     <li class="toctree-l5"><button class="section nav-item hide">duma</button>
 <ul class="subnav hide">
     <li class="toctree-l6"><a class="nav-item" href="../test/testsuites/duma/duma-metrics.html">duma Metrics</a></li>
-    <li class="toctree-l6"><a class="nav-item" href="../test/testsuites/duma/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l6"><a class="nav-item" href="../test/testsuites/duma/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
     <li class="toctree-l3"><button class="section nav-item hide">tools</button>
 <ul class="subnav hide">
     <li class="toctree-l4"><a class="nav-item" href="../tools/tools-metrics.html">tools Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../tools/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l4"><a class="nav-item" href="../tools/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
     <li class="toctree-l4"><button class="section nav-item hide">triage</button>
 <ul class="subnav hide">
     <li class="toctree-l5"><a class="nav-item" href="../tools/triage/triage-metrics.html">triage Metrics</a></li>
-    <li class="toctree-l5"><a class="nav-item" href="../tools/triage/zzz-file-metrics.html">File Metrics</a></li>
+    <li class="toctree-l5"><a class="nav-item" href="../tools/triage/zzz-file-metrics.html">File Metrics and Dependencies</a></li>
 </ul></li>
-</ul></li>
-    <li class="toctree-l3"><button class="section nav-item hide">win_installer</button>
-<ul class="subnav hide">
-    <li class="toctree-l4"><a class="nav-item" href="../win_installer/win_installer-metrics.html">win_installer Metrics</a></li>
-    <li class="toctree-l4"><a class="nav-item" href="../win_installer/zzz-file-metrics.html">File Metrics</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
                     <li class="toctree-l1"><button class="section nav-item">Reports</button>
 <ul class="subnav">
     <li class="toctree-l2"><a class="nav-item" href="../../../Reports/circular_file_refs.html">Direct Circular File References</a></li>
-    <li class="toctree-l2"><a class="nav-item" href="../../../Reports/file_dependencies.html">File Dependencies</a></li>
     <li class="toctree-l2"><a class="nav-item" href="../../../Reports/file_list_indented_sloc.html">File List Indented</a></li>
     <li class="toctree-l2"><a class="nav-item" href="../../../Reports/red_metrics.html">Red Metrics</a></li>
 </ul></li>
@@ -427,7 +404,7 @@
             </nav>
             <div class="repo">
     <div class="previous"><a href="gui-metrics.html">&laquo; Previous</a></div>
-    <div class="next"><a href="help/help-metrics.html">Next &raquo;</a></div>
+    <div class="next"><a href="test/test-metrics.html">Next &raquo;</a></div>
 </div>
         </aside>
         <div id="spacer"><button class="arrow"></button></div>
@@ -442,23 +419,9 @@
     <li>Metrics &raquo; </li><li>cppcheck &raquo; </li><li>gui</li>
 </ul>
 </nav>
-                <div id="content"><h1 id="file-metrics">File Metrics<a class="headerlink" href="#file-metrics" title="Permanent link">#</a></h1>
-<h2 id="cmakeliststxt-metrics">CMakeLists.txt Metrics<a class="headerlink" href="#cmakeliststxt-metrics" title="Permanent link">#</a></h2>
-<table>
-<thead>
-<tr>
-<th align="left">Metric</th>
-<th align="right">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">CountStmt</td>
-<td align="right">0</td>
-</tr>
-</tbody>
-</table>
-<h2 id="aboutdialogcpp-metrics">aboutdialog.cpp Metrics<a class="headerlink" href="#aboutdialogcpp-metrics" title="Permanent link">#</a></h2>
+                <div id="content"><h1 id="file-metrics-and-dependencies">File Metrics and Dependencies<a class="headerlink" href="#file-metrics-and-dependencies" title="Permanent link">#</a></h1>
+<h2 id="aboutdialogcpp">aboutdialog.cpp<a class="headerlink" href="#aboutdialogcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/aboutdialog.cpp</p>
 <table>
 <thead>
 <tr>
@@ -497,7 +460,24 @@
 </tr>
 </tbody>
 </table>
-<h2 id="aboutdialogh-metrics">aboutdialog.h Metrics<a class="headerlink" href="#aboutdialogh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#aboutdialogh">cppcheck/gui/aboutdialog.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="aboutdialogh">aboutdialog.h<a class="headerlink" href="#aboutdialogh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/aboutdialog.h</p>
 <table>
 <thead>
 <tr>
@@ -520,7 +500,32 @@
 </tr>
 </tbody>
 </table>
-<h2 id="applicationcpp-metrics">application.cpp Metrics<a class="headerlink" href="#applicationcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#aboutdialogcpp">cppcheck/gui/aboutdialog.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#maincpp">cppcheck/gui/main.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowcpp">cppcheck/gui/mainwindow.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="applicationcpp">application.cpp<a class="headerlink" href="#applicationcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/application.cpp</p>
 <table>
 <thead>
 <tr>
@@ -555,7 +560,24 @@
 </tr>
 </tbody>
 </table>
-<h2 id="applicationh-metrics">application.h Metrics<a class="headerlink" href="#applicationh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationh">cppcheck/gui/application.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="applicationh">application.h<a class="headerlink" href="#applicationh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/application.h</p>
 <table>
 <thead>
 <tr>
@@ -594,7 +616,48 @@
 </tr>
 </tbody>
 </table>
-<h2 id="applicationdialogcpp-metrics">applicationdialog.cpp Metrics<a class="headerlink" href="#applicationdialogcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationcpp">cppcheck/gui/application.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationdialogcpp">cppcheck/gui/applicationdialog.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationdialogh">cppcheck/gui/applicationdialog.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationlistcpp">cppcheck/gui/applicationlist.cpp</a></td>
+<td align="right">17</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationlisth">cppcheck/gui/applicationlist.h</a></td>
+<td align="right">4</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultstreecpp">cppcheck/gui/resultstree.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#settingsdialogcpp">cppcheck/gui/settingsdialog.cpp</a></td>
+<td align="right">3</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="applicationdialogcpp">applicationdialog.cpp<a class="headerlink" href="#applicationdialogcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/applicationdialog.cpp</p>
 <table>
 <thead>
 <tr>
@@ -633,7 +696,47 @@
 </tr>
 </tbody>
 </table>
-<h2 id="applicationdialogh-metrics">applicationdialog.h Metrics<a class="headerlink" href="#applicationdialogh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationh">cppcheck/gui/application.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationdialogh">cppcheck/gui/applicationdialog.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#commonh">cppcheck/gui/common.h</a></td>
+<td align="right">3</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#settingsdialogcpp">cppcheck/gui/settingsdialog.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="applicationdialogh">applicationdialog.h<a class="headerlink" href="#applicationdialogh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/applicationdialog.h</p>
 <table>
 <thead>
 <tr>
@@ -656,7 +759,43 @@
 </tr>
 </tbody>
 </table>
-<h2 id="applicationlistcpp-metrics">applicationlist.cpp Metrics<a class="headerlink" href="#applicationlistcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationh">cppcheck/gui/application.h</a></td>
+<td align="right">2</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationdialogcpp">cppcheck/gui/applicationdialog.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#settingsdialogcpp">cppcheck/gui/settingsdialog.cpp</a></td>
+<td align="right">2</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="applicationlistcpp">applicationlist.cpp<a class="headerlink" href="#applicationlistcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/applicationlist.cpp</p>
 <table>
 <thead>
 <tr>
@@ -695,7 +834,47 @@
 </tr>
 </tbody>
 </table>
-<h2 id="applicationlisth-metrics">applicationlist.h Metrics<a class="headerlink" href="#applicationlisth-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationh">cppcheck/gui/application.h</a></td>
+<td align="right">17</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationlisth">cppcheck/gui/applicationlist.h</a></td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#commonh">cppcheck/gui/common.h</a></td>
+<td align="right">9</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#settingsdialogcpp">cppcheck/gui/settingsdialog.cpp</a></td>
+<td align="right">6</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="applicationlisth">applicationlist.h<a class="headerlink" href="#applicationlisth" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/applicationlist.h</p>
 <table>
 <thead>
 <tr>
@@ -734,7 +913,55 @@
 </tr>
 </tbody>
 </table>
-<h2 id="checkstatisticscpp-metrics">checkstatistics.cpp Metrics<a class="headerlink" href="#checkstatisticscpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationh">cppcheck/gui/application.h</a></td>
+<td align="right">4</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationlistcpp">cppcheck/gui/applicationlist.cpp</a></td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowcpp">cppcheck/gui/mainwindow.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultstreecpp">cppcheck/gui/resultstree.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultsviewcpp">cppcheck/gui/resultsview.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#settingsdialogcpp">cppcheck/gui/settingsdialog.cpp</a></td>
+<td align="right">3</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="checkstatisticscpp">checkstatistics.cpp<a class="headerlink" href="#checkstatisticscpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/checkstatistics.cpp</p>
 <table>
 <thead>
 <tr>
@@ -749,7 +976,24 @@
 </tr>
 </tbody>
 </table>
-<h2 id="checkstatisticsh-metrics">checkstatistics.h Metrics<a class="headerlink" href="#checkstatisticsh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#checkstatisticsh">cppcheck/gui/checkstatistics.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="checkstatisticsh">checkstatistics.h<a class="headerlink" href="#checkstatisticsh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/checkstatistics.h</p>
 <table>
 <thead>
 <tr>
@@ -764,7 +1008,47 @@
 </tr>
 </tbody>
 </table>
-<h2 id="checkthreadcpp-metrics">checkthread.cpp Metrics<a class="headerlink" href="#checkthreadcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#showtypesh">cppcheck/gui/showtypes.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#checkstatisticscpp">cppcheck/gui/checkstatistics.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultsviewcpp">cppcheck/gui/resultsview.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#statsdialogcpp">cppcheck/gui/statsdialog.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="checkthreadcpp">checkthread.cpp<a class="headerlink" href="#checkthreadcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/checkthread.cpp</p>
 <table>
 <thead>
 <tr>
@@ -779,7 +1063,40 @@
 </tr>
 </tbody>
 </table>
-<h2 id="checkthreadh-metrics">checkthread.h Metrics<a class="headerlink" href="#checkthreadh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#checkthreadh">cppcheck/gui/checkthread.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#commonh">cppcheck/gui/common.h</a></td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#erroritemh">cppcheck/gui/erroritem.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#threadresulth">cppcheck/gui/threadresult.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#cppcheckh">cppcheck/lib/cppcheck.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="checkthreadh">checkthread.h<a class="headerlink" href="#checkthreadh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/checkthread.h</p>
 <table>
 <thead>
 <tr>
@@ -794,7 +1111,55 @@
 </tr>
 </tbody>
 </table>
-<h2 id="codeeditorcpp-metrics">codeeditor.cpp Metrics<a class="headerlink" href="#codeeditorcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#threadresulth">cppcheck/gui/threadresult.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#cppcheckh">cppcheck/lib/cppcheck.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#suppressionsh">cppcheck/lib/suppressions.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#checkthreadcpp">cppcheck/gui/checkthread.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#projectfiledialogcpp">cppcheck/gui/projectfiledialog.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#threadhandlercpp">cppcheck/gui/threadhandler.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="codeeditorcpp">codeeditor.cpp<a class="headerlink" href="#codeeditorcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/codeeditor.cpp</p>
 <table>
 <thead>
 <tr>
@@ -833,7 +1198,43 @@
 </tr>
 </tbody>
 </table>
-<h2 id="codeeditorh-metrics">codeeditor.h Metrics<a class="headerlink" href="#codeeditorh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditorh">cppcheck/gui/codeeditor.h</a></td>
+<td align="right">16</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditorstyleh">cppcheck/gui/codeeditorstyle.h</a></td>
+<td align="right">5</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditorh">cppcheck/gui/codeeditor.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="codeeditorh">codeeditor.h<a class="headerlink" href="#codeeditorh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/codeeditor.h</p>
 <table>
 <thead>
 <tr>
@@ -872,7 +1273,47 @@
 </tr>
 </tbody>
 </table>
-<h2 id="codeeditorstylecpp-metrics">codeeditorstyle.cpp Metrics<a class="headerlink" href="#codeeditorstylecpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditorcpp">cppcheck/gui/codeeditor.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditorstyleh">cppcheck/gui/codeeditorstyle.h</a></td>
+<td align="right">5</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditorcpp">cppcheck/gui/codeeditor.cpp</a></td>
+<td align="right">16</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditstyledialogh">cppcheck/gui/codeeditstyledialog.h</a></td>
+<td align="right">2</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="codeeditorstylecpp">codeeditorstyle.cpp<a class="headerlink" href="#codeeditorstylecpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/codeeditorstyle.cpp</p>
 <table>
 <thead>
 <tr>
@@ -911,7 +1352,39 @@
 </tr>
 </tbody>
 </table>
-<h2 id="codeeditorstyleh-metrics">codeeditorstyle.h Metrics<a class="headerlink" href="#codeeditorstyleh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditorstyleh">cppcheck/gui/codeeditorstyle.h</a></td>
+<td align="right">19</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#settingsdialogcpp">cppcheck/gui/settingsdialog.cpp</a></td>
+<td align="right">3</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="codeeditorstyleh">codeeditorstyle.h<a class="headerlink" href="#codeeditorstyleh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/codeeditorstyle.h</p>
 <table>
 <thead>
 <tr>
@@ -950,7 +1423,48 @@
 </tr>
 </tbody>
 </table>
-<h2 id="codeeditstylecontrolscpp-metrics">codeeditstylecontrols.cpp Metrics<a class="headerlink" href="#codeeditstylecontrolscpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditorcpp">cppcheck/gui/codeeditor.cpp</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditorh">cppcheck/gui/codeeditor.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditorstylecpp">cppcheck/gui/codeeditorstyle.cpp</a></td>
+<td align="right">19</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditstyledialogcpp">cppcheck/gui/codeeditstyledialog.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditstyledialogh">cppcheck/gui/codeeditstyledialog.h</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultsviewcpp">cppcheck/gui/resultsview.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#settingsdialogcpp">cppcheck/gui/settingsdialog.cpp</a></td>
+<td align="right">6</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="codeeditstylecontrolscpp">codeeditstylecontrols.cpp<a class="headerlink" href="#codeeditstylecontrolscpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/codeeditstylecontrols.cpp</p>
 <table>
 <thead>
 <tr>
@@ -989,7 +1503,24 @@
 </tr>
 </tbody>
 </table>
-<h2 id="codeeditstylecontrolsh-metrics">codeeditstylecontrols.h Metrics<a class="headerlink" href="#codeeditstylecontrolsh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditstylecontrolsh">cppcheck/gui/codeeditstylecontrols.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="codeeditstylecontrolsh">codeeditstylecontrols.h<a class="headerlink" href="#codeeditstylecontrolsh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/codeeditstylecontrols.h</p>
 <table>
 <thead>
 <tr>
@@ -1028,7 +1559,28 @@
 </tr>
 </tbody>
 </table>
-<h2 id="codeeditstyledialogcpp-metrics">codeeditstyledialog.cpp Metrics<a class="headerlink" href="#codeeditstyledialogcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditstylecontrolscpp">cppcheck/gui/codeeditstylecontrols.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditstyledialogh">cppcheck/gui/codeeditstyledialog.h</a></td>
+<td align="right">17</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="codeeditstyledialogcpp">codeeditstyledialog.cpp<a class="headerlink" href="#codeeditstyledialogcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/codeeditstyledialog.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1063,7 +1615,28 @@
 </tr>
 </tbody>
 </table>
-<h2 id="codeeditstyledialogh-metrics">codeeditstyledialog.h Metrics<a class="headerlink" href="#codeeditstyledialogh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditorstyleh">cppcheck/gui/codeeditorstyle.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditstyledialogh">cppcheck/gui/codeeditstyledialog.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="codeeditstyledialogh">codeeditstyledialog.h<a class="headerlink" href="#codeeditstyledialogh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/codeeditstyledialog.h</p>
 <table>
 <thead>
 <tr>
@@ -1102,7 +1675,51 @@
 </tr>
 </tbody>
 </table>
-<h2 id="commoncpp-metrics">common.cpp Metrics<a class="headerlink" href="#commoncpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditorh">cppcheck/gui/codeeditor.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditorstyleh">cppcheck/gui/codeeditorstyle.h</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditstylecontrolsh">cppcheck/gui/codeeditstylecontrols.h</a></td>
+<td align="right">17</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditstyledialogcpp">cppcheck/gui/codeeditstyledialog.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#settingsdialogcpp">cppcheck/gui/settingsdialog.cpp</a></td>
+<td align="right">3</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="commoncpp">common.cpp<a class="headerlink" href="#commoncpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/common.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1141,7 +1758,24 @@
 </tr>
 </tbody>
 </table>
-<h2 id="commonh-metrics">common.h Metrics<a class="headerlink" href="#commonh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#commonh">cppcheck/gui/common.h</a></td>
+<td align="right">2</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="commonh">common.h<a class="headerlink" href="#commonh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/common.h</p>
 <table>
 <thead>
 <tr>
@@ -1160,7 +1794,84 @@
 </tr>
 </tbody>
 </table>
-<h2 id="cppchecklibrarydatacpp-metrics">cppchecklibrarydata.cpp Metrics<a class="headerlink" href="#cppchecklibrarydatacpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationdialogcpp">cppcheck/gui/applicationdialog.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationlistcpp">cppcheck/gui/applicationlist.cpp</a></td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#checkthreadcpp">cppcheck/gui/checkthread.cpp</a></td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#commoncpp">cppcheck/gui/common.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#erroritemcpp">cppcheck/gui/erroritem.cpp</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#maincpp">cppcheck/gui/main.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowcpp">cppcheck/gui/mainwindow.cpp</a></td>
+<td align="right">78</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#projectfilecpp">cppcheck/gui/projectfile.cpp</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#projectfiledialogcpp">cppcheck/gui/projectfiledialog.cpp</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultstreecpp">cppcheck/gui/resultstree.cpp</a></td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultsviewcpp">cppcheck/gui/resultsview.cpp</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#settingsdialogcpp">cppcheck/gui/settingsdialog.cpp</a></td>
+<td align="right">32</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#showtypescpp">cppcheck/gui/showtypes.cpp</a></td>
+<td align="right">13</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#statsdialogcpp">cppcheck/gui/statsdialog.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#threadhandlercpp">cppcheck/gui/threadhandler.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#threadresultcpp">cppcheck/gui/threadresult.cpp</a></td>
+<td align="right">2</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="cppchecklibrarydatacpp">cppchecklibrarydata.cpp<a class="headerlink" href="#cppchecklibrarydatacpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/cppchecklibrarydata.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1199,7 +1910,39 @@
 </tr>
 </tbody>
 </table>
-<h2 id="cppchecklibrarydatah-metrics">cppchecklibrarydata.h Metrics<a class="headerlink" href="#cppchecklibrarydatah-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#cppchecklibrarydatah">cppcheck/gui/cppchecklibrarydata.h</a></td>
+<td align="right">25</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#librarydialogcpp">cppcheck/gui/librarydialog.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="cppchecklibrarydatah">cppchecklibrarydata.h<a class="headerlink" href="#cppchecklibrarydatah" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/cppchecklibrarydata.h</p>
 <table>
 <thead>
 <tr>
@@ -1238,7 +1981,40 @@
 </tr>
 </tbody>
 </table>
-<h2 id="csvreportcpp-metrics">csvreport.cpp Metrics<a class="headerlink" href="#csvreportcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#cppchecklibrarydatacpp">cppcheck/gui/cppchecklibrarydata.cpp</a></td>
+<td align="right">25</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#librarydialogcpp">cppcheck/gui/librarydialog.cpp</a></td>
+<td align="right">21</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#librarydialogh">cppcheck/gui/librarydialog.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#libraryeditargdialogcpp">cppcheck/gui/libraryeditargdialog.cpp</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#libraryeditargdialogh">cppcheck/gui/libraryeditargdialog.h</a></td>
+<td align="right">2</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="csvreportcpp">csvreport.cpp<a class="headerlink" href="#csvreportcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/csvreport.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1253,7 +2029,28 @@
 </tr>
 </tbody>
 </table>
-<h2 id="csvreporth-metrics">csvreport.h Metrics<a class="headerlink" href="#csvreporth-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#csvreporth">cppcheck/gui/csvreport.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#reporth">cppcheck/gui/report.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="csvreporth">csvreport.h<a class="headerlink" href="#csvreporth" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/csvreport.h</p>
 <table>
 <thead>
 <tr>
@@ -1268,7 +2065,43 @@
 </tr>
 </tbody>
 </table>
-<h2 id="erroritemcpp-metrics">erroritem.cpp Metrics<a class="headerlink" href="#erroritemcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#reporth">cppcheck/gui/report.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#csvreportcpp">cppcheck/gui/csvreport.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultsviewcpp">cppcheck/gui/resultsview.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="erroritemcpp">erroritem.cpp<a class="headerlink" href="#erroritemcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/erroritem.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1283,7 +2116,28 @@
 </tr>
 </tbody>
 </table>
-<h2 id="erroritemh-metrics">erroritem.h Metrics<a class="headerlink" href="#erroritemh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#commonh">cppcheck/gui/common.h</a></td>
+<td align="right">5</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#erroritemh">cppcheck/gui/erroritem.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="erroritemh">erroritem.h<a class="headerlink" href="#erroritemh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/erroritem.h</p>
 <table>
 <thead>
 <tr>
@@ -1298,7 +2152,75 @@
 </tr>
 </tbody>
 </table>
-<h2 id="filelistcpp-metrics">filelist.cpp Metrics<a class="headerlink" href="#filelistcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#checkthreadcpp">cppcheck/gui/checkthread.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#erroritemcpp">cppcheck/gui/erroritem.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#maincpp">cppcheck/gui/main.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#reporth">cppcheck/gui/report.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultstreecpp">cppcheck/gui/resultstree.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultsviewcpp">cppcheck/gui/resultsview.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="test/xmlreportv2/zzz-file-metrics.html#testxmlreportv2cpp">cppcheck/gui/test/xmlreportv2/testxmlreportv2.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#threadresultcpp">cppcheck/gui/threadresult.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#xmlreporth">cppcheck/gui/xmlreport.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#xmlreportv2cpp">cppcheck/gui/xmlreportv2.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="filelistcpp">filelist.cpp<a class="headerlink" href="#filelistcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/filelist.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1337,7 +2259,32 @@
 </tr>
 </tbody>
 </table>
-<h2 id="filelisth-metrics">filelist.h Metrics<a class="headerlink" href="#filelisth-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#filelisth">cppcheck/gui/filelist.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#pathh">cppcheck/lib/path.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#pathmatchh">cppcheck/lib/pathmatch.h</a></td>
+<td align="right">2</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="filelisth">filelist.h<a class="headerlink" href="#filelisth" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/filelist.h</p>
 <table>
 <thead>
 <tr>
@@ -1360,7 +2307,32 @@
 </tr>
 </tbody>
 </table>
-<h2 id="fileviewdialogcpp-metrics">fileviewdialog.cpp Metrics<a class="headerlink" href="#fileviewdialogcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#filelistcpp">cppcheck/gui/filelist.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowcpp">cppcheck/gui/mainwindow.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="test/filelist/zzz-file-metrics.html#testfilelistcpp">cppcheck/gui/test/filelist/testfilelist.cpp</a></td>
+<td align="right">11</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="fileviewdialogcpp">fileviewdialog.cpp<a class="headerlink" href="#fileviewdialogcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/fileviewdialog.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1399,7 +2371,24 @@
 </tr>
 </tbody>
 </table>
-<h2 id="fileviewdialogh-metrics">fileviewdialog.h Metrics<a class="headerlink" href="#fileviewdialogh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#fileviewdialogh">cppcheck/gui/fileviewdialog.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="fileviewdialogh">fileviewdialog.h<a class="headerlink" href="#fileviewdialogh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/fileviewdialog.h</p>
 <table>
 <thead>
 <tr>
@@ -1422,7 +2411,28 @@
 </tr>
 </tbody>
 </table>
-<h2 id="libraryaddfunctiondialogcpp-metrics">libraryaddfunctiondialog.cpp Metrics<a class="headerlink" href="#libraryaddfunctiondialogcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#fileviewdialogcpp">cppcheck/gui/fileviewdialog.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowcpp">cppcheck/gui/mainwindow.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="libraryaddfunctiondialogcpp">libraryaddfunctiondialog.cpp<a class="headerlink" href="#libraryaddfunctiondialogcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/libraryaddfunctiondialog.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1453,7 +2463,39 @@
 </tr>
 </tbody>
 </table>
-<h2 id="libraryaddfunctiondialogh-metrics">libraryaddfunctiondialog.h Metrics<a class="headerlink" href="#libraryaddfunctiondialogh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#libraryaddfunctiondialogh">cppcheck/gui/libraryaddfunctiondialog.h</a></td>
+<td align="right">9</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#librarydialogcpp">cppcheck/gui/librarydialog.cpp</a></td>
+<td align="right">2</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="libraryaddfunctiondialogh">libraryaddfunctiondialog.h<a class="headerlink" href="#libraryaddfunctiondialogh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/libraryaddfunctiondialog.h</p>
 <table>
 <thead>
 <tr>
@@ -1476,7 +2518,28 @@
 </tr>
 </tbody>
 </table>
-<h2 id="librarydialogcpp-metrics">librarydialog.cpp Metrics<a class="headerlink" href="#librarydialogcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#libraryaddfunctiondialogcpp">cppcheck/gui/libraryaddfunctiondialog.cpp</a></td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#librarydialogcpp">cppcheck/gui/librarydialog.cpp</a></td>
+<td align="right">9</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="librarydialogcpp">librarydialog.cpp<a class="headerlink" href="#librarydialogcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/librarydialog.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1519,7 +2582,52 @@
 </tr>
 </tbody>
 </table>
-<h2 id="librarydialogh-metrics">librarydialog.h Metrics<a class="headerlink" href="#librarydialogh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#cppchecklibrarydatacpp">cppcheck/gui/cppchecklibrarydata.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#cppchecklibrarydatah">cppcheck/gui/cppchecklibrarydata.h</a></td>
+<td align="right">21</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#libraryaddfunctiondialogcpp">cppcheck/gui/libraryaddfunctiondialog.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#libraryaddfunctiondialogh">cppcheck/gui/libraryaddfunctiondialog.h</a></td>
+<td align="right">9</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#librarydialogh">cppcheck/gui/librarydialog.h</a></td>
+<td align="right">13</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#libraryeditargdialogcpp">cppcheck/gui/libraryeditargdialog.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#libraryeditargdialogh">cppcheck/gui/libraryeditargdialog.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#pathh">cppcheck/lib/path.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="librarydialogh">librarydialog.h<a class="headerlink" href="#librarydialogh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/librarydialog.h</p>
 <table>
 <thead>
 <tr>
@@ -1542,7 +2650,43 @@
 </tr>
 </tbody>
 </table>
-<h2 id="libraryeditargdialogcpp-metrics">libraryeditargdialog.cpp Metrics<a class="headerlink" href="#libraryeditargdialogcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#cppchecklibrarydatah">cppcheck/gui/cppchecklibrarydata.h</a></td>
+<td align="right">5</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#librarydialogcpp">cppcheck/gui/librarydialog.cpp</a></td>
+<td align="right">13</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowcpp">cppcheck/gui/mainwindow.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="libraryeditargdialogcpp">libraryeditargdialog.cpp<a class="headerlink" href="#libraryeditargdialogcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/libraryeditargdialog.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1577,7 +2721,43 @@
 </tr>
 </tbody>
 </table>
-<h2 id="libraryeditargdialogh-metrics">libraryeditargdialog.h Metrics<a class="headerlink" href="#libraryeditargdialogh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#cppchecklibrarydatah">cppcheck/gui/cppchecklibrarydata.h</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#libraryeditargdialogh">cppcheck/gui/libraryeditargdialog.h</a></td>
+<td align="right">2</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#librarydialogcpp">cppcheck/gui/librarydialog.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="libraryeditargdialogh">libraryeditargdialog.h<a class="headerlink" href="#libraryeditargdialogh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/libraryeditargdialog.h</p>
 <table>
 <thead>
 <tr>
@@ -1600,7 +2780,43 @@
 </tr>
 </tbody>
 </table>
-<h2 id="maincpp-metrics">main.cpp Metrics<a class="headerlink" href="#maincpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#cppchecklibrarydatah">cppcheck/gui/cppchecklibrarydata.h</a></td>
+<td align="right">2</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#librarydialogcpp">cppcheck/gui/librarydialog.cpp</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#libraryeditargdialogcpp">cppcheck/gui/libraryeditargdialog.cpp</a></td>
+<td align="right">2</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="maincpp">main.cpp<a class="headerlink" href="#maincpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/main.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1615,7 +2831,44 @@
 </tr>
 </tbody>
 </table>
-<h2 id="mainwindowcpp-metrics">mainwindow.cpp Metrics<a class="headerlink" href="#mainwindowcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#aboutdialogh">cppcheck/gui/aboutdialog.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#commonh">cppcheck/gui/common.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#erroritemh">cppcheck/gui/erroritem.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowh">cppcheck/gui/mainwindow.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#translationhandlerh">cppcheck/gui/translationhandler.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#cppcheckh">cppcheck/lib/cppcheck.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="mainwindowcpp">mainwindow.cpp<a class="headerlink" href="#mainwindowcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/mainwindow.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1630,7 +2883,92 @@
 </tr>
 </tbody>
 </table>
-<h2 id="mainwindowh-metrics">mainwindow.h Metrics<a class="headerlink" href="#mainwindowh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#aboutdialogh">cppcheck/gui/aboutdialog.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationlisth">cppcheck/gui/applicationlist.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#commonh">cppcheck/gui/common.h</a></td>
+<td align="right">78</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#filelisth">cppcheck/gui/filelist.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#fileviewdialogh">cppcheck/gui/fileviewdialog.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#librarydialogh">cppcheck/gui/librarydialog.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowh">cppcheck/gui/mainwindow.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#projectfileh">cppcheck/gui/projectfile.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#projectfiledialogh">cppcheck/gui/projectfiledialog.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#reporth">cppcheck/gui/report.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#scratchpadh">cppcheck/gui/scratchpad.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#settingsdialogh">cppcheck/gui/settingsdialog.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#showtypesh">cppcheck/gui/showtypes.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#statsdialogh">cppcheck/gui/statsdialog.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#threadhandlerh">cppcheck/gui/threadhandler.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#threadresulth">cppcheck/gui/threadresult.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#translationhandlerh">cppcheck/gui/translationhandler.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#cppcheckh">cppcheck/lib/cppcheck.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="mainwindowh">mainwindow.h<a class="headerlink" href="#mainwindowh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/mainwindow.h</p>
 <table>
 <thead>
 <tr>
@@ -1645,7 +2983,51 @@
 </tr>
 </tbody>
 </table>
-<h2 id="newsuppressiondialogcpp-metrics">newsuppressiondialog.cpp Metrics<a class="headerlink" href="#newsuppressiondialogcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#platformsh">cppcheck/gui/platforms.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#maincpp">cppcheck/gui/main.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowcpp">cppcheck/gui/mainwindow.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#scratchpadcpp">cppcheck/gui/scratchpad.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="newsuppressiondialogcpp">newsuppressiondialog.cpp<a class="headerlink" href="#newsuppressiondialogcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/newsuppressiondialog.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1660,7 +3042,36 @@
 </tr>
 </tbody>
 </table>
-<h2 id="newsuppressiondialogh-metrics">newsuppressiondialog.h Metrics<a class="headerlink" href="#newsuppressiondialogh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#newsuppressiondialogh">cppcheck/gui/newsuppressiondialog.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#cppcheckh">cppcheck/lib/cppcheck.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#suppressionsh">cppcheck/lib/suppressions.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="newsuppressiondialogh">newsuppressiondialog.h<a class="headerlink" href="#newsuppressiondialogh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/newsuppressiondialog.h</p>
 <table>
 <thead>
 <tr>
@@ -1675,7 +3086,43 @@
 </tr>
 </tbody>
 </table>
-<h2 id="platformscpp-metrics">platforms.cpp Metrics<a class="headerlink" href="#platformscpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#suppressionsh">cppcheck/lib/suppressions.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#newsuppressiondialogcpp">cppcheck/gui/newsuppressiondialog.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#projectfiledialogcpp">cppcheck/gui/projectfiledialog.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="platformscpp">platforms.cpp<a class="headerlink" href="#platformscpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/platforms.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1690,7 +3137,24 @@
 </tr>
 </tbody>
 </table>
-<h2 id="platformsh-metrics">platforms.h Metrics<a class="headerlink" href="#platformsh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#platformsh">cppcheck/gui/platforms.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="platformsh">platforms.h<a class="headerlink" href="#platformsh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/platforms.h</p>
 <table>
 <thead>
 <tr>
@@ -1705,7 +3169,47 @@
 </tr>
 </tbody>
 </table>
-<h2 id="printablereportcpp-metrics">printablereport.cpp Metrics<a class="headerlink" href="#printablereportcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowh">cppcheck/gui/mainwindow.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#platformscpp">cppcheck/gui/platforms.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#projectfiledialogcpp">cppcheck/gui/projectfiledialog.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="printablereportcpp">printablereport.cpp<a class="headerlink" href="#printablereportcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/printablereport.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1720,7 +3224,24 @@
 </tr>
 </tbody>
 </table>
-<h2 id="printablereporth-metrics">printablereport.h Metrics<a class="headerlink" href="#printablereporth-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#printablereporth">cppcheck/gui/printablereport.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="printablereporth">printablereport.h<a class="headerlink" href="#printablereporth" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/printablereport.h</p>
 <table>
 <thead>
 <tr>
@@ -1735,7 +3256,43 @@
 </tr>
 </tbody>
 </table>
-<h2 id="projectfilecpp-metrics">projectfile.cpp Metrics<a class="headerlink" href="#projectfilecpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#reporth">cppcheck/gui/report.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#printablereportcpp">cppcheck/gui/printablereport.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultsviewcpp">cppcheck/gui/resultsview.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="projectfilecpp">projectfile.cpp<a class="headerlink" href="#projectfilecpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/projectfile.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1750,7 +3307,40 @@
 </tr>
 </tbody>
 </table>
-<h2 id="projectfileh-metrics">projectfile.h Metrics<a class="headerlink" href="#projectfileh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#commonh">cppcheck/gui/common.h</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#projectfileh">cppcheck/gui/projectfile.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#importprojecth">cppcheck/lib/importproject.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#pathh">cppcheck/lib/path.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="projectfileh">projectfile.h<a class="headerlink" href="#projectfileh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/projectfile.h</p>
 <table>
 <thead>
 <tr>
@@ -1765,7 +3355,55 @@
 </tr>
 </tbody>
 </table>
-<h2 id="projectfiletxt-metrics">projectfile.txt Metrics<a class="headerlink" href="#projectfiletxt-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#suppressionsh">cppcheck/lib/suppressions.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowcpp">cppcheck/gui/mainwindow.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#projectfilecpp">cppcheck/gui/projectfile.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#projectfiledialogcpp">cppcheck/gui/projectfiledialog.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#statsdialogcpp">cppcheck/gui/statsdialog.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="test/projectfile/zzz-file-metrics.html#testprojectfilecpp">cppcheck/gui/test/projectfile/testprojectfile.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="projectfiledialogcpp">projectfiledialog.cpp<a class="headerlink" href="#projectfiledialogcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/projectfiledialog.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1780,7 +3418,48 @@
 </tr>
 </tbody>
 </table>
-<h2 id="projectfiledialogcpp-metrics">projectfiledialog.cpp Metrics<a class="headerlink" href="#projectfiledialogcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#checkthreadh">cppcheck/gui/checkthread.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#commonh">cppcheck/gui/common.h</a></td>
+<td align="right">7</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#newsuppressiondialogh">cppcheck/gui/newsuppressiondialog.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#platformsh">cppcheck/gui/platforms.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#projectfileh">cppcheck/gui/projectfile.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#projectfiledialogh">cppcheck/gui/projectfiledialog.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#libraryh">cppcheck/lib/library.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="projectfiledialogh">projectfiledialog.h<a class="headerlink" href="#projectfiledialogh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/projectfiledialog.h</p>
 <table>
 <thead>
 <tr>
@@ -1795,7 +3474,43 @@
 </tr>
 </tbody>
 </table>
-<h2 id="projectfiledialogh-metrics">projectfiledialog.h Metrics<a class="headerlink" href="#projectfiledialogh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#suppressionsh">cppcheck/lib/suppressions.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowcpp">cppcheck/gui/mainwindow.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#projectfiledialogcpp">cppcheck/gui/projectfiledialog.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="reportcpp">report.cpp<a class="headerlink" href="#reportcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/report.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1810,7 +3525,24 @@
 </tr>
 </tbody>
 </table>
-<h2 id="readmetxt-metrics">readme.txt Metrics<a class="headerlink" href="#readmetxt-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#reporth">cppcheck/gui/report.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="reporth">report.h<a class="headerlink" href="#reporth" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/report.h</p>
 <table>
 <thead>
 <tr>
@@ -1825,7 +3557,79 @@
 </tr>
 </tbody>
 </table>
-<h2 id="reportcpp-metrics">report.cpp Metrics<a class="headerlink" href="#reportcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#erroritemh">cppcheck/gui/erroritem.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#csvreportcpp">cppcheck/gui/csvreport.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#csvreporth">cppcheck/gui/csvreport.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowcpp">cppcheck/gui/mainwindow.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#printablereporth">cppcheck/gui/printablereport.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#reportcpp">cppcheck/gui/report.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultstreecpp">cppcheck/gui/resultstree.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultsviewh">cppcheck/gui/resultsview.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#txtreporth">cppcheck/gui/txtreport.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#xmlreportcpp">cppcheck/gui/xmlreport.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#xmlreporth">cppcheck/gui/xmlreport.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#xmlreportv2cpp">cppcheck/gui/xmlreportv2.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="resultstreecpp">resultstree.cpp<a class="headerlink" href="#resultstreecpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/resultstree.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1840,7 +3644,60 @@
 </tr>
 </tbody>
 </table>
-<h2 id="reporth-metrics">report.h Metrics<a class="headerlink" href="#reporth-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationh">cppcheck/gui/application.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationlisth">cppcheck/gui/applicationlist.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#commonh">cppcheck/gui/common.h</a></td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#erroritemh">cppcheck/gui/erroritem.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#reporth">cppcheck/gui/report.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultstreeh">cppcheck/gui/resultstree.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#showtypesh">cppcheck/gui/showtypes.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#threadhandlerh">cppcheck/gui/threadhandler.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#xmlreportv2h">cppcheck/gui/xmlreportv2.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#pathh">cppcheck/lib/path.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="resultstreeh">resultstree.h<a class="headerlink" href="#resultstreeh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/resultstree.h</p>
 <table>
 <thead>
 <tr>
@@ -1855,7 +3712,43 @@
 </tr>
 </tbody>
 </table>
-<h2 id="resultstreecpp-metrics">resultstree.cpp Metrics<a class="headerlink" href="#resultstreecpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#showtypesh">cppcheck/gui/showtypes.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultstreecpp">cppcheck/gui/resultstree.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="resultsviewcpp">resultsview.cpp<a class="headerlink" href="#resultsviewcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/resultsview.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1870,7 +3763,68 @@
 </tr>
 </tbody>
 </table>
-<h2 id="resultstreeh-metrics">resultstree.h Metrics<a class="headerlink" href="#resultstreeh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationlisth">cppcheck/gui/applicationlist.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#checkstatisticsh">cppcheck/gui/checkstatistics.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditorstyleh">cppcheck/gui/codeeditorstyle.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#commonh">cppcheck/gui/common.h</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#csvreporth">cppcheck/gui/csvreport.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#erroritemh">cppcheck/gui/erroritem.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#printablereporth">cppcheck/gui/printablereport.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultsviewh">cppcheck/gui/resultsview.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#txtreporth">cppcheck/gui/txtreport.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#xmlreporth">cppcheck/gui/xmlreport.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#xmlreportv2h">cppcheck/gui/xmlreportv2.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#pathh">cppcheck/lib/path.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="resultsviewh">resultsview.h<a class="headerlink" href="#resultsviewh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/resultsview.h</p>
 <table>
 <thead>
 <tr>
@@ -1885,7 +3839,47 @@
 </tr>
 </tbody>
 </table>
-<h2 id="resultsviewcpp-metrics">resultsview.cpp Metrics<a class="headerlink" href="#resultsviewcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#reporth">cppcheck/gui/report.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#showtypesh">cppcheck/gui/showtypes.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultsviewcpp">cppcheck/gui/resultsview.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#threadhandlercpp">cppcheck/gui/threadhandler.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="scratchpadcpp">scratchpad.cpp<a class="headerlink" href="#scratchpadcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/scratchpad.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1900,7 +3894,28 @@
 </tr>
 </tbody>
 </table>
-<h2 id="resultsviewh-metrics">resultsview.h Metrics<a class="headerlink" href="#resultsviewh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowh">cppcheck/gui/mainwindow.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#scratchpadh">cppcheck/gui/scratchpad.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="scratchpadh">scratchpad.h<a class="headerlink" href="#scratchpadh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/scratchpad.h</p>
 <table>
 <thead>
 <tr>
@@ -1915,37 +3930,28 @@
 </tr>
 </tbody>
 </table>
-<h2 id="scratchpadcpp-metrics">scratchpad.cpp Metrics<a class="headerlink" href="#scratchpadcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
 <table>
 <thead>
 <tr>
-<th align="left">Metric</th>
-<th align="right">Value</th>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">CountStmt</td>
-<td align="right">0</td>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowcpp">cppcheck/gui/mainwindow.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#scratchpadcpp">cppcheck/gui/scratchpad.cpp</a></td>
+<td align="right">1</td>
 </tr>
 </tbody>
 </table>
-<h2 id="scratchpadh-metrics">scratchpad.h Metrics<a class="headerlink" href="#scratchpadh-metrics" title="Permanent link">#</a></h2>
-<table>
-<thead>
-<tr>
-<th align="left">Metric</th>
-<th align="right">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">CountStmt</td>
-<td align="right">0</td>
-</tr>
-</tbody>
-</table>
-<h2 id="settingsdialogcpp-metrics">settingsdialog.cpp Metrics<a class="headerlink" href="#settingsdialogcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<h2 id="settingsdialogcpp">settingsdialog.cpp<a class="headerlink" href="#settingsdialogcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/settingsdialog.cpp</p>
 <table>
 <thead>
 <tr>
@@ -1984,7 +3990,64 @@
 </tr>
 </tbody>
 </table>
-<h2 id="settingsdialogh-metrics">settingsdialog.h Metrics<a class="headerlink" href="#settingsdialogh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationh">cppcheck/gui/application.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationdialogcpp">cppcheck/gui/applicationdialog.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationdialogh">cppcheck/gui/applicationdialog.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationlistcpp">cppcheck/gui/applicationlist.cpp</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#applicationlisth">cppcheck/gui/applicationlist.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditorstylecpp">cppcheck/gui/codeeditorstyle.cpp</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditorstyleh">cppcheck/gui/codeeditorstyle.h</a></td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#codeeditstyledialogh">cppcheck/gui/codeeditstyledialog.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#commonh">cppcheck/gui/common.h</a></td>
+<td align="right">32</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#settingsdialogh">cppcheck/gui/settingsdialog.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#translationhandlerh">cppcheck/gui/translationhandler.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="settingsdialogh">settingsdialog.h<a class="headerlink" href="#settingsdialogh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/settingsdialog.h</p>
 <table>
 <thead>
 <tr>
@@ -1999,7 +4062,28 @@
 </tr>
 </tbody>
 </table>
-<h2 id="showtypescpp-metrics">showtypes.cpp Metrics<a class="headerlink" href="#showtypescpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowcpp">cppcheck/gui/mainwindow.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#settingsdialogcpp">cppcheck/gui/settingsdialog.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="showtypescpp">showtypes.cpp<a class="headerlink" href="#showtypescpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/showtypes.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2014,7 +4098,32 @@
 </tr>
 </tbody>
 </table>
-<h2 id="showtypesh-metrics">showtypes.h Metrics<a class="headerlink" href="#showtypesh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#commonh">cppcheck/gui/common.h</a></td>
+<td align="right">13</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#showtypesh">cppcheck/gui/showtypes.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="showtypesh">showtypes.h<a class="headerlink" href="#showtypesh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/showtypes.h</p>
 <table>
 <thead>
 <tr>
@@ -2029,7 +4138,59 @@
 </tr>
 </tbody>
 </table>
-<h2 id="statsdialogcpp-metrics">statsdialog.cpp Metrics<a class="headerlink" href="#statsdialogcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#checkstatisticsh">cppcheck/gui/checkstatistics.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowcpp">cppcheck/gui/mainwindow.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultstreecpp">cppcheck/gui/resultstree.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultstreeh">cppcheck/gui/resultstree.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultsviewh">cppcheck/gui/resultsview.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#showtypescpp">cppcheck/gui/showtypes.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="statsdialogcpp">statsdialog.cpp<a class="headerlink" href="#statsdialogcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/statsdialog.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2044,7 +4205,36 @@
 </tr>
 </tbody>
 </table>
-<h2 id="statsdialogh-metrics">statsdialog.h Metrics<a class="headerlink" href="#statsdialogh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#checkstatisticsh">cppcheck/gui/checkstatistics.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#commonh">cppcheck/gui/common.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#projectfileh">cppcheck/gui/projectfile.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#statsdialogh">cppcheck/gui/statsdialog.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="statsdialogh">statsdialog.h<a class="headerlink" href="#statsdialogh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/statsdialog.h</p>
 <table>
 <thead>
 <tr>
@@ -2059,7 +4249,28 @@
 </tr>
 </tbody>
 </table>
-<h2 id="threadhandlercpp-metrics">threadhandler.cpp Metrics<a class="headerlink" href="#threadhandlercpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowcpp">cppcheck/gui/mainwindow.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#statsdialogcpp">cppcheck/gui/statsdialog.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="threadhandlercpp">threadhandler.cpp<a class="headerlink" href="#threadhandlercpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/threadhandler.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2074,7 +4285,40 @@
 </tr>
 </tbody>
 </table>
-<h2 id="threadhandlerh-metrics">threadhandler.h Metrics<a class="headerlink" href="#threadhandlerh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#checkthreadh">cppcheck/gui/checkthread.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#commonh">cppcheck/gui/common.h</a></td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultsviewh">cppcheck/gui/resultsview.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#threadhandlerh">cppcheck/gui/threadhandler.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#settingsh">cppcheck/lib/settings.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="threadhandlerh">threadhandler.h<a class="headerlink" href="#threadhandlerh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/threadhandler.h</p>
 <table>
 <thead>
 <tr>
@@ -2089,7 +4333,55 @@
 </tr>
 </tbody>
 </table>
-<h2 id="threadresultcpp-metrics">threadresult.cpp Metrics<a class="headerlink" href="#threadresultcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#threadresulth">cppcheck/gui/threadresult.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#importprojecth">cppcheck/lib/importproject.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#suppressionsh">cppcheck/lib/suppressions.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowcpp">cppcheck/gui/mainwindow.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultstreecpp">cppcheck/gui/resultstree.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#threadhandlercpp">cppcheck/gui/threadhandler.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="threadresultcpp">threadresult.cpp<a class="headerlink" href="#threadresultcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/threadresult.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2104,7 +4396,36 @@
 </tr>
 </tbody>
 </table>
-<h2 id="threadresulth-metrics">threadresult.h Metrics<a class="headerlink" href="#threadresulth-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#commonh">cppcheck/gui/common.h</a></td>
+<td align="right">2</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#erroritemh">cppcheck/gui/erroritem.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#threadresulth">cppcheck/gui/threadresult.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="threadresulth">threadresult.h<a class="headerlink" href="#threadresulth" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/threadresult.h</p>
 <table>
 <thead>
 <tr>
@@ -2119,7 +4440,59 @@
 </tr>
 </tbody>
 </table>
-<h2 id="translationhandlercpp-metrics">translationhandler.cpp Metrics<a class="headerlink" href="#translationhandlercpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#errorloggerh">cppcheck/lib/errorlogger.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#importprojecth">cppcheck/lib/importproject.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#checkthreadcpp">cppcheck/gui/checkthread.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#checkthreadh">cppcheck/gui/checkthread.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowcpp">cppcheck/gui/mainwindow.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#threadhandlerh">cppcheck/gui/threadhandler.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#threadresultcpp">cppcheck/gui/threadresult.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="translationhandlercpp">translationhandler.cpp<a class="headerlink" href="#translationhandlercpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/translationhandler.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2158,7 +4531,39 @@
 </tr>
 </tbody>
 </table>
-<h2 id="translationhandlerh-metrics">translationhandler.h Metrics<a class="headerlink" href="#translationhandlerh-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#translationhandlerh">cppcheck/gui/translationhandler.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="test/translationhandler/zzz-file-metrics.html#testtranslationhandlercpp">cppcheck/gui/test/translationhandler/testtranslationhandler.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="translationhandlerh">translationhandler.h<a class="headerlink" href="#translationhandlerh" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/translationhandler.h</p>
 <table>
 <thead>
 <tr>
@@ -2173,7 +4578,40 @@
 </tr>
 </tbody>
 </table>
-<h2 id="txtreportcpp-metrics">txtreport.cpp Metrics<a class="headerlink" href="#txtreportcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#maincpp">cppcheck/gui/main.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#mainwindowcpp">cppcheck/gui/mainwindow.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#settingsdialogcpp">cppcheck/gui/settingsdialog.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="test/translationhandler/zzz-file-metrics.html#testtranslationhandlercpp">cppcheck/gui/test/translationhandler/testtranslationhandler.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#translationhandlercpp">cppcheck/gui/translationhandler.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="txtreportcpp">txtreport.cpp<a class="headerlink" href="#txtreportcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/txtreport.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2188,7 +4626,24 @@
 </tr>
 </tbody>
 </table>
-<h2 id="txtreporth-metrics">txtreport.h Metrics<a class="headerlink" href="#txtreporth-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#txtreporth">cppcheck/gui/txtreport.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="txtreporth">txtreport.h<a class="headerlink" href="#txtreporth" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/txtreport.h</p>
 <table>
 <thead>
 <tr>
@@ -2203,7 +4658,43 @@
 </tr>
 </tbody>
 </table>
-<h2 id="xmlreportcpp-metrics">xmlreport.cpp Metrics<a class="headerlink" href="#xmlreportcpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#reporth">cppcheck/gui/report.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultsviewcpp">cppcheck/gui/resultsview.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#txtreportcpp">cppcheck/gui/txtreport.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="xmlreportcpp">xmlreport.cpp<a class="headerlink" href="#xmlreportcpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/xmlreport.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2218,7 +4709,28 @@
 </tr>
 </tbody>
 </table>
-<h2 id="xmlreporth-metrics">xmlreport.h Metrics<a class="headerlink" href="#xmlreporth-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#reporth">cppcheck/gui/report.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#xmlreporth">cppcheck/gui/xmlreport.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="xmlreporth">xmlreport.h<a class="headerlink" href="#xmlreporth" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/xmlreport.h</p>
 <table>
 <thead>
 <tr>
@@ -2233,7 +4745,55 @@
 </tr>
 </tbody>
 </table>
-<h2 id="xmlreportv2cpp-metrics">xmlreportv2.cpp Metrics<a class="headerlink" href="#xmlreportv2cpp-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#erroritemh">cppcheck/gui/erroritem.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#reporth">cppcheck/gui/report.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultsviewcpp">cppcheck/gui/resultsview.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#xmlreportcpp">cppcheck/gui/xmlreport.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#xmlreportv2cpp">cppcheck/gui/xmlreportv2.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#xmlreportv2h">cppcheck/gui/xmlreportv2.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="xmlreportv2cpp">xmlreportv2.cpp<a class="headerlink" href="#xmlreportv2cpp" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/xmlreportv2.cpp</p>
 <table>
 <thead>
 <tr>
@@ -2248,7 +4808,40 @@
 </tr>
 </tbody>
 </table>
-<h2 id="xmlreportv2h-metrics">xmlreportv2.h Metrics<a class="headerlink" href="#xmlreportv2h-metrics" title="Permanent link">#</a></h2>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#erroritemh">cppcheck/gui/erroritem.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#reporth">cppcheck/gui/report.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#xmlreporth">cppcheck/gui/xmlreport.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#xmlreportv2h">cppcheck/gui/xmlreportv2.h</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="../lib/zzz-file-metrics.html#cppcheckh">cppcheck/lib/cppcheck.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h2 id="xmlreportv2h">xmlreportv2.h<a class="headerlink" href="#xmlreportv2h" title="Permanent link">#</a></h2>
+<p>)Full path name -&gt; cppcheck/gui/xmlreportv2.h</p>
 <table>
 <thead>
 <tr>
@@ -2262,11 +4855,54 @@
 <td align="right">0</td>
 </tr>
 </tbody>
-</table></div>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends ON</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#xmlreporth">cppcheck/gui/xmlreport.h</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Depends BY</th>
+<th align="right">Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultstreecpp">cppcheck/gui/resultstree.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#resultsviewcpp">cppcheck/gui/resultsview.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="test/xmlreportv2/zzz-file-metrics.html#testxmlreportv2cpp">cppcheck/gui/test/xmlreportv2/testxmlreportv2.cpp</a></td>
+<td align="right">1</td>
+</tr>
+<tr>
+<td align="left"><a href="zzz-file-metrics.html#xmlreportv2cpp">cppcheck/gui/xmlreportv2.cpp</a></td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p></div>
                 <footer>
     <div class="footer-buttons">
         <div class="previous"><a href="gui-metrics.html" title="gui Metrics"><span>Previous</span></a></div>
-        <div class="next"><a href="help/help-metrics.html" title="help Metrics"><span>Next</span></a></div>
+        <div class="next"><a href="test/test-metrics.html" title="test Metrics"><span>Next</span></a></div>
     </div>
     <div class="footer-note">
         <p>
